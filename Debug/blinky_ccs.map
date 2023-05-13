@@ -1,7 +1,7 @@
 ******************************************************************************
                   TI ARM Linker PC v20.2.7                     
 ******************************************************************************
->> Linked Sat May 13 00:48:11 2023
+>> Linked Sat May 13 12:35:29 2023
 
 OUTPUT FILE NAME:   <blinky.out>
 ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 00000731
@@ -35,20 +35,20 @@ section   page    origin      length       input sections
                   00000000    0000026c     startup_ccs.obj (.intvecs)
 
 .text      0    0000026c    0000056e     
-                  0000026c    0000016c     driverlib.lib : gpio.obj (.text:GPIOPadConfigSet)
+                  0000026c    0000016c     gpio.obj (.text:GPIOPadConfigSet)
                   000003d8    00000140     lib_gpio.obj (.text:LIB_GPIO_Init)
-                  00000518    000000f4     driverlib.lib : sysctl.obj (.text:SysCtlClockSet)
+                  00000518    000000f4     sysctl.obj (.text:SysCtlClockSet)
                   0000060c    000000b8     blinky.obj (.text:main)
-                  000006c4    00000038     driverlib.lib : sysctl.obj (.text:SysCtlPeripheralReady)
-                  000006fc    00000034                   : sysctl.obj (.text:SysCtlPeripheralEnable)
+                  000006c4    00000038     sysctl.obj (.text:SysCtlPeripheralReady)
+                  000006fc    00000034     sysctl.obj (.text:SysCtlPeripheralEnable)
                   00000730    0000002c     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.text:_c_int00_noinit_noargs:_c_int00_noinit_noargs)
                   0000075c    0000001c     lib_gpio.obj (.text:LIB_GPIO_WritePin)
-                  00000778    0000001c     driverlib.lib : sysctl.obj (.text:SysCtlGPIOAHBEnable)
+                  00000778    0000001c     sysctl.obj (.text:SysCtlGPIOAHBEnable)
                   00000794    00000014     lib_clock.obj (.text:LIB_CLOCK_PeripheralClockEnable)
                   000007a8    00000010     lib_gpio.obj (.text:LIB_GPIO_ReadPin)
                   000007b8    00000008     lib_clock.obj (.text:LIB_CLOCK_MainClockSet)
                   000007c0    00000006     startup_ccs.obj (.text:ResetISR)
-                  000007c6    00000006     driverlib.lib : sysctl.obj (.text:SysCtlDelay)
+                  000007c6    00000006     sysctl.obj (.text:SysCtlDelay)
                   000007cc    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
                   000007d0    00000004                                   : exit.c.obj (.text:abort:abort)
                   000007d4    00000002     startup_ccs.obj (.text:FaultISR)
@@ -89,7 +89,7 @@ MODULE SUMMARY
     +--+---------------------+------+---------+---------+
        Total:                364    0         0      
                                                      
-    C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib
+    .\driverlib\
        sysctl.obj            386    0         0      
        gpio.obj              364    0         0      
     +--+---------------------+------+---------+---------+

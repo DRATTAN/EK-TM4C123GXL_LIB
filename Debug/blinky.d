@@ -13,8 +13,8 @@ blinky.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machi
 blinky.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h
 blinky.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdbool.h
 blinky.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_memmap.h
-blinky.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/gpio.h
-blinky.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/sysctl.h
+blinky.obj: ../driverlib/gpio.h
+blinky.obj: ../driverlib/sysctl.h
 blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/EK-TM4C123GXL_LIB/clock/lib_clock.h
 blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/EK-TM4C123GXL_LIB/clock/lib_clock_Define.h
 blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/EK-TM4C123GXL_LIB/gpio/lib_gpio.h
@@ -48,9 +48,9 @@ C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdbool.h:
 
 C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_memmap.h:
 
-C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/gpio.h:
+../driverlib/gpio.h:
 
-C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/sysctl.h:
+../driverlib/sysctl.h:
 
 C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/EK-TM4C123GXL_LIB/clock/lib_clock.h:
 

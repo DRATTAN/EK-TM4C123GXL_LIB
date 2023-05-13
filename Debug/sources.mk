@@ -114,4 +114,9 @@ SUBDIRS := \
 . \
 EK-TM4C123GXL_LIB/clock \
 EK-TM4C123GXL_LIB/gpio \
+driverlib \
+driverlib/ccs/Debug \
+driverlib/ewarm/Exe \
+driverlib/gcc \
+driverlib/rvmdk \
 

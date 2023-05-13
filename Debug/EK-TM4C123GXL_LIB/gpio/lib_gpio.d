@@ -13,13 +13,13 @@ EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm
 EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_stdint.h
 EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h
 EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdbool.h
-EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/gpio.h
+EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/gpio.h
 EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_gpio.h
 EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_types.h
 EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_memmap.h
 EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: ../EK-TM4C123GXL_LIB/gpio/lib_gpio_define.h
 EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/EK-TM4C123GXL_LIB/clock/lib_clock.h
-EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/sysctl.h
+EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/sysctl.h
 EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/EK-TM4C123GXL_LIB/clock/lib_clock_Define.h
 
 ../EK-TM4C123GXL_LIB/gpio/lib_gpio.c:
@@ -48,7 +48,7 @@ C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h:
 
 C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdbool.h:
 
-C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/gpio.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/gpio.h:
 
 C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_gpio.h:
 
@@ -60,7 +60,7 @@ C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_memmap.h:
 
 C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/EK-TM4C123GXL_LIB/clock/lib_clock.h:
 
-C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/sysctl.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/sysctl.h:
 
 C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/EK-TM4C123GXL_LIB/clock/lib_clock_Define.h:
 
