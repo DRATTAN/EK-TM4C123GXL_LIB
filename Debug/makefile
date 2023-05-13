@@ -48,10 +48,11 @@ ORDERED_OBJS += \
 "./driverlib/usb.obj" \
 "./driverlib/watchdog.obj" \
 "../blinky_ccs.cmd" \
+"../driverlib.lib" \
 "../driverlib/ccs/Debug/driverlib.lib" \
 "../driverlib/rvmdk/driverlib.lib" \
 $(GEN_CMDS__FLAG) \
--l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" \
+-l"C:/Users/RATTAN/Desktop/ccs workspace/blinky/driverlib.lib" \
 -llibc.a \
 
 -include ../makefile.init
