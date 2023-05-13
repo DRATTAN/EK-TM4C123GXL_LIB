@@ -1,0 +1,7 @@
+"./blinky.obj"
+"./startup_ccs.obj"
+"./EK-TM4C123GXL_LIB/clock/lib_clock.obj"
+"./EK-TM4C123GXL_LIB/gpio/lib_gpio.obj"
+"../blinky_ccs.cmd"
+-l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"
+-llibc.a
