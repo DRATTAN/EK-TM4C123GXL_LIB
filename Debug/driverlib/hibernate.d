@@ -15,14 +15,14 @@ driverlib/hibernate.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/
 driverlib/hibernate.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/time.h
 driverlib/hibernate.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/abi_prefix.h
 driverlib/hibernate.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/xlocale/_time.h
-driverlib/hibernate.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_hibernate.h
-driverlib/hibernate.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_ints.h
-driverlib/hibernate.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_sysctl.h
-driverlib/hibernate.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_types.h
-driverlib/hibernate.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/debug.h
-driverlib/hibernate.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/hibernate.h
-driverlib/hibernate.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/interrupt.h
-driverlib/hibernate.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/sysctl.h
+driverlib/hibernate.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_hibernate.h
+driverlib/hibernate.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_ints.h
+driverlib/hibernate.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_sysctl.h
+driverlib/hibernate.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_types.h
+driverlib/hibernate.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/debug.h
+driverlib/hibernate.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/hibernate.h
+driverlib/hibernate.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/interrupt.h
+driverlib/hibernate.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/sysctl.h
 
 ../driverlib/hibernate.c:
 
@@ -54,19 +54,19 @@ C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/abi_prefix.h:
 
 C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/xlocale/_time.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_hibernate.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_hibernate.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_ints.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_ints.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_sysctl.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_sysctl.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_types.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_types.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/debug.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/debug.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/hibernate.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/hibernate.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/interrupt.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/interrupt.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/sysctl.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/sysctl.h:
 

@@ -12,15 +12,15 @@ driverlib/can.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/includ
 driverlib/can.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_types.h
 driverlib/can.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_stdint.h
 driverlib/can.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h
-driverlib/can.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_can.h
-driverlib/can.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_ints.h
-driverlib/can.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_nvic.h
-driverlib/can.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_memmap.h
-driverlib/can.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_sysctl.h
-driverlib/can.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_types.h
-driverlib/can.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/can.h
-driverlib/can.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/debug.h
-driverlib/can.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/interrupt.h
+driverlib/can.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_can.h
+driverlib/can.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_ints.h
+driverlib/can.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_nvic.h
+driverlib/can.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_memmap.h
+driverlib/can.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_sysctl.h
+driverlib/can.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_types.h
+driverlib/can.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/can.h
+driverlib/can.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/debug.h
+driverlib/can.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/interrupt.h
 
 ../driverlib/can.c:
 
@@ -46,21 +46,21 @@ C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_stdint.h
 
 C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_can.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_can.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_ints.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_ints.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_nvic.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_nvic.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_memmap.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_memmap.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_sysctl.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_sysctl.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_types.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_types.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/can.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/can.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/debug.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/debug.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/interrupt.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/interrupt.h:
 

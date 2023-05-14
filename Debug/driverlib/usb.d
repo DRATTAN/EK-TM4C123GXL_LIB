@@ -12,16 +12,16 @@ driverlib/usb.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/includ
 driverlib/usb.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_types.h
 driverlib/usb.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_stdint.h
 driverlib/usb.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h
-driverlib/usb.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_ints.h
-driverlib/usb.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_memmap.h
-driverlib/usb.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_types.h
-driverlib/usb.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_sysctl.h
-driverlib/usb.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_usb.h
-driverlib/usb.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/debug.h
-driverlib/usb.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/interrupt.h
-driverlib/usb.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/sysctl.h
-driverlib/usb.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/udma.h
-driverlib/usb.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/usb.h
+driverlib/usb.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_ints.h
+driverlib/usb.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_memmap.h
+driverlib/usb.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_types.h
+driverlib/usb.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_sysctl.h
+driverlib/usb.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_usb.h
+driverlib/usb.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/debug.h
+driverlib/usb.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/interrupt.h
+driverlib/usb.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/sysctl.h
+driverlib/usb.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/udma.h
+driverlib/usb.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/usb.h
 
 ../driverlib/usb.c:
 
@@ -47,23 +47,23 @@ C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_stdint.h
 
 C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_ints.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_ints.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_memmap.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_memmap.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_types.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_types.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_sysctl.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_sysctl.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_usb.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_usb.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/debug.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/debug.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/interrupt.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/interrupt.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/sysctl.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/sysctl.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/udma.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/udma.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/usb.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/usb.h:
 

@@ -49,6 +49,7 @@
 									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}}"/>
 									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}/EK-TM4C123GXL_LIB/gpio}"/>
 									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}/EK-TM4C123GXL_LIB/clock}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}/EK-TM4C123GXL_LIB/isr_anagement}"/>
 									<listOptionValue builtIn="false" value="${CG_TOOL_ROOT}/include"/>
 								</option>
 								<option id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.LITTLE_ENDIAN.318851265" name="Little endian code [See 'General' page to edit] (--little_endian, -me)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.LITTLE_ENDIAN" useByScannerDiscovery="false" value="true" valueType="boolean"/>
@@ -134,6 +135,7 @@
 									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}/EK-TM4C123GXL_LIB/clock}"/>
 									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}/EK-TM4C123GXL_LIB/gpio}"/>
 									<listOptionValue builtIn="false" value="${SW_ROOT}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}/EK-TM4C123GXL_LIB/isr_anagement}"/>
 									<listOptionValue builtIn="false" value="${CG_TOOL_ROOT}/include"/>
 								</option>
 								<option id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.LITTLE_ENDIAN.278455119" name="Little endian code [See 'General' page to edit] (--little_endian, -me)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.LITTLE_ENDIAN" useByScannerDiscovery="false" value="true" valueType="boolean"/>

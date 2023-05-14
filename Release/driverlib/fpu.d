@@ -11,9 +11,9 @@ driverlib/fpu.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/includ
 driverlib/fpu.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_types.h
 driverlib/fpu.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_stdint.h
 driverlib/fpu.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h
-driverlib/fpu.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_nvic.h
-driverlib/fpu.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_types.h
-driverlib/fpu.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/fpu.h
+driverlib/fpu.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_nvic.h
+driverlib/fpu.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_types.h
+driverlib/fpu.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/fpu.h
 
 ../driverlib/fpu.c:
 
@@ -37,9 +37,9 @@ C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_stdint.h
 
 C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_nvic.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_nvic.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_types.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_types.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/fpu.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/fpu.h:
 

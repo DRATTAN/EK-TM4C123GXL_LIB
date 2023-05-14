@@ -4,5 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -l"C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib.lib" -llibc.a
+LIBS := -l"C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib.lib" -llibc.a
 

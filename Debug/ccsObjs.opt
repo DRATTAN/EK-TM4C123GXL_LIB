@@ -2,6 +2,7 @@
 "./startup_ccs.obj"
 "./EK-TM4C123GXL_LIB/clock/lib_clock.obj"
 "./EK-TM4C123GXL_LIB/gpio/lib_gpio.obj"
+"./EK-TM4C123GXL_LIB/isr_anagement/lib_isrmanagement.obj"
 "./driverlib/adc.obj"
 "./driverlib/aes.obj"
 "./driverlib/can.obj"
@@ -39,5 +40,5 @@
 "../driverlib.lib"
 "../driverlib/ccs/Debug/driverlib.lib"
 "../driverlib/rvmdk/driverlib.lib"
--l"C:/Users/RATTAN/Desktop/ccs workspace/blinky/driverlib.lib"
+-l"C:/Users/RATTAN/Desktop/ccs workspace/EK-TM4C123GXL_LIB_TEST/driverlib.lib"
 -llibc.a

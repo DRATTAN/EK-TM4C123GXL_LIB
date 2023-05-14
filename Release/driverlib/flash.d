@@ -12,13 +12,13 @@ driverlib/flash.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/incl
 driverlib/flash.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_types.h
 driverlib/flash.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_stdint.h
 driverlib/flash.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h
-driverlib/flash.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_flash.h
-driverlib/flash.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_ints.h
-driverlib/flash.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_sysctl.h
-driverlib/flash.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_types.h
-driverlib/flash.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/debug.h
-driverlib/flash.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/flash.h
-driverlib/flash.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/interrupt.h
+driverlib/flash.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_flash.h
+driverlib/flash.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_ints.h
+driverlib/flash.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_sysctl.h
+driverlib/flash.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_types.h
+driverlib/flash.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/debug.h
+driverlib/flash.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/flash.h
+driverlib/flash.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/interrupt.h
 
 ../driverlib/flash.c:
 
@@ -44,17 +44,17 @@ C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_stdint.h
 
 C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_flash.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_flash.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_ints.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_ints.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_sysctl.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_sysctl.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_types.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_types.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/debug.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/debug.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/flash.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/flash.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/interrupt.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/interrupt.h:
 

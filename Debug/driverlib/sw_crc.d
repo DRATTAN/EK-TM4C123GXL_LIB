@@ -11,7 +11,7 @@ driverlib/sw_crc.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/inc
 driverlib/sw_crc.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_types.h
 driverlib/sw_crc.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_stdint.h
 driverlib/sw_crc.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h
-driverlib/sw_crc.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/sw_crc.h
+driverlib/sw_crc.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/sw_crc.h
 
 ../driverlib/sw_crc.c:
 
@@ -35,5 +35,5 @@ C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_stdint.h
 
 C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/sw_crc.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/sw_crc.h:
 

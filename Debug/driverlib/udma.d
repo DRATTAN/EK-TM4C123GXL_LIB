@@ -12,12 +12,12 @@ driverlib/udma.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/inclu
 driverlib/udma.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_types.h
 driverlib/udma.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_stdint.h
 driverlib/udma.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h
-driverlib/udma.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_sysctl.h
-driverlib/udma.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_types.h
-driverlib/udma.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_udma.h
-driverlib/udma.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/debug.h
-driverlib/udma.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/interrupt.h
-driverlib/udma.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/udma.h
+driverlib/udma.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_sysctl.h
+driverlib/udma.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_types.h
+driverlib/udma.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_udma.h
+driverlib/udma.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/debug.h
+driverlib/udma.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/interrupt.h
+driverlib/udma.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/udma.h
 
 ../driverlib/udma.c:
 
@@ -43,15 +43,15 @@ C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_stdint.h
 
 C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_sysctl.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_sysctl.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_types.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_types.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/inc/hw_udma.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_udma.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/debug.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/debug.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/interrupt.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/interrupt.h:
 
-C:/Users/RATTAN/Desktop/ccs\ workspace/blinky/driverlib/udma.h:
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/udma.h:
 

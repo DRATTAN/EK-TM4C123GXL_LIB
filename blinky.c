@@ -22,57 +22,53 @@
 //
 //*****************************************************************************
 
+#include <EK-TM4C123GXL_LIB/isr_anagement/lib_isrmanagement.h>
 #include <stdint.h>
 #include <stdbool.h>
 #include "inc/hw_memmap.h"
 #include "driverlib/gpio.h"
 #include "driverlib/sysctl.h"
+
+#include "driverlib/interrupt.h"
+#include "inc/tm4c123gh6pm.h"               //Register Definitions
+
 #include "lib_clock.h"
 #include "lib_gpio.h"
+//#include "lib_isrmanagement.h"
 
 //*****************************************************************************
 //
 // Blink the on-board LED.
 //
 //*****************************************************************************
-int
-main(void)
+
+void toggle(void);
+int main(void)
 {
 
     LIB_CLOCK_MainClockSet(CLOCK_XTAL_PLL_80M);
-
     volatile uint32_t ui32Loop;
-
-    LIB_GPIO_Init(GPIO_PORTB_AHB_BASE, GPIO_PIN_5, GPIO_DIR_OUTPUT, GPIO_PIN_TYPE_OUTPUT_STD, GPIO_PIN_RESET);
-    LIB_GPIO_Init(GPIO_PORTF_AHB_BASE, GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3, GPIO_DIR_OUTPUT, GPIO_PIN_TYPE_OUTPUT_STD, GPIO_PIN_RESET);
-    LIB_GPIO_Init(GPIO_PORTF_AHB_BASE, GPIO_PIN_4, GPIO_DIR_INPUT, GPIO_PIN_TYPE_INPUT_WPU, GPIO_PIN_SET);
-
+    LIB_ISR_GPIOEXTIISRInit();
+    LIB_GPIO_Init(GPIOBH, GPIO_PIN_5, GPIO_DIR_OUTPUT, GPIO_PIN_TYPE_OUTPUT_STD, GPIO_PIN_RESET);
+    LIB_GPIO_Init(GPIOFH, GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3, GPIO_DIR_OUTPUT, GPIO_PIN_TYPE_OUTPUT_STD, GPIO_PIN_RESET);
+    LIB_GPIO_ExtiInit(ISR_GPIOF, ISR_GPIO_PIN_4, GPIO_EXTI_TRIGGER_FALLING, toggle);
+    LIB_GPIO_ExtiInit(ISR_GPIOB, ISR_GPIO_PIN_0, GPIO_EXTI_TRIGGER_RISING, toggle);
     while(1)
     {
-        //
-        // Turn on the LED.
-        //
-        LIB_GPIO_WritePin(GPIO_PORTF_AHB_BASE, GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3, GPIO_PIN_SET);
-        LIB_GPIO_WritePin(GPIO_PORTB_AHB_BASE,GPIO_PIN_5, GPIO_PIN_SET);
-        //
-        // Delay for a bit.
-        //
-        for(ui32Loop = 0; ui32Loop < 200000; ui32Loop++)
+        for(ui32Loop = 0; ui32Loop < 20000; ui32Loop++)
         {
         }
-
-        //
-        // Turn off the LED.
-        //
-        LIB_GPIO_WritePin(GPIO_PORTF_AHB_BASE, GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3, GPIO_PIN_RESET);
-        LIB_GPIO_WritePin(GPIO_PORTB_AHB_BASE, GPIO_PIN_5, GPIO_PIN_RESET);
-        //
-        // Delay for a bit.
-        //
-        for(ui32Loop = 0; ui32Loop < 200000; ui32Loop++)
-        {
-        }
-        if(LIB_GPIO_ReadPin(GPIO_PORTF_AHB_BASE, GPIO_PIN_4) == 0) LIB_CLOCK_MainClockSet(CLOCK_XTAL_PLL_5M);
-        else LIB_CLOCK_MainClockSet(CLOCK_XTAL_PLL_80M);
     }
+}
+
+void toggle()
+{
+    volatile uint32_t ui32Loop;
+    for(ui32Loop = 0; ui32Loop < 5000; ui32Loop++)
+    {
+    }
+    LIB_GPIO_TogglePin(GPIO_PORTF_AHB_BASE, GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3);
+    LIB_GPIO_TogglePin(GPIO_PORTF_AHB_BASE, GPIO_PIN_5);
+    return ;
+
 }
