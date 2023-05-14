@@ -37,55 +37,60 @@
  */
 void LIB_GPIO_Init(uint32_t Port, uint8_t Pin, uint8_t Dir, uint32_t Type, uint8_t Value)
 {
-    uint32_t SYSCTL_PERIPH_GPIO_TABLE[12] = {SYSCTL_PERIPH_GPIOA, SYSCTL_PERIPH_GPIOB, SYSCTL_PERIPH_GPIOC, SYSCTL_PERIPH_GPIOD, SYSCTL_PERIPH_GPIOE, SYSCTL_PERIPH_GPIOF};
-    typedef enum {GPIO_A = GPIOA,GPIO_B = GPIOB,GPIO_C=GPIOC,GPIO_D=GPIOD,GPIO_E=GPIOE,GPIO_F=GPIOF} GPIO_BASE2SYSCTL_PERIRH_REMAP;
-    //LIB_CLOCK_PeripheralClockEnable()
-    switch(Port)
+    if(Port >= GPIOAH)
     {
-    case GPIOAH:
-        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOA);
-        SysCtlGPIOAHBEnable(SYSCTL_PERIPH_GPIOA);
-        break;
-    case GPIOBH:
-        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOB);
-        SysCtlGPIOAHBEnable(SYSCTL_PERIPH_GPIOB);
-        break;
-    case GPIOCH:
-        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOC);
-        SysCtlGPIOAHBEnable(SYSCTL_PERIPH_GPIOC);
-        break;
-    case GPIODH:
-        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOD);
-        SysCtlGPIOAHBEnable(SYSCTL_PERIPH_GPIOD);
-        break;
-    case GPIOEH:
-        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOE);
-        SysCtlGPIOAHBEnable(SYSCTL_PERIPH_GPIOE);
-        break;
-    case GPIOFH:
-        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOF);
-        SysCtlGPIOAHBEnable(SYSCTL_PERIPH_GPIOF);
-        break;
-    case GPIOA:
-        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOA);
-        break;
-    case GPIOB:
-        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOB);
-        break;
-    case GPIOC:
-        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOC);
-        break;
-    case GPIOD:
-        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOD);
-        break;
-    case GPIOE:
-        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOE);
-        break;
-    case GPIOF:
-        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOF);
-        break;
-    default: break;
+        LIB_CLOCK_PeripheralClockEnable(((Port - GPIOAH)>>12) + SYSCTL_PERIPH_GPIOA);
+        SysCtlGPIOAHBEnable(((Port - GPIOAH)>>12) + SYSCTL_PERIPH_GPIOA);
     }
+    else if(Port >= GPIOE) LIB_CLOCK_PeripheralClockEnable(((Port - GPIOE)>>12) + SYSCTL_PERIPH_GPIOA);
+    else if(Port >= GPIOA) LIB_CLOCK_PeripheralClockEnable(((Port - GPIOA)>>12) + SYSCTL_PERIPH_GPIOA);
+    else ;
+//    switch(Port)
+//    {
+//    case GPIOAH:
+        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOA);
+//        SysCtlGPIOAHBEnable(SYSCTL_PERIPH_GPIOA);
+//        break;
+//    case GPIOBH:
+//        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOB);
+//        SysCtlGPIOAHBEnable(SYSCTL_PERIPH_GPIOB);
+//        break;
+//    case GPIOCH:
+//        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOC);
+//        SysCtlGPIOAHBEnable(SYSCTL_PERIPH_GPIOC);
+//        break;
+//    case GPIODH:
+//        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOD);
+//        SysCtlGPIOAHBEnable(SYSCTL_PERIPH_GPIOD);
+//        break;
+//    case GPIOEH:
+//        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOE);
+//        SysCtlGPIOAHBEnable(SYSCTL_PERIPH_GPIOE);
+//        break;
+//    case GPIOFH:
+//        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOF);
+//        SysCtlGPIOAHBEnable(SYSCTL_PERIPH_GPIOF);
+//        break;
+//    case GPIOA:
+//        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOA);
+//        break;
+//    case GPIOB:
+//        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOB);
+//        break;
+//    case GPIOC:
+//        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOC);
+//        break;
+//    case GPIOD:
+//        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOD);
+//        break;
+//    case GPIOE:
+//        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOE);
+//        break;
+//    case GPIOF:
+//        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOF);
+//        break;
+//    default: break;
+//    }
 
     if(GPIO_DIR_OUTPUT == Dir)
     {
