@@ -5,6 +5,8 @@
 
 #include "lib_clock.h"
 
+volatile uint32_t CPU_F = 0;
+
 /*
  * 描述:设置系统时钟频率
  * 参数
@@ -14,13 +16,14 @@
  *       CLOCK_XTAL_PLL_20M:设置系统时钟为20HMz
  *       CLOCK_XTAL_PLL_10M:设置系统时钟为10HMz
  *       CLOCK_XTAL_PLL_5M:设置系统时钟为5HMz
- * 返回值:void
+ * 返回值:uint32_t 系统时钟频率
  * 备注:对于TM4C123GXL,系统时钟不可超过80MHz
  */
-void LIB_CLOCK_MainClockSet(uint32_t DIV)
+uint32_t LIB_CLOCK_MainClockSet(uint32_t DIV)
 {
     SysCtlClockSet(DIV| SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
-    return ;
+    CPU_F = SysCtlClockGet();
+    return CPU_F;
 }
 
 /*

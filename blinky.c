@@ -22,7 +22,6 @@
 //
 //*****************************************************************************
 
-#include <EK-TM4C123GXL_LIB/isr_anagement/lib_isrmanagement.h>
 #include <stdint.h>
 #include <stdbool.h>
 #include "inc/hw_memmap.h"
@@ -34,6 +33,7 @@
 
 #include "lib_clock.h"
 #include "lib_gpio.h"
+#include "lib_time.h"
 //#include "lib_isrmanagement.h"
 
 //*****************************************************************************
@@ -51,8 +51,8 @@ int main(void)
     LIB_ISR_GPIOEXTIISRInit();
     LIB_GPIO_Init(GPIOBH, GPIO_PIN_5, GPIO_DIR_OUTPUT, GPIO_PIN_TYPE_OUTPUT_STD, GPIO_PIN_RESET);
     LIB_GPIO_Init(GPIOFH, GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3, GPIO_DIR_OUTPUT, GPIO_PIN_TYPE_OUTPUT_STD, GPIO_PIN_RESET);
-    LIB_GPIO_ExtiInit(ISR_GPIOF, ISR_GPIO_PIN_4, GPIO_EXTI_TRIGGER_FALLING, toggle);
-    LIB_GPIO_ExtiInit(ISR_GPIOB, ISR_GPIO_PIN_0, GPIO_EXTI_TRIGGER_RISING, toggle);
+    LIB_GPIO_ExtiInit(ISR_GPIOFH, ISR_GPIO_PIN_4, GPIO_EXTI_TRIGGER_FALLING, toggle);
+    LIB_GPIO_ExtiInit(ISR_GPIOBH, ISR_GPIO_PIN_0, GPIO_EXTI_TRIGGER_RISING, toggle);
     while(1)
     {
         for(ui32Loop = 0; ui32Loop < 20000; ui32Loop++)
@@ -64,11 +64,9 @@ int main(void)
 void toggle()
 {
     volatile uint32_t ui32Loop;
-    for(ui32Loop = 0; ui32Loop < 5000; ui32Loop++)
-    {
-    }
+    delay_ms(50);
+    if(LIB_GPIO_ReadPin(GPIOFH, GPIO_PIN_4) == 1) return ;
     LIB_GPIO_TogglePin(GPIO_PORTF_AHB_BASE, GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3);
     LIB_GPIO_TogglePin(GPIO_PORTF_AHB_BASE, GPIO_PIN_5);
     return ;
-
 }

@@ -11,7 +11,9 @@
 #include "driverlib/sysctl.h"
 #include "lib_clock_Define.h"
 
-void LIB_CLOCK_MainClockSet(uint32_t);
+extern volatile uint32_t CPU_F;
+
+uint32_t LIB_CLOCK_MainClockSet(uint32_t);
 void LIB_CLOCK_PeripheralClockEnable(uint32_t);
 void LIB_CLOCK_PeripheralClockDisable(uint32_t);
 
