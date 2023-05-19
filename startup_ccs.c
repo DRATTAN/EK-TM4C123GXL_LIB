@@ -25,6 +25,7 @@
 #include <stdint.h>
 #include "inc/hw_nvic.h"
 #include "inc/hw_types.h"
+#include "lib_isrmanagement.h"
 
 //*****************************************************************************
 //
@@ -43,7 +44,15 @@ static void IntDefaultHandler(void);
 //
 //*****************************************************************************
 extern void _c_int00(void);
-
+//*****************************************************************************
+// 中断向量在此初始化,如果需要更改,请在此列表下extern后修改
+//*****************************************************************************
+extern void GPIOA_ISR_Handle(void);
+extern void GPIOB_ISR_Handle(void);
+extern void GPIOC_ISR_Handle(void);
+extern void GPIOD_ISR_Handle(void);
+extern void GPIOE_ISR_Handle(void);
+extern void GPIOF_ISR_Handle(void);
 //*****************************************************************************
 //
 // Linker variable that marks the top of the stack.
@@ -78,11 +87,11 @@ void (* const g_pfnVectors[])(void) =
     0,                                      // Reserved
     IntDefaultHandler,                      // The PendSV handler
     IntDefaultHandler,                      // The SysTick handler
-    IntDefaultHandler,                      // GPIO Port A
-    IntDefaultHandler,                      // GPIO Port B
-    IntDefaultHandler,                      // GPIO Port C
-    IntDefaultHandler,                      // GPIO Port D
-    IntDefaultHandler,                      // GPIO Port E
+    GPIOA_ISR_Handle,                      // GPIO Port A
+    GPIOB_ISR_Handle,                      // GPIO Port B
+    GPIOC_ISR_Handle,                      // GPIO Port C
+    GPIOD_ISR_Handle,                      // GPIO Port D
+    GPIOE_ISR_Handle,                      // GPIO Port E
     IntDefaultHandler,                      // UART0 Rx and Tx
     IntDefaultHandler,                      // UART1 Rx and Tx
     IntDefaultHandler,                      // SSI0 Rx and Tx
@@ -108,7 +117,7 @@ void (* const g_pfnVectors[])(void) =
     IntDefaultHandler,                      // Analog Comparator 2
     IntDefaultHandler,                      // System Control (PLL, OSC, BO)
     IntDefaultHandler,                      // FLASH Control
-    IntDefaultHandler,                      // GPIO Port F
+    GPIOF_ISR_Handle,                      // GPIO Port F
     IntDefaultHandler,                      // GPIO Port G
     IntDefaultHandler,                      // GPIO Port H
     IntDefaultHandler,                      // UART2 Rx and Tx
