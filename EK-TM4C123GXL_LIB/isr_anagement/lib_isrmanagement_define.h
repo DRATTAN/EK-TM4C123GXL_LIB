@@ -1,4 +1,4 @@
-
+//GPIO ISR DEFINE
 #define ISR_GPIOAH 0x00
 #define ISR_GPIOBH 0x01
 #define ISR_GPIOCH 0x02
@@ -14,3 +14,14 @@
 #define ISR_GPIO_PIN_5 0x05
 #define ISR_GPIO_PIN_6 0x06
 #define ISR_GPIO_PIN_7 0x07
+
+//TIMER ISR DEFINE
+#define ISR_TIMER0 0x00
+#define ISR_TIMER1 0x01
+#define ISR_TIMER2 0x02
+#define ISR_TIMER3 0x03
+#define ISR_TIMER4 0x04
+#define ISR_TIMER5 0x05
+
+#define ISR_TIMER_A 0x00
+#define ISR_TIMER_B 0x01

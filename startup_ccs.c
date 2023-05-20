@@ -53,6 +53,21 @@ extern void GPIOC_ISR_Handle(void);
 extern void GPIOD_ISR_Handle(void);
 extern void GPIOE_ISR_Handle(void);
 extern void GPIOF_ISR_Handle(void);
+
+extern void TIMER0A_ISR_Handle(void);
+extern void TIMER0B_ISR_Handle(void);
+extern void TIMER1A_ISR_Handle(void);
+extern void TIMER1B_ISR_Handle(void);
+extern void TIMER2A_ISR_Handle(void);
+extern void TIMER2B_ISR_Handle(void);
+extern void TIMER3A_ISR_Handle(void);
+extern void TIMER3B_ISR_Handle(void);
+extern void TIMER4A_ISR_Handle(void);
+extern void TIMER4B_ISR_Handle(void);
+extern void TIMER5A_ISR_Handle(void);
+extern void TIMER5B_ISR_Handle(void);
+
+
 //*****************************************************************************
 //
 // Linker variable that marks the top of the stack.
@@ -87,11 +102,11 @@ void (* const g_pfnVectors[])(void) =
     0,                                      // Reserved
     IntDefaultHandler,                      // The PendSV handler
     IntDefaultHandler,                      // The SysTick handler
-    GPIOA_ISR_Handle,                      // GPIO Port A
-    GPIOB_ISR_Handle,                      // GPIO Port B
-    GPIOC_ISR_Handle,                      // GPIO Port C
-    GPIOD_ISR_Handle,                      // GPIO Port D
-    GPIOE_ISR_Handle,                      // GPIO Port E
+    GPIOA_ISR_Handle,                       // GPIO Port A
+    GPIOB_ISR_Handle,                       // GPIO Port B
+    GPIOC_ISR_Handle,                       // GPIO Port C
+    GPIOD_ISR_Handle,                       // GPIO Port D
+    GPIOE_ISR_Handle,                       // GPIO Port E
     IntDefaultHandler,                      // UART0 Rx and Tx
     IntDefaultHandler,                      // UART1 Rx and Tx
     IntDefaultHandler,                      // SSI0 Rx and Tx
@@ -106,24 +121,24 @@ void (* const g_pfnVectors[])(void) =
     IntDefaultHandler,                      // ADC Sequence 2
     IntDefaultHandler,                      // ADC Sequence 3
     IntDefaultHandler,                      // Watchdog timer
-    IntDefaultHandler,                      // Timer 0 subtimer A
-    IntDefaultHandler,                      // Timer 0 subtimer B
-    IntDefaultHandler,                      // Timer 1 subtimer A
-    IntDefaultHandler,                      // Timer 1 subtimer B
-    IntDefaultHandler,                      // Timer 2 subtimer A
-    IntDefaultHandler,                      // Timer 2 subtimer B
+    TIMER0A_ISR_Handle,                      // Timer 0 subtimer A
+    TIMER0B_ISR_Handle,                      // Timer 0 subtimer B
+    TIMER1A_ISR_Handle,                      // Timer 1 subtimer A
+    TIMER1B_ISR_Handle,                      // Timer 1 subtimer B
+    TIMER2A_ISR_Handle,                      // Timer 2 subtimer A
+    TIMER2B_ISR_Handle,                      // Timer 2 subtimer B
     IntDefaultHandler,                      // Analog Comparator 0
     IntDefaultHandler,                      // Analog Comparator 1
     IntDefaultHandler,                      // Analog Comparator 2
     IntDefaultHandler,                      // System Control (PLL, OSC, BO)
     IntDefaultHandler,                      // FLASH Control
-    GPIOF_ISR_Handle,                      // GPIO Port F
+    GPIOF_ISR_Handle,                       // GPIO Port F
     IntDefaultHandler,                      // GPIO Port G
     IntDefaultHandler,                      // GPIO Port H
     IntDefaultHandler,                      // UART2 Rx and Tx
     IntDefaultHandler,                      // SSI1 Rx and Tx
-    IntDefaultHandler,                      // Timer 3 subtimer A
-    IntDefaultHandler,                      // Timer 3 subtimer B
+    TIMER3A_ISR_Handle,                      // Timer 3 subtimer A
+    TIMER3B_ISR_Handle,                      // Timer 3 subtimer B
     IntDefaultHandler,                      // I2C1 Master and Slave
     IntDefaultHandler,                      // Quadrature Encoder 1
     IntDefaultHandler,                      // CAN0
@@ -157,8 +172,8 @@ void (* const g_pfnVectors[])(void) =
     0,                                      // Reserved
     IntDefaultHandler,                      // I2C2 Master and Slave
     IntDefaultHandler,                      // I2C3 Master and Slave
-    IntDefaultHandler,                      // Timer 4 subtimer A
-    IntDefaultHandler,                      // Timer 4 subtimer B
+    TIMER4A_ISR_Handle,                      // Timer 4 subtimer A
+    TIMER4B_ISR_Handle,                      // Timer 4 subtimer B
     0,                                      // Reserved
     0,                                      // Reserved
     0,                                      // Reserved
@@ -179,8 +194,8 @@ void (* const g_pfnVectors[])(void) =
     0,                                      // Reserved
     0,                                      // Reserved
     0,                                      // Reserved
-    IntDefaultHandler,                      // Timer 5 subtimer A
-    IntDefaultHandler,                      // Timer 5 subtimer B
+    TIMER5A_ISR_Handle,                      // Timer 5 subtimer A
+    TIMER5B_ISR_Handle,                      // Timer 5 subtimer B
     IntDefaultHandler,                      // Wide Timer 0 subtimer A
     IntDefaultHandler,                      // Wide Timer 0 subtimer B
     IntDefaultHandler,                      // Wide Timer 1 subtimer A

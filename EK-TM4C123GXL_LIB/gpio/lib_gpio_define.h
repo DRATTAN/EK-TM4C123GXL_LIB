@@ -7,6 +7,9 @@
 #define GPIO_DIR_OUTPUT                 0x01
 #define GPIO_DIR_INPUT                  0x00
 
+#define GPIO_EXTI_CTRL_ENABLE           0x01
+#define GPIO_EXTI_CTRL_DISABLE          0x00
+
 #define GPIO_PIN_SET                    0x01
 #define GPIO_PIN_RESET                  0x00
 #define GPIO_PIN_TYPE_INPUT_WPU GPIO_PIN_TYPE_STD_WPU

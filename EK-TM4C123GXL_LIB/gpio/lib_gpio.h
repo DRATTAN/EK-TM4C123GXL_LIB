@@ -21,6 +21,8 @@ void LIB_GPIO_Init(uint32_t, uint8_t, uint8_t, uint32_t, uint8_t);
 void LIB_GPIO_WritePin(uint32_t, uint32_t, uint8_t);
 uint8_t LIB_GPIO_ReadPin(uint32_t, uint32_t);
 void LIB_GPIO_TogglePin(uint32_t, uint32_t);
-void LIB_GPIO_ExtiInit(uint8_t, uint8_t, uint8_t, void (*ISRISR_handler)(void));
-
+void LIB_GPIO_ExtiInit(uint8_t, uint8_t, uint8_t, void (*)(void));
+void LIB_GPIO_ExtiCtrlPin(uint8_t, uint8_t, uint8_t);
+void LIB_GPIO_ExtiCtrlPort(uint8_t, uint8_t);
+void LIB_GPIO_ExtiIsrSet(uint8_t, uint8_t, void (*)(void));
 #endif

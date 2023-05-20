@@ -44,53 +44,7 @@ void LIB_GPIO_Init(uint32_t Port, uint8_t Pin, uint8_t Dir, uint32_t Type, uint8
     }
     else if(Port >= GPIOE) LIB_CLOCK_PeripheralClockEnable(((Port - GPIOE)>>12) + SYSCTL_PERIPH_GPIOA);
     else if(Port >= GPIOA) LIB_CLOCK_PeripheralClockEnable(((Port - GPIOA)>>12) + SYSCTL_PERIPH_GPIOA);
-    else ;
-//    switch(Port)
-//    {
-//    case GPIOAH:
-        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOA);
-//        SysCtlGPIOAHBEnable(SYSCTL_PERIPH_GPIOA);
-//        break;
-//    case GPIOBH:
-//        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOB);
-//        SysCtlGPIOAHBEnable(SYSCTL_PERIPH_GPIOB);
-//        break;
-//    case GPIOCH:
-//        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOC);
-//        SysCtlGPIOAHBEnable(SYSCTL_PERIPH_GPIOC);
-//        break;
-//    case GPIODH:
-//        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOD);
-//        SysCtlGPIOAHBEnable(SYSCTL_PERIPH_GPIOD);
-//        break;
-//    case GPIOEH:
-//        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOE);
-//        SysCtlGPIOAHBEnable(SYSCTL_PERIPH_GPIOE);
-//        break;
-//    case GPIOFH:
-//        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOF);
-//        SysCtlGPIOAHBEnable(SYSCTL_PERIPH_GPIOF);
-//        break;
-//    case GPIOA:
-//        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOA);
-//        break;
-//    case GPIOB:
-//        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOB);
-//        break;
-//    case GPIOC:
-//        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOC);
-//        break;
-//    case GPIOD:
-//        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOD);
-//        break;
-//    case GPIOE:
-//        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOE);
-//        break;
-//    case GPIOF:
-//        LIB_CLOCK_PeripheralClockEnable(SYSCTL_PERIPH_GPIOF);
-//        break;
-//    default: break;
-//    }
+    else __nop();
 
     if(GPIO_DIR_OUTPUT == Dir)
     {
@@ -195,7 +149,7 @@ void LIB_GPIO_TogglePin(uint32_t Port, uint32_t Pin)
  *               GPIO_EXTI_TRIGGER_LOW 低电平触发
  *               GPIO_EXTI_TRIGGER_DISCRETE_INT 离散触发
  *      @ISR_handler:
- *          中断服务函数，无返回值，无参数.
+ *          中断回调函数，不允许存在返回值，不允许传入参数.
  * 返回值:void
  * 备注:(2023/05/14) @param(Trigger) GPIO_EXTI_TRIGGER_DISCRETE_INT未实现,请勿使用.
  *
@@ -212,7 +166,23 @@ void LIB_GPIO_ExtiInit(uint8_t GPIOISRPort, uint8_t GPIOISRPin, uint8_t Trigger,
     LIB_ISR_GPIOEXTIRegister(GPIOISRPort,GPIOISRPin,ISR_handler);
     GPIOIntEnable(GPIO_BASE_TABLE[GPIOISRPort], 0x01 << GPIOISRPin);
     IntEnable(GPIO_ASSIGNMENTS_TABLE[GPIOISRPort]);
-    IntMasterEnable();
 }
 
+void LIB_GPIO_ExtiCtrlPin(uint8_t GPIOISRPort, uint8_t GPIOISRPin, uint8_t Ctrl)
+{
+    uint32_t GPIO_BASE_TABLE[6] = {GPIOAH, GPIOBH, GPIOCH, GPIODH, GPIOEH, GPIOFH};
+    if(GPIO_EXTI_CTRL_ENABLE == Ctrl) GPIOIntEnable(GPIO_BASE_TABLE[GPIOISRPort], 0x01 << GPIOISRPin);
+    if(GPIO_EXTI_CTRL_DISABLE == Ctrl) GPIOIntDisable(GPIO_BASE_TABLE[GPIOISRPort], 0x01 << GPIOISRPin);
+}
 
+void LIB_GPIO_ExtiCtrlPort(uint8_t GPIOISRPort, uint8_t Ctrl)
+{
+    uint32_t GPIO_ASSIGNMENTS_TABLE[6] = {INT_GPIOA, INT_GPIOB, INT_GPIOC, INT_GPIOD, INT_GPIOE, INT_GPIOF};
+    if(GPIO_EXTI_CTRL_ENABLE == Ctrl) IntEnable(GPIO_ASSIGNMENTS_TABLE[GPIOISRPort]);
+    if(GPIO_EXTI_CTRL_DISABLE == Ctrl) IntDisable(GPIO_ASSIGNMENTS_TABLE[GPIOISRPort]);
+}
+
+void LIB_GPIO_ExtiIsrSet(uint8_t GPIOISRPort, uint8_t GPIOISRPin, void (*ISR_handler)(void))
+{
+    LIB_ISR_GPIOEXTIRegister(GPIOISRPort,GPIOISRPin,ISR_handler);
+}
