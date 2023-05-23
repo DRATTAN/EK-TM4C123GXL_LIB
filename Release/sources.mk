@@ -117,6 +117,7 @@ EK-TM4C123GXL_LIB/gpio \
 EK-TM4C123GXL_LIB/isr_anagement \
 EK-TM4C123GXL_LIB/time \
 EK-TM4C123GXL_LIB/timer \
+EK-TM4C123GXL_LIB/uart \
 driverlib \
 driverlib/ccs/Debug \
 driverlib/ewarm/Exe \

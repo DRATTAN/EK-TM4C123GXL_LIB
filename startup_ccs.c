@@ -67,7 +67,14 @@ extern void TIMER4B_ISR_Handle(void);
 extern void TIMER5A_ISR_Handle(void);
 extern void TIMER5B_ISR_Handle(void);
 
-
+extern void UART0_ISR_Handle(void);
+extern void UART1_ISR_Handle(void);
+extern void UART2_ISR_Handle(void);
+extern void UART3_ISR_Handle(void);
+extern void UART4_ISR_Handle(void);
+extern void UART5_ISR_Handle(void);
+extern void UART6_ISR_Handle(void);
+extern void UART7_ISR_Handle(void);
 //*****************************************************************************
 //
 // Linker variable that marks the top of the stack.
@@ -107,8 +114,8 @@ void (* const g_pfnVectors[])(void) =
     GPIOC_ISR_Handle,                       // GPIO Port C
     GPIOD_ISR_Handle,                       // GPIO Port D
     GPIOE_ISR_Handle,                       // GPIO Port E
-    IntDefaultHandler,                      // UART0 Rx and Tx
-    IntDefaultHandler,                      // UART1 Rx and Tx
+    UART0_ISR_Handle,                      // UART0 Rx and Tx
+    UART1_ISR_Handle,                      // UART1 Rx and Tx
     IntDefaultHandler,                      // SSI0 Rx and Tx
     IntDefaultHandler,                      // I2C0 Master and Slave
     IntDefaultHandler,                      // PWM Fault
@@ -135,7 +142,7 @@ void (* const g_pfnVectors[])(void) =
     GPIOF_ISR_Handle,                       // GPIO Port F
     IntDefaultHandler,                      // GPIO Port G
     IntDefaultHandler,                      // GPIO Port H
-    IntDefaultHandler,                      // UART2 Rx and Tx
+    UART2_ISR_Handle,                      // UART2 Rx and Tx
     IntDefaultHandler,                      // SSI1 Rx and Tx
     TIMER3A_ISR_Handle,                      // Timer 3 subtimer A
     TIMER3B_ISR_Handle,                      // Timer 3 subtimer B
@@ -161,11 +168,11 @@ void (* const g_pfnVectors[])(void) =
     IntDefaultHandler,                      // GPIO Port L
     IntDefaultHandler,                      // SSI2 Rx and Tx
     IntDefaultHandler,                      // SSI3 Rx and Tx
-    IntDefaultHandler,                      // UART3 Rx and Tx
-    IntDefaultHandler,                      // UART4 Rx and Tx
-    IntDefaultHandler,                      // UART5 Rx and Tx
-    IntDefaultHandler,                      // UART6 Rx and Tx
-    IntDefaultHandler,                      // UART7 Rx and Tx
+    UART3_ISR_Handle,                      // UART3 Rx and Tx
+    UART4_ISR_Handle,                      // UART4 Rx and Tx
+    UART5_ISR_Handle,                      // UART5 Rx and Tx
+    UART6_ISR_Handle,                      // UART6 Rx and Tx
+    UART7_ISR_Handle,                      // UART7 Rx and Tx
     0,                                      // Reserved
     0,                                      // Reserved
     0,                                      // Reserved

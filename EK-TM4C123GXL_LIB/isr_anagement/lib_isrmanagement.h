@@ -10,6 +10,7 @@
 #include "driverlib/gpio.h"
 #include "driverlib/sysctl.h"
 #include "lib_gpio.h"
+#include "lib_uart.h"
 #include "lib_isrmanagement_define.h"
 
 #define ACCESS_ISR_TABLE(TABLE, GROUP, RANK) (* (* (* (TABLE + GROUP) + RANK)))
@@ -21,5 +22,8 @@ void LIB_ISR_GPIOEXTIRegister(uint8_t, uint8_t, void (*)(void));
 
 void LIB_ISR_TIMERISRInit(void);
 void LIB_ISR_TIMERRegister(uint8_t, uint8_t, void (*)(void));
+
+void LIB_ISR_UARTISRInit(void);
+void LIB_ISR_UARTRegister(uint8_t, void (*)(void));
 
 #endif

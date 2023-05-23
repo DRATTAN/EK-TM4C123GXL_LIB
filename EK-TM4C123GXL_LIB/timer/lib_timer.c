@@ -12,9 +12,10 @@ void LIB_TIMER_Init()//(uint8_t ISR_TIMER_Base, uint8_t ISR_TIMER_Part, )
 {
     SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);
     TimerConfigure(TIMER0_BASE, TIMER_CFG_A_PERIODIC_UP);
-    TimerLoadSet(TIMER0_BASE, TIMER_A, SysCtlClockGet()/1000 - 1);
+    TimerLoadSet(TIMER0_BASE, TIMER_A, SysCtlClockGet()/2 - 1);
     TimerIntEnable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
     LIB_ISR_TIMERRegister(0, 0, toggle);
+    //IntPrioritySet(INT_TIMER0A, 0x01);
     IntEnable(INT_TIMER0A);
     IntMasterEnable();
     TimerEnable( TIMER0_BASE,  TIMER_A);
