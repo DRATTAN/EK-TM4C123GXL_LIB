@@ -33,6 +33,8 @@ EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-T
 EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/time/lib_time.h
 EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/uart/lib_uart_define.h
 EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/isr_anagement/lib_isrmanagement.h
+EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/utils/uartstdio.h
+EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/stdarg.h
 EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/isr_anagement/lib_isrmanagement_define.h
 
 ../EK-TM4C123GXL_LIB/gpio/lib_gpio.c:
@@ -100,6 +102,10 @@ C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/
 C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/uart/lib_uart_define.h:
 
 C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/isr_anagement/lib_isrmanagement.h:
+
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/utils/uartstdio.h:
+
+C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/stdarg.h:
 
 C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/isr_anagement/lib_isrmanagement_define.h:
 

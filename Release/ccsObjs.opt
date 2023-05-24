@@ -42,6 +42,8 @@
 "./driverlib/udma.obj"
 "./driverlib/usb.obj"
 "./driverlib/watchdog.obj"
+"./utils/uartstdio.obj"
+"./utils/ustdlib.obj"
 "../blinky_ccs.cmd"
 "../driverlib.lib"
 "../driverlib/ccs/Debug/driverlib.lib"

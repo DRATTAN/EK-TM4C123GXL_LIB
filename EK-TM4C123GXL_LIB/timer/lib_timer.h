@@ -10,10 +10,10 @@
 
 #include <stdint.h>
 #include <stdbool.h>
-#include "driverlib/interrupt.h"
 #include "inc/tm4c123gh6pm.h"
-#include "driverlib/sysctl.h"
 #include "inc/hw_memmap.h"
+#include "driverlib/interrupt.h"
+#include "driverlib/sysctl.h"
 #include "driverlib/timer.h"
 #include "lib_timer_define.h"
 #include "lib_isrmanagement.h"

@@ -105,6 +105,22 @@ void LIB_UART_Init(uint8_t Uart_Ver, uint32_t Baud, void (*UARTx_ISRhandle)(void
     return;
 }
 
+void LIB_UART_PrintfInit()
+{
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);
+    while (!SysCtlPeripheralReady(SYSCTL_PERIPH_UART0));
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
+    while (!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOA));
+    GPIOPinConfigure(GPIO_PA0_U0RX);
+    GPIOPinConfigure(GPIO_PA1_U0TX);
+    GPIOPinTypeUART(GPIO_PORTA_BASE, GPIO_PIN_0 | GPIO_PIN_1);
+    UARTClockSourceSet(UART0_BASE, UART_CLOCK_PIOSC);
+    UARTStdioConfig(0,115200, 16000000);
+    IntEnable(INT_UART0);
+    UARTIntEnable(UART0_BASE, UART_INT_RX);
+    //LIB_ISR_UARTRegister(Uart_Ver, UARTx_ISRhandle);
+}
+
 /*
  * 描述:串口发送一字节数据
  * 参数

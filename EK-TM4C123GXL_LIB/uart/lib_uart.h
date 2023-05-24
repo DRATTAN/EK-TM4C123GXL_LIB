@@ -23,8 +23,10 @@
 #include "lib_time.h"
 #include "lib_uart_define.h"
 #include "lib_isrmanagement.h"
+#include "utils/uartstdio.h"
 
 void LIB_UART_Init(uint8_t, uint32_t, void (*)(void));
+void LIB_UART_PrintfInit(void);
 void LIB_UART_SendData(uint8_t, uint8_t);
 void LIB_UART_TransmitData(uint8_t, uint8_t *,  uint32_t);
 void LIB_UART_SendString(uint8_t, uint8_t *);

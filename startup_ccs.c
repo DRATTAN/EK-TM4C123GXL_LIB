@@ -75,6 +75,8 @@ extern void UART4_ISR_Handle(void);
 extern void UART5_ISR_Handle(void);
 extern void UART6_ISR_Handle(void);
 extern void UART7_ISR_Handle(void);
+
+extern void QEI1_Isr_Handler(void);
 //*****************************************************************************
 //
 // Linker variable that marks the top of the stack.
@@ -147,7 +149,7 @@ void (* const g_pfnVectors[])(void) =
     TIMER3A_ISR_Handle,                      // Timer 3 subtimer A
     TIMER3B_ISR_Handle,                      // Timer 3 subtimer B
     IntDefaultHandler,                      // I2C1 Master and Slave
-    IntDefaultHandler,                      // Quadrature Encoder 1
+    QEI1_Isr_Handler,                      // Quadrature Encoder 1
     IntDefaultHandler,                      // CAN0
     IntDefaultHandler,                      // CAN1
     0,                                      // Reserved
