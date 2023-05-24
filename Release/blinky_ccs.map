@@ -1,17 +1,17 @@
 ******************************************************************************
                   TI ARM Linker PC v18.12.8                    
 ******************************************************************************
->> Linked Wed May 24 13:56:39 2023
+>> Linked Wed May 24 16:40:17 2023
 
 OUTPUT FILE NAME:   <EK-TM4C123GXL_LIB_TEST.out>
-ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 0000144d
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 000013fd
 
 
 MEMORY CONFIGURATION
 
          name            origin    length      used     unused   attr    fill
 ----------------------  --------  ---------  --------  --------  ----  --------
-  FLASH                 00000000   00040000  00001bc6  0003e43a  R  X
+  FLASH                 00000000   00040000  00001b56  0003e4aa  R  X
   SRAM                  20000000   00008000  00000314  00007cec  RW X
 
 
@@ -19,11 +19,11 @@ SEGMENT ALLOCATION MAP
 
 run origin  load origin   length   init length attrs members
 ----------  ----------- ---------- ----------- ----- -------
-00000000    00000000    00001bd0   00001bd0    r-x
+00000000    00000000    00001b60   00001b60    r-x
   00000000    00000000    0000026c   0000026c    r-- .intvecs
-  00000270    00000270    0000180a   0000180a    r-x .text
-  00001a7c    00001a7c    00000130   00000130    r-- .const
-  00001bb0    00001bb0    00000020   00000020    r-- .cinit
+  00000270    00000270    0000179a   0000179a    r-x .text
+  00001a0c    00001a0c    00000130   00000130    r-- .const
+  00001b40    00001b40    00000020   00000020    r-- .cinit
 20000000    20000000    00000314   00000000    rw-
   20000000    20000000    00000200   00000000    rw- .stack
   20000200    20000200    00000114   00000000    rw- .data
@@ -37,149 +37,146 @@ section   page    origin      length       input sections
 .intvecs   0    00000000    0000026c     
                   00000000    0000026c     startup_ccs.obj (.intvecs)
 
-.text      0    00000270    0000180a     
+.text      0    00000270    0000179a     
                   00000270    00000358     lib_uart.obj (.text:LIB_UART_Init)
                   000005c8    00000248     gpio.obj (.text:GPIOPadConfigSet)
                   00000810    00000194     sysctl.obj (.text:SysCtlClockGet)
                   000009a4    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
                   000009a8    00000164     sysctl.obj (.text:SysCtlClockSet)
                   00000b0c    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : exit.c.obj (.text:abort:abort)
-                  00000b10    000000fc     lib_gpio.obj (.text:LIB_GPIO_Init)
-                  00000c0c    00000004     --HOLE-- [fill = 0]
-                  00000c10    000000a2     lib_EXTIisrmanagement.obj (.text:GPIOA_ISR_Handle)
-                  00000cb2    00000006     sysctl.obj (.text:SysCtlDelay)
-                  00000cb8    000000a2     lib_EXTIisrmanagement.obj (.text:GPIOB_ISR_Handle)
-                  00000d5a    00000006     --HOLE-- [fill = 0]
-                  00000d60    000000a2     lib_EXTIisrmanagement.obj (.text:GPIOC_ISR_Handle)
-                  00000e02    00000006     --HOLE-- [fill = 0]
-                  00000e08    000000a2     lib_EXTIisrmanagement.obj (.text:GPIOD_ISR_Handle)
-                  00000eaa    00000006     --HOLE-- [fill = 0]
-                  00000eb0    000000a2     lib_EXTIisrmanagement.obj (.text:GPIOE_ISR_Handle)
-                  00000f52    00000006     --HOLE-- [fill = 0]
-                  00000f58    000000a2     lib_EXTIisrmanagement.obj (.text:GPIOF_ISR_Handle)
-                  00000ffa    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
-                  00001096    00000002     --HOLE-- [fill = 0]
-                  00001098    00000092     interrupt.obj (.text:IntEnable)
-                  0000112a    00000006     --HOLE-- [fill = 0]
-                  00001130    00000070     timer.obj (.text:TimerConfigure)
-                  000011a0    0000006e     lib_timer.obj (.text:LIB_TIMER_Init)
-                  0000120e    00000002     --HOLE-- [fill = 0]
-                  00001210    0000006e     blinky.obj (.text:main)
-                  0000127e    00000068     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
-                  000012e6    00000002     --HOLE-- [fill = 0]
-                  000012e8    0000005c     gpio.obj (.text:GPIOPinConfigure)
-                  00001344    00000004     --HOLE-- [fill = 0]
-                  00001348    00000048     uart.obj (.text:UARTConfigSetExpClk)
-                  00001390    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
-                  000013d4    00000004     --HOLE-- [fill = 0]
-                  000013d8    0000003a     sysctl.obj (.text:SysCtlPeripheralReady)
-                  00001412    00000006     --HOLE-- [fill = 0]
-                  00001418    00000034     sysctl.obj (.text:SysCtlPeripheralEnable)
-                  0000144c    00000034     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
-                  00001480    0000002c     gpio.obj (.text:GPIODirModeSet)
-                  000014ac    00000004     --HOLE-- [fill = 0]
-                  000014b0    0000002c     lib_TIMERisrmanagement.obj (.text:TIMER1A_ISR_Handle)
-                  000014dc    00000004     --HOLE-- [fill = 0]
-                  000014e0    0000002c     lib_TIMERisrmanagement.obj (.text:TIMER1B_ISR_Handle)
-                  0000150c    00000004     --HOLE-- [fill = 0]
-                  00001510    0000002c     lib_TIMERisrmanagement.obj (.text:TIMER2A_ISR_Handle)
-                  0000153c    00000004     --HOLE-- [fill = 0]
-                  00001540    0000002c     lib_TIMERisrmanagement.obj (.text:TIMER2B_ISR_Handle)
-                  0000156c    00000004     --HOLE-- [fill = 0]
-                  00001570    0000002c     lib_TIMERisrmanagement.obj (.text:TIMER3A_ISR_Handle)
-                  0000159c    00000004     --HOLE-- [fill = 0]
-                  000015a0    0000002c     lib_TIMERisrmanagement.obj (.text:TIMER3B_ISR_Handle)
-                  000015cc    00000004     --HOLE-- [fill = 0]
-                  000015d0    0000002c     lib_TIMERisrmanagement.obj (.text:TIMER4A_ISR_Handle)
-                  000015fc    00000004     --HOLE-- [fill = 0]
-                  00001600    0000002c     lib_TIMERisrmanagement.obj (.text:TIMER4B_ISR_Handle)
-                  0000162c    00000004     --HOLE-- [fill = 0]
-                  00001630    0000002c     lib_TIMERisrmanagement.obj (.text:TIMER5A_ISR_Handle)
-                  0000165c    00000004     --HOLE-- [fill = 0]
-                  00001660    0000002c     lib_TIMERisrmanagement.obj (.text:TIMER5B_ISR_Handle)
-                  0000168c    00000004     --HOLE-- [fill = 0]
-                  00001690    0000002c     lib_UARTisrmanagement.obj (.text:UART0_ISR_Handle)
-                  000016bc    00000004     --HOLE-- [fill = 0]
-                  000016c0    0000002c     lib_UARTisrmanagement.obj (.text:UART1_ISR_Handle)
-                  000016ec    00000004     --HOLE-- [fill = 0]
-                  000016f0    0000002c     lib_UARTisrmanagement.obj (.text:UART2_ISR_Handle)
-                  0000171c    00000004     --HOLE-- [fill = 0]
-                  00001720    0000002c     lib_UARTisrmanagement.obj (.text:UART3_ISR_Handle)
-                  0000174c    00000004     --HOLE-- [fill = 0]
-                  00001750    0000002c     lib_UARTisrmanagement.obj (.text:UART5_ISR_Handle)
-                  0000177c    00000004     --HOLE-- [fill = 0]
-                  00001780    0000002c     lib_UARTisrmanagement.obj (.text:UART6_ISR_Handle)
-                  000017ac    00000004     --HOLE-- [fill = 0]
-                  000017b0    0000002c     lib_UARTisrmanagement.obj (.text:UART7_ISR_Handle)
-                  000017dc    00000004     --HOLE-- [fill = 0]
-                  000017e0    00000028     lib_TIMERisrmanagement.obj (.text:TIMER0A_ISR_Handle)
-                  00001808    00000028     lib_TIMERisrmanagement.obj (.text:TIMER0B_ISR_Handle)
-                  00001830    00000028     lib_UARTisrmanagement.obj (.text:UART4_ISR_Handle)
-                  00001858    00000028     uart.obj (.text:UARTDisable)
-                  00001880    00000020     lib_gpio.obj (.text:LIB_GPIO_WritePin)
-                  000018a0    00000020     blinky.obj (.text:toggle)
-                  000018c0    0000001c     lib_clock.obj (.text:LIB_CLOCK_MainClockSet)
+                  00000b10    000000b8     lib_gpio.obj (.text:LIB_GPIO_Init)
+                  00000bc8    000000a2     lib_EXTIisrmanagement.obj (.text:GPIOB_ISR_Handle)
+                  00000c6a    00000006     sysctl.obj (.text:SysCtlDelay)
+                  00000c70    000000a2     lib_EXTIisrmanagement.obj (.text:GPIOC_ISR_Handle)
+                  00000d12    00000006     --HOLE-- [fill = 0]
+                  00000d18    000000a2     lib_EXTIisrmanagement.obj (.text:GPIOD_ISR_Handle)
+                  00000dba    00000006     --HOLE-- [fill = 0]
+                  00000dc0    000000a2     lib_EXTIisrmanagement.obj (.text:GPIOE_ISR_Handle)
+                  00000e62    00000006     --HOLE-- [fill = 0]
+                  00000e68    000000a2     lib_EXTIisrmanagement.obj (.text:GPIOF_ISR_Handle)
+                  00000f0a    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
+                  00000fa6    00000002     --HOLE-- [fill = 0]
+                  00000fa8    0000009a     lib_EXTIisrmanagement.obj (.text:GPIOA_ISR_Handle)
+                  00001042    00000006     --HOLE-- [fill = 0]
+                  00001048    00000092     interrupt.obj (.text:IntEnable)
+                  000010da    00000006     --HOLE-- [fill = 0]
+                  000010e0    00000070     timer.obj (.text:TimerConfigure)
+                  00001150    0000006e     lib_timer.obj (.text:LIB_TIMER_Init)
+                  000011be    00000002     --HOLE-- [fill = 0]
+                  000011c0    0000006e     blinky.obj (.text:main)
+                  0000122e    00000068     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  00001296    00000002     --HOLE-- [fill = 0]
+                  00001298    0000005c     gpio.obj (.text:GPIOPinConfigure)
+                  000012f4    00000004     --HOLE-- [fill = 0]
+                  000012f8    00000048     uart.obj (.text:UARTConfigSetExpClk)
+                  00001340    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  00001384    00000004     --HOLE-- [fill = 0]
+                  00001388    0000003a     sysctl.obj (.text:SysCtlPeripheralReady)
+                  000013c2    00000006     --HOLE-- [fill = 0]
+                  000013c8    00000034     sysctl.obj (.text:SysCtlPeripheralEnable)
+                  000013fc    00000034     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  00001430    0000002c     gpio.obj (.text:GPIODirModeSet)
+                  0000145c    00000004     --HOLE-- [fill = 0]
+                  00001460    0000002c     lib_TIMERisrmanagement.obj (.text:TIMER1A_ISR_Handle)
+                  0000148c    00000004     --HOLE-- [fill = 0]
+                  00001490    0000002c     lib_TIMERisrmanagement.obj (.text:TIMER1B_ISR_Handle)
+                  000014bc    00000004     --HOLE-- [fill = 0]
+                  000014c0    0000002c     lib_TIMERisrmanagement.obj (.text:TIMER2A_ISR_Handle)
+                  000014ec    00000004     --HOLE-- [fill = 0]
+                  000014f0    0000002c     lib_TIMERisrmanagement.obj (.text:TIMER2B_ISR_Handle)
+                  0000151c    00000004     --HOLE-- [fill = 0]
+                  00001520    0000002c     lib_TIMERisrmanagement.obj (.text:TIMER3A_ISR_Handle)
+                  0000154c    00000004     --HOLE-- [fill = 0]
+                  00001550    0000002c     lib_TIMERisrmanagement.obj (.text:TIMER3B_ISR_Handle)
+                  0000157c    00000004     --HOLE-- [fill = 0]
+                  00001580    0000002c     lib_TIMERisrmanagement.obj (.text:TIMER4A_ISR_Handle)
+                  000015ac    00000004     --HOLE-- [fill = 0]
+                  000015b0    0000002c     lib_TIMERisrmanagement.obj (.text:TIMER4B_ISR_Handle)
+                  000015dc    00000004     --HOLE-- [fill = 0]
+                  000015e0    0000002c     lib_TIMERisrmanagement.obj (.text:TIMER5A_ISR_Handle)
+                  0000160c    00000004     --HOLE-- [fill = 0]
+                  00001610    0000002c     lib_TIMERisrmanagement.obj (.text:TIMER5B_ISR_Handle)
+                  0000163c    00000004     --HOLE-- [fill = 0]
+                  00001640    0000002c     lib_UARTisrmanagement.obj (.text:UART0_ISR_Handle)
+                  0000166c    00000004     --HOLE-- [fill = 0]
+                  00001670    0000002c     lib_UARTisrmanagement.obj (.text:UART1_ISR_Handle)
+                  0000169c    00000004     --HOLE-- [fill = 0]
+                  000016a0    0000002c     lib_UARTisrmanagement.obj (.text:UART2_ISR_Handle)
+                  000016cc    00000004     --HOLE-- [fill = 0]
+                  000016d0    0000002c     lib_UARTisrmanagement.obj (.text:UART3_ISR_Handle)
+                  000016fc    00000004     --HOLE-- [fill = 0]
+                  00001700    0000002c     lib_UARTisrmanagement.obj (.text:UART5_ISR_Handle)
+                  0000172c    00000004     --HOLE-- [fill = 0]
+                  00001730    0000002c     lib_UARTisrmanagement.obj (.text:UART6_ISR_Handle)
+                  0000175c    00000004     --HOLE-- [fill = 0]
+                  00001760    0000002c     lib_UARTisrmanagement.obj (.text:UART7_ISR_Handle)
+                  0000178c    00000004     --HOLE-- [fill = 0]
+                  00001790    00000028     lib_TIMERisrmanagement.obj (.text:TIMER0A_ISR_Handle)
+                  000017b8    00000028     lib_TIMERisrmanagement.obj (.text:TIMER0B_ISR_Handle)
+                  000017e0    00000028     lib_UARTisrmanagement.obj (.text:UART4_ISR_Handle)
+                  00001808    00000028     uart.obj (.text:UARTDisable)
+                  00001830    00000020     lib_gpio.obj (.text:LIB_GPIO_WritePin)
+                  00001850    00000020     blinky.obj (.text:toggle)
+                  00001870    0000001c     lib_clock.obj (.text:LIB_CLOCK_MainClockSet)
+                  0000188c    00000004     --HOLE-- [fill = 0]
+                  00001890    0000001c     lib_clock.obj (.text:LIB_CLOCK_PeripheralClockEnable)
+                  000018ac    00000004     --HOLE-- [fill = 0]
+                  000018b0    00000016     gpio.obj (.text:GPIOPinTypeUART)
+                  000018c6    00000002     --HOLE-- [fill = 0]
+                  000018c8    00000014     uart.obj (.text:UARTEnable)
                   000018dc    00000004     --HOLE-- [fill = 0]
-                  000018e0    0000001c     lib_clock.obj (.text:LIB_CLOCK_PeripheralClockEnable)
-                  000018fc    00000004     --HOLE-- [fill = 0]
-                  00001900    0000001a     sysctl.obj (.text:SysCtlGPIOAHBEnable)
-                  0000191a    00000006     --HOLE-- [fill = 0]
-                  00001920    00000016     gpio.obj (.text:GPIOPinTypeUART)
-                  00001936    00000002     --HOLE-- [fill = 0]
-                  00001938    00000014     uart.obj (.text:UARTEnable)
-                  0000194c    00000004     --HOLE-- [fill = 0]
-                  00001950    00000012     interrupt.obj (.text:IntMasterEnable)
-                  00001962    00000006     --HOLE-- [fill = 0]
-                  00001968    00000012     lib_gpio.obj (.text:LIB_GPIO_TogglePin)
-                  0000197a    00000006     --HOLE-- [fill = 0]
-                  00001980    00000012     lib_TIMERisrmanagement.obj (.text:LIB_ISR_TIMERRegister)
-                  00001992    00000006     --HOLE-- [fill = 0]
-                  00001998    00000012     timer.obj (.text:TimerLoadSet)
+                  000018e0    00000012     interrupt.obj (.text:IntMasterEnable)
+                  000018f2    00000006     --HOLE-- [fill = 0]
+                  000018f8    00000012     lib_gpio.obj (.text:LIB_GPIO_TogglePin)
+                  0000190a    00000006     --HOLE-- [fill = 0]
+                  00001910    00000012     lib_TIMERisrmanagement.obj (.text:LIB_ISR_TIMERRegister)
+                  00001922    00000006     --HOLE-- [fill = 0]
+                  00001928    00000012     timer.obj (.text:TimerLoadSet)
+                  0000193a    00000006     --HOLE-- [fill = 0]
+                  00001940    0000000e     gpio.obj (.text:GPIOIntStatus)
+                  0000194e    00000002     --HOLE-- [fill = 0]
+                  00001950    0000000e     lib_UARTisrmanagement.obj (.text:LIB_ISR_UARTRegister)
+                  0000195e    00000002     --HOLE-- [fill = 0]
+                  00001960    0000000e     timer.obj (.text:TimerEnable)
+                  0000196e    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  0000197c    00000004     --HOLE-- [fill = 0]
+                  00001980    0000000c     cpu.obj (.text:CPUcpsie)
+                  0000198c    00000004     --HOLE-- [fill = 0]
+                  00001990    0000000a     timer.obj (.text:TimerIntStatus)
+                  0000199a    00000006     --HOLE-- [fill = 0]
+                  000019a0    0000000a     uart.obj (.text:UARTFIFODisable)
                   000019aa    00000006     --HOLE-- [fill = 0]
-                  000019b0    0000000e     gpio.obj (.text:GPIOIntStatus)
-                  000019be    00000002     --HOLE-- [fill = 0]
-                  000019c0    0000000e     lib_UARTisrmanagement.obj (.text:LIB_ISR_UARTRegister)
-                  000019ce    00000002     --HOLE-- [fill = 0]
-                  000019d0    0000000e     timer.obj (.text:TimerEnable)
-                  000019de    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  000019b0    0000000a     uart.obj (.text:UARTIntStatus)
+                  000019ba    00000006     --HOLE-- [fill = 0]
+                  000019c0    00000008     timer.obj (.text:TimerIntEnable)
+                  000019c8    00000008     uart.obj (.text:UARTIntEnable)
+                  000019d0    00000006     gpio.obj (.text:GPIOIntClear)
+                  000019d6    00000002     --HOLE-- [fill = 0]
+                  000019d8    00000006     startup_ccs.obj (.text:ResetISR)
+                  000019de    00000002     --HOLE-- [fill = 0]
+                  000019e0    00000004     timer.obj (.text:TimerIntClear)
+                  000019e4    00000004     --HOLE-- [fill = 0]
+                  000019e8    00000004     uart.obj (.text:UARTIntClear)
                   000019ec    00000004     --HOLE-- [fill = 0]
-                  000019f0    0000000c     cpu.obj (.text:CPUcpsie)
-                  000019fc    00000004     --HOLE-- [fill = 0]
-                  00001a00    0000000a     timer.obj (.text:TimerIntStatus)
-                  00001a0a    00000006     --HOLE-- [fill = 0]
-                  00001a10    0000000a     uart.obj (.text:UARTFIFODisable)
-                  00001a1a    00000006     --HOLE-- [fill = 0]
-                  00001a20    0000000a     uart.obj (.text:UARTIntStatus)
-                  00001a2a    00000006     --HOLE-- [fill = 0]
-                  00001a30    00000008     timer.obj (.text:TimerIntEnable)
-                  00001a38    00000008     uart.obj (.text:UARTIntEnable)
-                  00001a40    00000006     gpio.obj (.text:GPIOIntClear)
-                  00001a46    00000002     --HOLE-- [fill = 0]
-                  00001a48    00000006     startup_ccs.obj (.text:ResetISR)
-                  00001a4e    00000002     --HOLE-- [fill = 0]
-                  00001a50    00000004     timer.obj (.text:TimerIntClear)
-                  00001a54    00000004     --HOLE-- [fill = 0]
-                  00001a58    00000004     uart.obj (.text:UARTIntClear)
-                  00001a5c    00000004     --HOLE-- [fill = 0]
-                  00001a60    00000002     startup_ccs.obj (.text:FaultISR)
-                  00001a62    00000006     --HOLE-- [fill = 0]
-                  00001a68    00000002     startup_ccs.obj (.text:IntDefaultHandler)
-                  00001a6a    00000006     --HOLE-- [fill = 0]
-                  00001a70    00000002     startup_ccs.obj (.text:NmiSR)
-                  00001a72    00000006     --HOLE-- [fill = 0]
-                  00001a78    00000002     lib_EXTIisrmanagement.obj (.text:__nop)
+                  000019f0    00000002     startup_ccs.obj (.text:FaultISR)
+                  000019f2    00000006     --HOLE-- [fill = 0]
+                  000019f8    00000002     startup_ccs.obj (.text:IntDefaultHandler)
+                  000019fa    00000006     --HOLE-- [fill = 0]
+                  00001a00    00000002     startup_ccs.obj (.text:NmiSR)
+                  00001a02    00000006     --HOLE-- [fill = 0]
+                  00001a08    00000002     lib_EXTIisrmanagement.obj (.text:__nop)
 
-.const     0    00001a7c    00000130     
-                  00001a7c    00000090     gpio.obj (.const:g_pui32GPIOBaseAddrs)
-                  00001b0c    0000006c     sysctl.obj (.const:g_pui32Xtals)
-                  00001b78    00000020     lib_uart.obj (.const:$P$T0$1)
-                  00001b98    00000014     interrupt.obj (.const:g_pui32EnRegs)
+.const     0    00001a0c    00000130     
+                  00001a0c    00000090     gpio.obj (.const:g_pui32GPIOBaseAddrs)
+                  00001a9c    0000006c     sysctl.obj (.const:g_pui32Xtals)
+                  00001b08    00000020     lib_uart.obj (.const:$P$T0$1)
+                  00001b28    00000014     interrupt.obj (.const:g_pui32EnRegs)
 
-.cinit     0    00001bb0    00000020     
-                  00001bb0    0000000e     (.cinit..data.load) [load image, compression = lzss]
-                  00001bbe    00000002     --HOLE-- [fill = 0]
-                  00001bc0    00000008     (__TI_handler_table)
-                  00001bc8    00000008     (__TI_cinit_table)
+.cinit     0    00001b40    00000020     
+                  00001b40    0000000e     (.cinit..data.load) [load image, compression = lzss]
+                  00001b4e    00000002     --HOLE-- [fill = 0]
+                  00001b50    00000008     (__TI_handler_table)
+                  00001b58    00000008     (__TI_cinit_table)
 
 .init_array 
 *          0    00000000    00000000     UNINITIALIZED
@@ -212,16 +209,16 @@ MODULE SUMMARY
        Total:                       56     0         4      
                                                             
     .\EK-TM4C123GXL_LIB\gpio\
-       lib_gpio.obj                 302    0         0      
+       lib_gpio.obj                 234    0         0      
     +--+----------------------------+------+---------+---------+
-       Total:                       302    0         0      
+       Total:                       234    0         0      
                                                             
     .\EK-TM4C123GXL_LIB\isr_anagement\
-       lib_EXTIisrmanagement.obj    974    0         192    
+       lib_EXTIisrmanagement.obj    966    0         192    
        lib_TIMERisrmanagement.obj   538    0         48     
        lib_UARTisrmanagement.obj    362    0         32     
     +--+----------------------------+------+---------+---------+
-       Total:                       1874   0         272    
+       Total:                       1866   0         272    
                                                             
     .\EK-TM4C123GXL_LIB\timer\
        lib_timer.obj                110    0         0      
@@ -234,14 +231,14 @@ MODULE SUMMARY
        Total:                       856    32        0      
                                                             
     .\driverlib\
-       sysctl.obj                   902    108       0      
+       sysctl.obj                   876    108       0      
        gpio.obj                     762    144       0      
        interrupt.obj                164    20        0      
        timer.obj                    166    0         0      
        uart.obj                     164    0         0      
        cpu.obj                      12     0         0      
     +--+----------------------------+------+---------+---------+
-       Total:                       2170   272       0      
+       Total:                       2144   272       0      
                                                             
     C:\ti\ccs1220\ccs\tools\compiler\ti-cgt-arm_18.12.8.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
        memcpy_t2.asm.obj            156    0         0      
@@ -257,18 +254,18 @@ MODULE SUMMARY
        Stack:                       0      0         512    
        Linker Generated:            0      30        0      
     +--+----------------------------+------+---------+---------+
-       Grand Total:                 5924   954       788    
+       Grand Total:                 5822   954       788    
 
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 00001bc8 records: 1, size/record: 8, table size: 8
-	.data: load addr=00001bb0, load size=0000000e bytes, run addr=20000200, run size=00000114 bytes, compression=lzss
+__TI_cinit_table @ 00001b58 records: 1, size/record: 8, table size: 8
+	.data: load addr=00001b40, load size=0000000e bytes, run addr=20000200, run size=00000114 bytes, compression=lzss
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 00001bc0 records: 2, size/record: 4, table size: 8
+__TI_handler_table @ 00001b50 records: 2, size/record: 4, table size: 8
 	index: 0, handler: __TI_decompress_lzss
 	index: 1, handler: __TI_decompress_none
 
@@ -279,104 +276,103 @@ address   name
 -------   ----                           
 00000b0d  C$$EXIT                        
 20000310  CPU_F                          
-000019f1  CPUcpsie                       
+00001981  CPUcpsie                       
 20000200  ExtiIsrHandleTable             
-00000c11  GPIOA_ISR_Handle               
-00000cb9  GPIOB_ISR_Handle               
-00000d61  GPIOC_ISR_Handle               
-00000e09  GPIOD_ISR_Handle               
-00001481  GPIODirModeSet                 
-00000eb1  GPIOE_ISR_Handle               
-00000f59  GPIOF_ISR_Handle               
-00001a41  GPIOIntClear                   
-000019b1  GPIOIntStatus                  
+00000fa9  GPIOA_ISR_Handle               
+00000bc9  GPIOB_ISR_Handle               
+00000c71  GPIOC_ISR_Handle               
+00000d19  GPIOD_ISR_Handle               
+00001431  GPIODirModeSet                 
+00000dc1  GPIOE_ISR_Handle               
+00000e69  GPIOF_ISR_Handle               
+000019d1  GPIOIntClear                   
+00001941  GPIOIntStatus                  
 000005c9  GPIOPadConfigSet               
-000012e9  GPIOPinConfigure               
-00001921  GPIOPinTypeUART                
-00001099  IntEnable                      
-00001951  IntMasterEnable                
-000018c1  LIB_CLOCK_MainClockSet         
-000018e1  LIB_CLOCK_PeripheralClockEnable
+00001299  GPIOPinConfigure               
+000018b1  GPIOPinTypeUART                
+00001049  IntEnable                      
+000018e1  IntMasterEnable                
+00001871  LIB_CLOCK_MainClockSet         
+00001891  LIB_CLOCK_PeripheralClockEnable
 00000b11  LIB_GPIO_Init                  
-00001969  LIB_GPIO_TogglePin             
-00001881  LIB_GPIO_WritePin              
-00001981  LIB_ISR_TIMERRegister          
-000019c1  LIB_ISR_UARTRegister           
-000011a1  LIB_TIMER_Init                 
+000018f9  LIB_GPIO_TogglePin             
+00001831  LIB_GPIO_WritePin              
+00001911  LIB_ISR_TIMERRegister          
+00001951  LIB_ISR_UARTRegister           
+00001151  LIB_TIMER_Init                 
 00000271  LIB_UART_Init                  
-00001a49  ResetISR                       
+000019d9  ResetISR                       
 00000811  SysCtlClockGet                 
 000009a9  SysCtlClockSet                 
-00000cb3  SysCtlDelay                    
-00001901  SysCtlGPIOAHBEnable            
-00001419  SysCtlPeripheralEnable         
-000013d9  SysCtlPeripheralReady          
-000017e1  TIMER0A_ISR_Handle             
-00001809  TIMER0B_ISR_Handle             
-000014b1  TIMER1A_ISR_Handle             
-000014e1  TIMER1B_ISR_Handle             
-00001511  TIMER2A_ISR_Handle             
-00001541  TIMER2B_ISR_Handle             
-00001571  TIMER3A_ISR_Handle             
-000015a1  TIMER3B_ISR_Handle             
-000015d1  TIMER4A_ISR_Handle             
-00001601  TIMER4B_ISR_Handle             
-00001631  TIMER5A_ISR_Handle             
-00001661  TIMER5B_ISR_Handle             
-00001131  TimerConfigure                 
-000019d1  TimerEnable                    
-00001a51  TimerIntClear                  
-00001a31  TimerIntEnable                 
-00001a01  TimerIntStatus                 
+00000c6b  SysCtlDelay                    
+000013c9  SysCtlPeripheralEnable         
+00001389  SysCtlPeripheralReady          
+00001791  TIMER0A_ISR_Handle             
+000017b9  TIMER0B_ISR_Handle             
+00001461  TIMER1A_ISR_Handle             
+00001491  TIMER1B_ISR_Handle             
+000014c1  TIMER2A_ISR_Handle             
+000014f1  TIMER2B_ISR_Handle             
+00001521  TIMER3A_ISR_Handle             
+00001551  TIMER3B_ISR_Handle             
+00001581  TIMER4A_ISR_Handle             
+000015b1  TIMER4B_ISR_Handle             
+000015e1  TIMER5A_ISR_Handle             
+00001611  TIMER5B_ISR_Handle             
+000010e1  TimerConfigure                 
+00001961  TimerEnable                    
+000019e1  TimerIntClear                  
+000019c1  TimerIntEnable                 
+00001991  TimerIntStatus                 
 200002c0  TimerIsrHandleTable            
-00001999  TimerLoadSet                   
-00001691  UART0_ISR_Handle               
-000016c1  UART1_ISR_Handle               
-000016f1  UART2_ISR_Handle               
-00001721  UART3_ISR_Handle               
-00001831  UART4_ISR_Handle               
-00001751  UART5_ISR_Handle               
-00001781  UART6_ISR_Handle               
-000017b1  UART7_ISR_Handle               
-00001349  UARTConfigSetExpClk            
-00001859  UARTDisable                    
-00001939  UARTEnable                     
-00001a11  UARTFIFODisable                
-00001a59  UARTIntClear                   
-00001a39  UARTIntEnable                  
-00001a21  UARTIntStatus                  
+00001929  TimerLoadSet                   
+00001641  UART0_ISR_Handle               
+00001671  UART1_ISR_Handle               
+000016a1  UART2_ISR_Handle               
+000016d1  UART3_ISR_Handle               
+000017e1  UART4_ISR_Handle               
+00001701  UART5_ISR_Handle               
+00001731  UART6_ISR_Handle               
+00001761  UART7_ISR_Handle               
+000012f9  UARTConfigSetExpClk            
+00001809  UARTDisable                    
+000018c9  UARTEnable                     
+000019a1  UARTFIFODisable                
+000019e9  UARTIntClear                   
+000019c9  UARTIntEnable                  
+000019b1  UARTIntStatus                  
 200002f0  UartIsrHandleTable             
 20000200  __STACK_END                    
 00000200  __STACK_SIZE                   
 20000200  __STACK_TOP                    
-00001bc8  __TI_CINIT_Base                
-00001bd0  __TI_CINIT_Limit               
-00001bc0  __TI_Handler_Table_Base        
-00001bc8  __TI_Handler_Table_Limit       
-00001391  __TI_auto_init_nobinit_nopinit 
-0000127f  __TI_decompress_lzss           
-000019df  __TI_decompress_none           
+00001b58  __TI_CINIT_Base                
+00001b60  __TI_CINIT_Limit               
+00001b50  __TI_Handler_Table_Base        
+00001b58  __TI_Handler_Table_Limit       
+00001341  __TI_auto_init_nobinit_nopinit 
+0000122f  __TI_decompress_lzss           
+0000196f  __TI_decompress_none           
 ffffffff  __TI_pprof_out_hndl            
 ffffffff  __TI_prof_data_size            
 ffffffff  __TI_prof_data_start           
 00000000  __TI_static_base__             
-00000ffb  __aeabi_memcpy                 
-00000ffb  __aeabi_memcpy4                
-00000ffb  __aeabi_memcpy8                
+00000f0b  __aeabi_memcpy                 
+00000f0b  __aeabi_memcpy4                
+00000f0b  __aeabi_memcpy8                
 ffffffff  __binit__                      
 ffffffff  __c_args__                     
 UNDEFED   __mpu_init                     
-00001a79  __nop                          
+00001a09  __nop                          
 20000000  __stack                        
-0000144d  _c_int00_noargs                
+000013fd  _c_int00_noargs                
 UNDEFED   _system_post_cinit             
 000009a5  _system_pre_init               
 00000b0d  abort                          
 ffffffff  binit                          
 00000000  g_pfnVectors                   
-00001211  main                           
-00000ffb  memcpy                         
-000018a1  toggle                         
+000011c1  main                           
+00000f0b  memcpy                         
+00001851  toggle                         
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -394,80 +390,79 @@ address   name
 00000b0d  C$$EXIT                        
 00000b0d  abort                          
 00000b11  LIB_GPIO_Init                  
-00000c11  GPIOA_ISR_Handle               
-00000cb3  SysCtlDelay                    
-00000cb9  GPIOB_ISR_Handle               
-00000d61  GPIOC_ISR_Handle               
-00000e09  GPIOD_ISR_Handle               
-00000eb1  GPIOE_ISR_Handle               
-00000f59  GPIOF_ISR_Handle               
-00000ffb  __aeabi_memcpy                 
-00000ffb  __aeabi_memcpy4                
-00000ffb  __aeabi_memcpy8                
-00000ffb  memcpy                         
-00001099  IntEnable                      
-00001131  TimerConfigure                 
-000011a1  LIB_TIMER_Init                 
-00001211  main                           
-0000127f  __TI_decompress_lzss           
-000012e9  GPIOPinConfigure               
-00001349  UARTConfigSetExpClk            
-00001391  __TI_auto_init_nobinit_nopinit 
-000013d9  SysCtlPeripheralReady          
-00001419  SysCtlPeripheralEnable         
-0000144d  _c_int00_noargs                
-00001481  GPIODirModeSet                 
-000014b1  TIMER1A_ISR_Handle             
-000014e1  TIMER1B_ISR_Handle             
-00001511  TIMER2A_ISR_Handle             
-00001541  TIMER2B_ISR_Handle             
-00001571  TIMER3A_ISR_Handle             
-000015a1  TIMER3B_ISR_Handle             
-000015d1  TIMER4A_ISR_Handle             
-00001601  TIMER4B_ISR_Handle             
-00001631  TIMER5A_ISR_Handle             
-00001661  TIMER5B_ISR_Handle             
-00001691  UART0_ISR_Handle               
-000016c1  UART1_ISR_Handle               
-000016f1  UART2_ISR_Handle               
-00001721  UART3_ISR_Handle               
-00001751  UART5_ISR_Handle               
-00001781  UART6_ISR_Handle               
-000017b1  UART7_ISR_Handle               
-000017e1  TIMER0A_ISR_Handle             
-00001809  TIMER0B_ISR_Handle             
-00001831  UART4_ISR_Handle               
-00001859  UARTDisable                    
-00001881  LIB_GPIO_WritePin              
-000018a1  toggle                         
-000018c1  LIB_CLOCK_MainClockSet         
-000018e1  LIB_CLOCK_PeripheralClockEnable
-00001901  SysCtlGPIOAHBEnable            
-00001921  GPIOPinTypeUART                
-00001939  UARTEnable                     
-00001951  IntMasterEnable                
-00001969  LIB_GPIO_TogglePin             
-00001981  LIB_ISR_TIMERRegister          
-00001999  TimerLoadSet                   
-000019b1  GPIOIntStatus                  
-000019c1  LIB_ISR_UARTRegister           
-000019d1  TimerEnable                    
-000019df  __TI_decompress_none           
-000019f1  CPUcpsie                       
-00001a01  TimerIntStatus                 
-00001a11  UARTFIFODisable                
-00001a21  UARTIntStatus                  
-00001a31  TimerIntEnable                 
-00001a39  UARTIntEnable                  
-00001a41  GPIOIntClear                   
-00001a49  ResetISR                       
-00001a51  TimerIntClear                  
-00001a59  UARTIntClear                   
-00001a79  __nop                          
-00001bc0  __TI_Handler_Table_Base        
-00001bc8  __TI_CINIT_Base                
-00001bc8  __TI_Handler_Table_Limit       
-00001bd0  __TI_CINIT_Limit               
+00000bc9  GPIOB_ISR_Handle               
+00000c6b  SysCtlDelay                    
+00000c71  GPIOC_ISR_Handle               
+00000d19  GPIOD_ISR_Handle               
+00000dc1  GPIOE_ISR_Handle               
+00000e69  GPIOF_ISR_Handle               
+00000f0b  __aeabi_memcpy                 
+00000f0b  __aeabi_memcpy4                
+00000f0b  __aeabi_memcpy8                
+00000f0b  memcpy                         
+00000fa9  GPIOA_ISR_Handle               
+00001049  IntEnable                      
+000010e1  TimerConfigure                 
+00001151  LIB_TIMER_Init                 
+000011c1  main                           
+0000122f  __TI_decompress_lzss           
+00001299  GPIOPinConfigure               
+000012f9  UARTConfigSetExpClk            
+00001341  __TI_auto_init_nobinit_nopinit 
+00001389  SysCtlPeripheralReady          
+000013c9  SysCtlPeripheralEnable         
+000013fd  _c_int00_noargs                
+00001431  GPIODirModeSet                 
+00001461  TIMER1A_ISR_Handle             
+00001491  TIMER1B_ISR_Handle             
+000014c1  TIMER2A_ISR_Handle             
+000014f1  TIMER2B_ISR_Handle             
+00001521  TIMER3A_ISR_Handle             
+00001551  TIMER3B_ISR_Handle             
+00001581  TIMER4A_ISR_Handle             
+000015b1  TIMER4B_ISR_Handle             
+000015e1  TIMER5A_ISR_Handle             
+00001611  TIMER5B_ISR_Handle             
+00001641  UART0_ISR_Handle               
+00001671  UART1_ISR_Handle               
+000016a1  UART2_ISR_Handle               
+000016d1  UART3_ISR_Handle               
+00001701  UART5_ISR_Handle               
+00001731  UART6_ISR_Handle               
+00001761  UART7_ISR_Handle               
+00001791  TIMER0A_ISR_Handle             
+000017b9  TIMER0B_ISR_Handle             
+000017e1  UART4_ISR_Handle               
+00001809  UARTDisable                    
+00001831  LIB_GPIO_WritePin              
+00001851  toggle                         
+00001871  LIB_CLOCK_MainClockSet         
+00001891  LIB_CLOCK_PeripheralClockEnable
+000018b1  GPIOPinTypeUART                
+000018c9  UARTEnable                     
+000018e1  IntMasterEnable                
+000018f9  LIB_GPIO_TogglePin             
+00001911  LIB_ISR_TIMERRegister          
+00001929  TimerLoadSet                   
+00001941  GPIOIntStatus                  
+00001951  LIB_ISR_UARTRegister           
+00001961  TimerEnable                    
+0000196f  __TI_decompress_none           
+00001981  CPUcpsie                       
+00001991  TimerIntStatus                 
+000019a1  UARTFIFODisable                
+000019b1  UARTIntStatus                  
+000019c1  TimerIntEnable                 
+000019c9  UARTIntEnable                  
+000019d1  GPIOIntClear                   
+000019d9  ResetISR                       
+000019e1  TimerIntClear                  
+000019e9  UARTIntClear                   
+00001a09  __nop                          
+00001b50  __TI_Handler_Table_Base        
+00001b58  __TI_CINIT_Base                
+00001b58  __TI_Handler_Table_Limit       
+00001b60  __TI_CINIT_Limit               
 20000000  __stack                        
 20000200  ExtiIsrHandleTable             
 20000200  __STACK_END                    
@@ -484,4 +479,4 @@ ffffffff  binit
 UNDEFED   __mpu_init                     
 UNDEFED   _system_post_cinit             
 
-[100 symbols]
+[99 symbols]

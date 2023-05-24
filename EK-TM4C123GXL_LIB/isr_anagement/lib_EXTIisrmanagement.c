@@ -13,8 +13,8 @@ void (* volatile ExtiIsrHandleTable[6][8])(void) =
 
 void GPIOA_ISR_Handle(void)
 {
-    uint32_t status = GPIOIntStatus(GPIOAH, true);
-    GPIOIntClear(GPIOAH, status);
+    uint32_t status = GPIOIntStatus(GPIOA, true);
+    GPIOIntClear(GPIOA, status);
     if((status & GPIO_PIN_0) == GPIO_PIN_0)    ACCESS_ISR_TABLE(ExtiIsrHandleTable, 0, 0)();
     if((status & GPIO_PIN_1) == GPIO_PIN_1)    ACCESS_ISR_TABLE(ExtiIsrHandleTable, 0, 1)();
     if((status & GPIO_PIN_2) == GPIO_PIN_2)    ACCESS_ISR_TABLE(ExtiIsrHandleTable, 0, 2)();
@@ -27,8 +27,8 @@ void GPIOA_ISR_Handle(void)
 
 void GPIOB_ISR_Handle(void)
 {
-    uint32_t status = GPIOIntStatus(GPIOBH, true);
-    GPIOIntClear(GPIOBH, status);
+    uint32_t status = GPIOIntStatus(GPIOB, true);
+    GPIOIntClear(GPIOB, status);
     if((status & GPIO_PIN_0) == GPIO_PIN_0)    ACCESS_ISR_TABLE(ExtiIsrHandleTable, 1, 0)();
     if((status & GPIO_PIN_1) == GPIO_PIN_1)    ACCESS_ISR_TABLE(ExtiIsrHandleTable, 1, 1)();
     if((status & GPIO_PIN_2) == GPIO_PIN_2)    ACCESS_ISR_TABLE(ExtiIsrHandleTable, 1, 2)();
@@ -40,8 +40,8 @@ void GPIOB_ISR_Handle(void)
 }
 void GPIOC_ISR_Handle(void)
 {
-    uint32_t status = GPIOIntStatus(GPIOCH, true);
-    GPIOIntClear(GPIOCH, status);
+    uint32_t status = GPIOIntStatus(GPIOC, true);
+    GPIOIntClear(GPIOC, status);
     if((status & GPIO_PIN_0) == GPIO_PIN_0)    ACCESS_ISR_TABLE(ExtiIsrHandleTable, 2, 0)();
     if((status & GPIO_PIN_1) == GPIO_PIN_1)    ACCESS_ISR_TABLE(ExtiIsrHandleTable, 2, 1)();
     if((status & GPIO_PIN_2) == GPIO_PIN_2)    ACCESS_ISR_TABLE(ExtiIsrHandleTable, 2, 2)();
@@ -53,8 +53,8 @@ void GPIOC_ISR_Handle(void)
 }
 void GPIOD_ISR_Handle(void)
 {
-    uint32_t status = GPIOIntStatus(GPIODH, true);
-    GPIOIntClear(GPIODH, status);
+    uint32_t status = GPIOIntStatus(GPIOD, true);
+    GPIOIntClear(GPIOD, status);
     if((status & GPIO_PIN_0) == GPIO_PIN_0)    ACCESS_ISR_TABLE(ExtiIsrHandleTable, 3, 0)();
     if((status & GPIO_PIN_1) == GPIO_PIN_1)    ACCESS_ISR_TABLE(ExtiIsrHandleTable, 3, 1)();
     if((status & GPIO_PIN_2) == GPIO_PIN_2)    ACCESS_ISR_TABLE(ExtiIsrHandleTable, 3, 2)();
@@ -66,8 +66,8 @@ void GPIOD_ISR_Handle(void)
 }
 void GPIOE_ISR_Handle(void)
 {
-    uint32_t status = GPIOIntStatus(GPIOEH, true);
-    GPIOIntClear(GPIOEH, status);
+    uint32_t status = GPIOIntStatus(GPIOE, true);
+    GPIOIntClear(GPIOE, status);
     if((status & GPIO_PIN_0) == GPIO_PIN_0)    ACCESS_ISR_TABLE(ExtiIsrHandleTable, 4, 0)();
     if((status & GPIO_PIN_1) == GPIO_PIN_1)    ACCESS_ISR_TABLE(ExtiIsrHandleTable, 4, 1)();
     if((status & GPIO_PIN_2) == GPIO_PIN_2)    ACCESS_ISR_TABLE(ExtiIsrHandleTable, 4, 2)();
@@ -79,8 +79,8 @@ void GPIOE_ISR_Handle(void)
 }
 void GPIOF_ISR_Handle(void)
 {
-    uint32_t status = GPIOIntStatus(GPIOFH, true);
-    GPIOIntClear(GPIOFH, status);
+    uint32_t status = GPIOIntStatus(GPIOF, true);
+    GPIOIntClear(GPIOF, status);
     if((status & GPIO_PIN_0) == GPIO_PIN_0)    ACCESS_ISR_TABLE(ExtiIsrHandleTable, 5, 0)();
     if((status & GPIO_PIN_1) == GPIO_PIN_1)    ACCESS_ISR_TABLE(ExtiIsrHandleTable, 5, 1)();
     if((status & GPIO_PIN_2) == GPIO_PIN_2)    ACCESS_ISR_TABLE(ExtiIsrHandleTable, 5, 2)();
@@ -93,12 +93,12 @@ void GPIOF_ISR_Handle(void)
 
 void LIB_ISR_GPIOEXTIISRInit()
 {
-    GPIOIntRegister(GPIOAH, GPIOA_ISR_Handle);
-    GPIOIntRegister(GPIOBH, GPIOB_ISR_Handle);
-    GPIOIntRegister(GPIOCH, GPIOC_ISR_Handle);
-    GPIOIntRegister(GPIODH, GPIOD_ISR_Handle);
-    GPIOIntRegister(GPIOEH, GPIOE_ISR_Handle);
-    GPIOIntRegister(GPIOFH, GPIOF_ISR_Handle);
+    GPIOIntRegister(GPIOA, GPIOA_ISR_Handle);
+    GPIOIntRegister(GPIOB, GPIOB_ISR_Handle);
+    GPIOIntRegister(GPIOC, GPIOC_ISR_Handle);
+    GPIOIntRegister(GPIOD, GPIOD_ISR_Handle);
+    GPIOIntRegister(GPIOE, GPIOE_ISR_Handle);
+    GPIOIntRegister(GPIOF, GPIOF_ISR_Handle);
 }
 
 void LIB_ISR_GPIOEXTIRegister(uint8_t ISRGPIOPort, uint8_t ISRGPIOPin, void (*ISR_handler)(void))

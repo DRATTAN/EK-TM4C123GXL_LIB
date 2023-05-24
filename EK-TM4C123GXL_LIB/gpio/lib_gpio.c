@@ -10,7 +10,7 @@
  * 参数
  *  @Port:
  *      GPIO基地址:
- *          GPIOA-GPIOF,GPIOAH-GPIOFH
+ *          GPIOA-GPIOF
  *  @Pin:
  *      端口号:
  *          GPIO_PIN_0-GPIO_PIN_7
@@ -37,12 +37,7 @@
  */
 void LIB_GPIO_Init(uint32_t Port, uint8_t Pin, uint8_t Dir, uint32_t Type, uint8_t Value)
 {
-    if(Port >= GPIOAH)
-    {
-        LIB_CLOCK_PeripheralClockEnable(((Port - GPIOAH)>>12) + SYSCTL_PERIPH_GPIOA);
-        SysCtlGPIOAHBEnable(((Port - GPIOAH)>>12) + SYSCTL_PERIPH_GPIOA);
-    }
-    else if(Port >= GPIOE) LIB_CLOCK_PeripheralClockEnable(((Port - GPIOE)>>12) + SYSCTL_PERIPH_GPIOA);
+    if(Port >= GPIOE) LIB_CLOCK_PeripheralClockEnable(((Port - GPIOE)>>12) + SYSCTL_PERIPH_GPIOE);
     else if(Port >= GPIOA) LIB_CLOCK_PeripheralClockEnable(((Port - GPIOA)>>12) + SYSCTL_PERIPH_GPIOA);
     else __nop();
 
@@ -154,10 +149,9 @@ void LIB_GPIO_TogglePin(uint32_t Port, uint32_t Pin)
  * 备注:(2023/05/14) @param(Trigger) GPIO_EXTI_TRIGGER_DISCRETE_INT未实现,请勿使用.
  *
  */
-
 void LIB_GPIO_ExtiInit(uint8_t GPIOISRPort, uint8_t GPIOISRPin, uint8_t Trigger, void (*ISR_handler)(void))
 {
-    uint32_t GPIO_BASE_TABLE[6] = {GPIOAH, GPIOBH, GPIOCH, GPIODH, GPIOEH, GPIOFH};
+    uint32_t GPIO_BASE_TABLE[6] = {GPIOA, GPIOB, GPIOC, GPIOD, GPIOE, GPIOF};
     uint32_t GPIO_EXTI_TRIG_TABLE[6] = {GPIO_RISING_EDGE, GPIO_FALLING_EDGE, GPIO_BOTH_EDGES, GPIO_HIGH_LEVEL, GPIO_LOW_LEVEL, GPIO_DISCRETE_INT};
     uint32_t GPIO_ASSIGNMENTS_TABLE[6] = {INT_GPIOA, INT_GPIOB, INT_GPIOC, INT_GPIOD, INT_GPIOE, INT_GPIOF};
     if(Trigger == GPIO_EXTI_TRIGGER_RISING || Trigger == GPIO_EXTI_TRIGGER_HIGH) LIB_GPIO_Init(GPIO_BASE_TABLE[GPIOISRPort], 0x01 << GPIOISRPin, GPIO_DIR_INPUT, GPIO_PIN_TYPE_INPUT_WPD, 0x00);
@@ -168,13 +162,46 @@ void LIB_GPIO_ExtiInit(uint8_t GPIOISRPort, uint8_t GPIOISRPin, uint8_t Trigger,
     IntEnable(GPIO_ASSIGNMENTS_TABLE[GPIOISRPort]);
 }
 
+/*
+ * 描述:打开/关闭GPIOx 下某个Pin的外部中断
+ * 参数
+ *      @GPIOISRPort:
+ *          GPIO中断的端口号:
+ *              ISR_GPIOA-ISR_GPIOF
+ *      @GPIOISRPin:
+ *          GPIO中断的端口Pin号:
+ *              ISR_GPIO_PIN_0-ISR_GPIO_PIN_7
+ *      @Ctrl:
+ *          打开/关闭:
+ *               GPIO_EXTI_CTRL_ENABLE 打开
+ *               GPIO_EXTI_CTRL_DISABLE 关闭
+ *      @ISR_handler:
+ *          中断回调函数，不允许存在返回值，不允许传入参数.
+ * 返回值:void
+ * 备注:
+ */
 void LIB_GPIO_ExtiCtrlPin(uint8_t GPIOISRPort, uint8_t GPIOISRPin, uint8_t Ctrl)
 {
-    uint32_t GPIO_BASE_TABLE[6] = {GPIOAH, GPIOBH, GPIOCH, GPIODH, GPIOEH, GPIOFH};
+    uint32_t GPIO_BASE_TABLE[6] = {GPIOA, GPIOB, GPIOC, GPIOD, GPIOE, GPIOF};
     if(GPIO_EXTI_CTRL_ENABLE == Ctrl) GPIOIntEnable(GPIO_BASE_TABLE[GPIOISRPort], 0x01 << GPIOISRPin);
     if(GPIO_EXTI_CTRL_DISABLE == Ctrl) GPIOIntDisable(GPIO_BASE_TABLE[GPIOISRPort], 0x01 << GPIOISRPin);
 }
 
+/*
+ * 描述:打开/关闭GPIOx的外部中断
+ * 参数
+ *      @GPIOISRPort:
+ *          GPIO中断的端口号:
+ *              ISR_GPIOA-ISR_GPIOF
+ *      @Ctrl:
+ *          打开/关闭:
+ *               GPIO_EXTI_CTRL_ENABLE 打开
+ *               GPIO_EXTI_CTRL_DISABLE 关闭
+ *      @ISR_handler:
+ *          中断回调函数，不允许存在返回值，不允许传入参数.
+ * 返回值:void
+ * 备注:
+ */
 void LIB_GPIO_ExtiCtrlPort(uint8_t GPIOISRPort, uint8_t Ctrl)
 {
     uint32_t GPIO_ASSIGNMENTS_TABLE[6] = {INT_GPIOA, INT_GPIOB, INT_GPIOC, INT_GPIOD, INT_GPIOE, INT_GPIOF};
@@ -182,6 +209,20 @@ void LIB_GPIO_ExtiCtrlPort(uint8_t GPIOISRPort, uint8_t Ctrl)
     if(GPIO_EXTI_CTRL_DISABLE == Ctrl) IntDisable(GPIO_ASSIGNMENTS_TABLE[GPIOISRPort]);
 }
 
+/*
+ * 描述:设置GPIOx Pinx的中断服务函数
+ * 参数
+ *      @GPIOISRPort:
+ *          GPIO中断的端口号:
+ *              ISR_GPIOA-ISR_GPIOF
+ *      @GPIOISRPin:
+ *          GPIO中断的端口Pin号:
+ *              ISR_GPIO_PIN_0-ISR_GPIO_PIN_7
+ *      @ISR_handler:
+ *          中断服务函数，不允许存在返回值，不允许传入参数.
+ * 返回值:void
+ * 备注:
+ */
 void LIB_GPIO_ExtiIsrSet(uint8_t GPIOISRPort, uint8_t GPIOISRPin, void (*ISR_handler)(void))
 {
     LIB_ISR_GPIOEXTIRegister(GPIOISRPort,GPIOISRPin,ISR_handler);

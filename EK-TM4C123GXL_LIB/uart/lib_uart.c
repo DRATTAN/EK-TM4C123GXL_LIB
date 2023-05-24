@@ -129,7 +129,6 @@ void LIB_UART_SendData(uint8_t Uart_Ver, uint8_t Data)
 {
     while(HWREG((UART_BASE + (Uart_Ver << 12)) + UART_O_FR) & UART_FR_TXFF) ;
     HWREG((UART_BASE + (Uart_Ver << 12)) + UART_O_DR) = Data;
-    return ;
 }
 
 /*
@@ -247,4 +246,9 @@ int8_t LIB_UART_GetData(uint8_t Uart_Ver, uint8_t *Buffer)
     if(!(HWREG((UART_BASE + (Uart_Ver << 12)) + UART_O_FR) & UART_FR_RXFE)) *Buffer = (uint8_t)(HWREG((UART_BASE + (Uart_Ver << 12)) + UART_O_DR));
     else return(-1);
     return 0;
+}
+
+void LIB_UART_UartIsrSet()
+{
+
 }
