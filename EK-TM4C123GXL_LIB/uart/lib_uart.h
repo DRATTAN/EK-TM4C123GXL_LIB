@@ -30,5 +30,8 @@ void LIB_UART_TransmitData(uint8_t, uint8_t *,  uint32_t);
 void LIB_UART_SendString(uint8_t, uint8_t *);
 uint8_t LIB_UART_GetBlockData(uint8_t);
 int8_t LIB_UART_GetData(uint8_t, uint8_t *);
+void LIB_UART_UartIsrSet(uint8_t, void (*)(void));
+void LIB_UART_IntDisable(uint8_t);
+void LIB_UART_IntEnable(uint8_t);
 
 #endif /* EK_TM4C123GXL_LIB_UART_LIB_UART_H_ */

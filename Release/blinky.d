@@ -35,6 +35,7 @@ blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4
 blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/isr_anagement/lib_isrmanagement.h
 blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/isr_anagement/lib_isrmanagement_define.h
 blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/timer/lib_timer.h
+blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/timer/lib_timer_define.h
 
 ../blinky.c:
 
@@ -105,4 +106,6 @@ C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/
 C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/isr_anagement/lib_isrmanagement_define.h:
 
 C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/timer/lib_timer.h:
+
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/timer/lib_timer_define.h:
 

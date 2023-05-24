@@ -248,7 +248,73 @@ int8_t LIB_UART_GetData(uint8_t Uart_Ver, uint8_t *Buffer)
     return 0;
 }
 
-void LIB_UART_UartIsrSet()
+/*
+ * 描述:设置串口中断服务函数
+ * 参数
+ *  @Uart_Ver:
+ *      串口号:
+ *          UART0-UART7
+ *          uart    rx      tx
+ *          0       PA0     PA1
+ *          1       PB0     PB1
+ *          2       PD6     PD7
+ *          3       PC6     PC7
+ *          4       PC4     PC5
+ *          5       PE4     PE5
+ *          6       PD4     PD5
+ *          7       PE0     PE1
+ *  @*UARTx_ISRhandle:
+ *      中服务函数
+ * 返回值:void
+ * 备注:
+ */
+void LIB_UART_UartIsrSet(uint8_t Uart_Ver, void (*UARTx_ISRhandle)(void))
 {
+    LIB_ISR_UARTRegister(Uart_Ver, UARTx_ISRhandle);
+}
 
+/*
+ * 描述:失能串口接收中断函数
+ * 参数
+ *  @Uart_Ver:
+ *      串口号:
+ *          UART0-UART7
+ *          uart    rx      tx
+ *          0       PA0     PA1
+ *          1       PB0     PB1
+ *          2       PD6     PD7
+ *          3       PC6     PC7
+ *          4       PC4     PC5
+ *          5       PE4     PE5
+ *          6       PD4     PD5
+ *          7       PE0     PE1
+ * 返回值:void
+ * 备注:
+ */
+void LIB_UART_IntDisable(uint8_t Uart_Ver)
+{
+    UARTIntDisable((UART_BASE + (Uart_Ver << 12)), UART_INT_RX);
+}
+
+/*
+ * 描述:使能串口接收中断函数
+ * 参数
+ *  @Uart_Ver:
+ *      串口号:
+ *          UART0-UART7
+ *          uart    rx      tx
+ *          0       PA0     PA1
+ *          1       PB0     PB1
+ *          2       PD6     PD7
+ *          3       PC6     PC7
+ *          4       PC4     PC5
+ *          5       PE4     PE5
+ *          6       PD4     PD5
+ *          7       PE0     PE1
+ * 返回值:void
+ * 备注:
+ */
+void LIB_UART_IntEnable(uint8_t Uart_Ver)
+{
+    UARTIntEnable((UART_BASE + (Uart_Ver << 12)), UART_INT_RX);
 }

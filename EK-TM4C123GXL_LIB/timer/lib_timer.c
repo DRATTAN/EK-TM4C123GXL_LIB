@@ -7,16 +7,32 @@
 
 #include "lib_timer.h"
 
-extern void toggle(void);
-void LIB_TIMER_Init()//(uint8_t ISR_TIMER_Base, uint8_t ISR_TIMER_Part, )
+
+void LIB_TIMER_InitCycle(uint8_t TIMERx, uint32_t Freq, void (*TIMER_ISRhandle)(void))
 {
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);
-    TimerConfigure(TIMER0_BASE, TIMER_CFG_A_PERIODIC_UP);
-    TimerLoadSet(TIMER0_BASE, TIMER_A, SysCtlClockGet()/10 - 1);
-    TimerIntEnable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
-    LIB_ISR_TIMERRegister(0, 0, toggle);
-    //IntPrioritySet(INT_TIMER0A, 0x01);
-    IntEnable(INT_TIMER0A);
-    IntMasterEnable();
-    TimerEnable( TIMER0_BASE,  TIMER_A);
+    uint32_t TIMER_INT_TABLE[6] = {INT_TIMER0A, INT_TIMER1A, INT_TIMER2A, INT_TIMER3A, INT_TIMER4A, INT_TIMER5A};
+    SysCtlPeripheralEnable(TIMERx + SYSCTL_PERIPH_BASE);
+    TimerConfigure(((TIMERx << 12) + TIMER_BASE), TIMER_CFG_A_PERIODIC_UP);
+    TimerLoadSet(((TIMERx << 12) + TIMER_BASE), TIMER_A, SysCtlClockGet()/Freq - 1);
+    TimerIntEnable(((TIMERx << 12) + TIMER_BASE), TIMER_TIMA_TIMEOUT);
+    LIB_ISR_TIMERRegister(TIMERx, 0, TIMER_ISRhandle);
+    IntEnable(TIMER_INT_TABLE[TIMERx]);
 }
+
+void LIB_TIMER_IntDisable(uint8_t TIMERx)
+{
+    TimerDisable(((TIMERx << 12) + TIMER_BASE), TIMER_A);
+}
+
+void LIB_TIMER_IntEnable(uint8_t TIMERx)
+{
+    TimerEnable(((TIMERx << 12) + TIMER_BASE), TIMER_A);
+}
+
+void LIB_TIMER_SetFreq(uint8_t TIMERx, uint32_t Freq)
+{
+    TimerLoadSet(((TIMERx << 12) + TIMER_BASE), TIMER_A, SysCtlClockGet()/Freq - 1);
+}
+
+
+
