@@ -27,7 +27,7 @@
  *          典型值115200,9600,19200
  *  @UARTx_ISRhandle:
  *      串口接收回调函数:
- *          当不使用串口接收中断时,请仍创建一个函数填入,此函数中必须存在LIB_UART_Get(UARTx),否则串口会溢出
+ *          当不使用串口接收中断时,请仍创建一个函数填入,此函数中必须存在LIB_UART_Get(UARTx)或LIB_UART_GetBlock(UARTx),否则串口会溢出
  * 返回值:void
  * 备注:
  */
@@ -98,24 +98,153 @@ void LIB_UART_Init(uint8_t Uart_Ver, uint32_t Baud, void (*UARTx_ISRhandle)(void
     while(!SysCtlPeripheralReady(SYSCTL_PERIPH_UARTBASE + Uart_Ver)) ;
 
     LIB_ISR_UARTRegister(Uart_Ver, UARTx_ISRhandle);
-    UARTConfigSetExpClk((UART_BASE + (Uart_Ver<<12)), SysCtlClockGet(), Baud, (UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
+    UARTConfigSetExpClk((UART_BASE + (Uart_Ver << 12)), SysCtlClockGet(), Baud, (UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
     IntEnable(INT_UART_TABLE[Uart_Ver]);
-    UARTIntEnable((UART_BASE + (Uart_Ver<<12)), UART_INT_RX);
-    UARTFIFODisable((UART_BASE + (Uart_Ver<<12)));
+    UARTIntEnable((UART_BASE + (Uart_Ver << 12)), UART_INT_RX);
+    UARTFIFODisable((UART_BASE + (Uart_Ver << 12)));
     return;
 }
 
-void LIB_UART_Put(uint8_t Uart_Ver, uint8_t Char)
+/*
+ * 描述:串口发送一字节数据
+ * 参数
+ *  @Uart_Ver:
+ *      串口号:
+ *          UART0-UART7
+ *          uart    rx      tx
+ *          0       PA0     PA1
+ *          1       PB0     PB1
+ *          2       PD6     PD7
+ *          3       PC6     PC7
+ *          4       PC4     PC5
+ *          5       PE4     PE5
+ *          6       PD4     PD5
+ *          7       PE0     PE1
+ *  @Data:
+ *      待发送的数据
+ * 返回值:void
+ * 备注:
+ */
+void LIB_UART_SendData(uint8_t Uart_Ver, uint8_t Data)
 {
-
+    while(HWREG((UART_BASE + (Uart_Ver << 12)) + UART_O_FR) & UART_FR_TXFF) ;
+    HWREG((UART_BASE + (Uart_Ver << 12)) + UART_O_DR) = Data;
+    return ;
 }
 
-void LIB_UART_Transmit(uint8_t Uart_Ver, uint8_t* Pointer)
+/*
+ * 描述:串口传输多位数据
+ * 参数
+ *  @Uart_Ver:
+ *      串口号:
+ *          UART0-UART7
+ *          uart    rx      tx
+ *          0       PA0     PA1
+ *          1       PB0     PB1
+ *          2       PD6     PD7
+ *          3       PC6     PC7
+ *          4       PC4     PC5
+ *          5       PE4     PE5
+ *          6       PD4     PD5
+ *          7       PE0     PE1
+ *  @*Buffer:
+ *      待发送的数据存储区的地址
+ *  @Counter:
+ *      发送数据的大小,以字节为单位
+ * 返回值:void
+ * 备注:
+ */
+void LIB_UART_TransmitData(uint8_t Uart_Ver, uint8_t *Buffer,  uint32_t Counter)
 {
-
+    while(Counter--)
+    {
+        while(HWREG((UART_BASE + (Uart_Ver << 12)) + UART_O_FR) & UART_FR_TXFF) ;
+        HWREG((UART_BASE + (Uart_Ver << 12)) + UART_O_DR) = *Buffer;
+        Buffer ++;
+    }
 }
 
-uint8_t LIB_UART_Get(uint8_t Uart_Ver)
+/*
+ * 描述:串口发送字符串
+ * 参数
+ *  @Uart_Ver:
+ *      串口号:
+ *          UART0-UART7
+ *          uart    rx      tx
+ *          0       PA0     PA1
+ *          1       PB0     PB1
+ *          2       PD6     PD7
+ *          3       PC6     PC7
+ *          4       PC4     PC5
+ *          5       PE4     PE5
+ *          6       PD4     PD5
+ *          7       PE0     PE1
+ *  @*Str:
+ *      待发送的字符串地址
+ * 返回值:void
+ * 备注:字符串必须以'\0'结尾,否则卡死.函数不会把'\0'一起发送出去
+ */
+void LIB_UART_SendString(uint8_t Uart_Ver, uint8_t *Str)
 {
+    while(*Str != '\0')
+    {
+        while(HWREG((UART_BASE + (Uart_Ver << 12)) + UART_O_FR) & UART_FR_TXFF) ;
+        HWREG((UART_BASE + (Uart_Ver << 12)) + UART_O_DR) = *Str;
+        Str ++;
+    }
+}
 
+/*
+ * 描述:串口阻塞式接收一位数据
+ * 参数
+ *  @Uart_Ver:
+ *      串口号:
+ *          UART0-UART7
+ *          uart    rx      tx
+ *          0       PA0     PA1
+ *          1       PB0     PB1
+ *          2       PD6     PD7
+ *          3       PC6     PC7
+ *          4       PC4     PC5
+ *          5       PE4     PE5
+ *          6       PD4     PD5
+ *          7       PE0     PE1
+ *
+ * 返回值:
+ *      uint8_t
+ *          接收到的字符
+ * 备注:当接收区没有数据时,此函数会阻塞.直到接收到数据
+ */
+uint8_t LIB_UART_GetBlockData(uint8_t Uart_Ver)
+{
+    while(HWREG((UART_BASE + (Uart_Ver << 12)) + UART_O_FR) & UART_FR_RXFE) ;
+    return (uint8_t) HWREG((UART_BASE + (Uart_Ver << 12)) + UART_O_DR);
+}
+/*
+ * 描述:串口非阻塞式接收一位数据
+ * 参数
+ *  @Uart_Ver:
+ *      串口号:
+ *          UART0-UART7
+ *          uart    rx      tx
+ *          0       PA0     PA1
+ *          1       PB0     PB1
+ *          2       PD6     PD7
+ *          3       PC6     PC7
+ *          4       PC4     PC5
+ *          5       PE4     PE5
+ *          6       PD4     PD5
+ *          7       PE0     PE1
+ *  @*Buffer:
+ *      若接收到字符,接收到的字符将存储到此位置
+ * 返回值:
+ *      int8_t:
+ *          若接收到字符,将返回0,若未接受到字符,将返回-1
+ * 备注:当接收区没有数据时,此函数仅返回-1,不会对Buffer有任何操作
+ */
+int8_t LIB_UART_GetData(uint8_t Uart_Ver, uint8_t *Buffer)
+{
+    if(!(HWREG((UART_BASE + (Uart_Ver << 12)) + UART_O_FR) & UART_FR_RXFE)) *Buffer = (uint8_t)(HWREG((UART_BASE + (Uart_Ver << 12)) + UART_O_DR));
+    else return(-1);
+    return 0;
 }
