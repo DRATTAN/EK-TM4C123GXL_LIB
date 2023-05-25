@@ -6,7 +6,7 @@
 #include "lib_gpio.h"
 
 /*
- * 描述:初始换GPIO端口
+ * 描述:初始化GPIO端口
  * 参数
  *  @Port:
  *      GPIO基地址:

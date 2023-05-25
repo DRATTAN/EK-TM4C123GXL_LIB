@@ -8,6 +8,7 @@
 #include "driverlib/timer.h"
 #include "driverlib/interrupt.h"
 #include "driverlib/gpio.h"
+#include "driverlib/qei.h"
 #include "driverlib/sysctl.h"
 #include "lib_gpio.h"
 #include "lib_uart.h"
@@ -26,4 +27,5 @@ void LIB_ISR_TIMERRegister(uint8_t, uint8_t, void (*)(void));
 void LIB_ISR_UARTISRInit(void);
 void LIB_ISR_UARTRegister(uint8_t, void (*)(void));
 
+void LIB_ISR_QEIRegister(uint8_t, void (*)(void));
 #endif

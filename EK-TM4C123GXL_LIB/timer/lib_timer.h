@@ -22,5 +22,6 @@ void LIB_TIMER_InitCycle(uint8_t, uint32_t, void (*)(void));
 void LIB_TIMER_IntDisable(uint8_t);
 void LIB_TIMER_IntEnable(uint8_t);
 void LIB_TIMER_SetFreq(uint8_t, uint32_t);
-
+void LIB_TIMER_TimerDisable(uint8_t);
+void LIB_TIMER_TimerEnable(uint8_t);
 #endif /* EK_TM4C123GXL_LIB_TIMER_LIB_TIMER_H_ */

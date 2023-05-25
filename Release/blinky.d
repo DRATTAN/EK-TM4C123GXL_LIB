@@ -19,6 +19,8 @@ blinky.obj: ../driverlib/sysctl.h
 blinky.obj: ../driverlib/timer.h
 blinky.obj: ../driverlib/interrupt.h
 blinky.obj: ../driverlib/qei.h
+blinky.obj: ../utils/uartstdio.h
+blinky.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/stdarg.h
 blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/clock/lib_clock.h
 blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/clock/lib_clock_Define.h
 blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/gpio/lib_gpio.h
@@ -34,8 +36,6 @@ blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driver
 blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/time/lib_time.h
 blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/uart/lib_uart_define.h
 blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/isr_anagement/lib_isrmanagement.h
-blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/utils/uartstdio.h
-blinky.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/stdarg.h
 blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/isr_anagement/lib_isrmanagement_define.h
 blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/timer/lib_timer.h
 blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/timer/lib_timer_define.h
@@ -80,6 +80,10 @@ C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/stdbool.h:
 
 ../driverlib/qei.h:
 
+../utils/uartstdio.h:
+
+C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/stdarg.h:
+
 C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/clock/lib_clock.h:
 
 C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/clock/lib_clock_Define.h:
@@ -109,10 +113,6 @@ C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/
 C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/uart/lib_uart_define.h:
 
 C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/isr_anagement/lib_isrmanagement.h:
-
-C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/utils/uartstdio.h:
-
-C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/stdarg.h:
 
 C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/isr_anagement/lib_isrmanagement_define.h:
 

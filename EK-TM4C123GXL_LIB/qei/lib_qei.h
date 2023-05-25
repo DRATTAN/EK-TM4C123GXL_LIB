@@ -19,6 +19,13 @@
 #include "driverlib/interrupt.h"
 #include "driverlib/qei.h"
 #include "lib_qei_define.h"
+#include "lib_isrmanagement.h"
 
-void LIB_QEI_Init(void);
+void LIB_QEI_Init(uint8_t, uint32_t, void (*)(void));
+
+uint32_t LIB_QEI_GetPulse(uint8_t);
+int8_t LIB_QEI_GetDirect(uint8_t);
+uint32_t LIB_QEI_GetPos(uint8_t);
+void LIB_QEI_SetPos(uint8_t,uint32_t);
+
 #endif /* EK_TM4C123GXL_LIB_QEI_LIB_QEI_H_ */

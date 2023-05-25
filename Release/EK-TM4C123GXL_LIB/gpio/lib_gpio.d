@@ -25,6 +25,7 @@ EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-T
 EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/tm4c123gh6pm.h
 EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/timer.h
 EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/interrupt.h
+EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/qei.h
 EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/gpio/lib_gpio.h
 EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/uart/lib_uart.h
 EK-TM4C123GXL_LIB/gpio/lib_gpio.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_uart.h
@@ -86,6 +87,8 @@ C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/tm4c123gh6pm.h
 C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/timer.h:
 
 C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/interrupt.h:
+
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/qei.h:
 
 C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/gpio/lib_gpio.h:
 

@@ -76,7 +76,8 @@ extern void UART5_ISR_Handle(void);
 extern void UART6_ISR_Handle(void);
 extern void UART7_ISR_Handle(void);
 
-extern void QEI1_Isr_Handler(void);
+extern void QEI0_ISR_Handle(void);
+extern void QEI1_ISR_Handle(void);
 //*****************************************************************************
 //
 // Linker variable that marks the top of the stack.
@@ -124,7 +125,7 @@ void (* const g_pfnVectors[])(void) =
     IntDefaultHandler,                      // PWM Generator 0
     IntDefaultHandler,                      // PWM Generator 1
     IntDefaultHandler,                      // PWM Generator 2
-    IntDefaultHandler,                      // Quadrature Encoder 0
+    QEI0_ISR_Handle,                      // Quadrature Encoder 0
     IntDefaultHandler,                      // ADC Sequence 0
     IntDefaultHandler,                      // ADC Sequence 1
     IntDefaultHandler,                      // ADC Sequence 2
@@ -149,7 +150,7 @@ void (* const g_pfnVectors[])(void) =
     TIMER3A_ISR_Handle,                      // Timer 3 subtimer A
     TIMER3B_ISR_Handle,                      // Timer 3 subtimer B
     IntDefaultHandler,                      // I2C1 Master and Slave
-    QEI1_Isr_Handler,                      // Quadrature Encoder 1
+    QEI1_ISR_Handle,                      // Quadrature Encoder 1
     IntDefaultHandler,                      // CAN0
     IntDefaultHandler,                      // CAN1
     0,                                      // Reserved
