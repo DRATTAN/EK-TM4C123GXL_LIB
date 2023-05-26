@@ -6,6 +6,7 @@
 "./EK-TM4C123GXL_LIB/isr_anagement/lib_QEIisrmanagement.obj"
 "./EK-TM4C123GXL_LIB/isr_anagement/lib_TIMERisrmanagement.obj"
 "./EK-TM4C123GXL_LIB/isr_anagement/lib_UARTisrmanagement.obj"
+"./EK-TM4C123GXL_LIB/pwm/lib_pwm.obj"
 "./EK-TM4C123GXL_LIB/qei/lib_qei.obj"
 "./EK-TM4C123GXL_LIB/time/lib_time.obj"
 "./EK-TM4C123GXL_LIB/timer/lib_timer.obj"

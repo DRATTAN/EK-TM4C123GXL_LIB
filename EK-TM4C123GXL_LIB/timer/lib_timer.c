@@ -23,7 +23,7 @@
 void LIB_TIMER_InitCycle(uint8_t TIMERx, uint32_t Freq, void (*TIMER_ISRhandle)(void))
 {
     uint32_t TIMER_INT_TABLE[6] = {INT_TIMER0A, INT_TIMER1A, INT_TIMER2A, INT_TIMER3A, INT_TIMER4A, INT_TIMER5A};
-    SysCtlPeripheralEnable(TIMERx + SYSCTL_PERIPH_BASE);
+    SysCtlPeripheralEnable(TIMERx + SYSCTL_PERIPH_TIMER_BASE);
     TimerDisable(((TIMERx << 12) + TIMER_BASE),TIMER_A);
     LIB_ISR_TIMERRegister(TIMERx, 0, TIMER_ISRhandle);
     TimerConfigure(((TIMERx << 12) + TIMER_BASE), TIMER_CFG_A_PERIODIC_UP);

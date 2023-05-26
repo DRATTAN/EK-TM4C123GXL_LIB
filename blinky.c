@@ -18,7 +18,7 @@
 #include "lib_timer.h"
 #include "lib_uart.h"
 #include "lib_qei.h"
-
+#include "lib_pwm.h"
 
 void toggle(void);
 void motor_control(void);
@@ -37,10 +37,11 @@ int main(void)
     LIB_TIMER_InitCycle(TIMER0, 2, toggle);
     LIB_QEI_Init(QEI0, 200, motor_control);
     LIB_TIMER_IntEnable(TIMER0);
+    LIB_PWM_Init(0,1,1000,1000,2000);
     IntMasterEnable();
     while(1)
     {
-        for(ui32Loop = 0; ui32Loop < 20000; ui32Loop++)
+        for(ui32Loop = 0; ui32Loop < 20000; ui32Loop ++)
         {
         }
     }
