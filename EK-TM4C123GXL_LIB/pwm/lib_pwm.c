@@ -7,7 +7,7 @@
 
 #include "lib_pwm.h"
 
-void LIB_PWM_Init(uint8_t PWm_Num,uint8_t PWM_Gen_Num, uint32_t Freq, uint16_t duty1,uint16_t duty2)
+void LIB_PWM_Init(uint8_t PWm_Num,uint8_t PWM_Gen_Num, uint32_t Freq, uint16_t dutyA,uint16_t dutyB)
 {
     uint32_t GPIO_PORT_TABLE[2][4] = {{GPIO_PORTB_BASE, GPIO_PORTB_BASE, GPIO_PORTE_BASE, GPIO_PORTC_BASE},{GPIO_PORTD_BASE, GPIO_PORTA_BASE, GPIO_PORTF_BASE,GPIO_PORTF_BASE}};
     uint32_t GPIO_PIN_TABLE[2][4] = {{GPIO_PIN_6, GPIO_PIN_4, GPIO_PIN_4, GPIO_PIN_4},{GPIO_PIN_0, GPIO_PIN_6, GPIO_PIN_0, GPIO_PIN_2}};
@@ -23,9 +23,16 @@ void LIB_PWM_Init(uint8_t PWm_Num,uint8_t PWM_Gen_Num, uint32_t Freq, uint16_t d
     GPIOPinTypePWM(GPIO_PORT_TABLE[PWm_Num][PWM_Gen_Num], GPIO_PIN_TABLE[PWm_Num][PWM_Gen_Num] | (GPIO_PIN_TABLE[PWm_Num][PWM_Gen_Num] << 1));
     PWMGenConfigure((PWM_BASE + (PWm_Num << 12)), (PWM_GEN_BASE + ((0x00000004 * PWM_Gen_Num) << 4)), PWM_GEN_MODE_DOWN | PWM_GEN_MODE_NO_SYNC);
     PWMGenPeriodSet((PWM_BASE + (PWm_Num << 12)), (PWM_GEN_BASE + ((0x00000004 * PWM_Gen_Num) << 4)), SysCtlClockGet() / 32 / Freq);
-    PWMPulseWidthSet((PWM_BASE + (PWm_Num << 12)),PWM_OUT_TABLE[PWM_Gen_Num * 2],duty1);
-    PWMPulseWidthSet((PWM_BASE + (PWm_Num << 12)),PWM_OUT_TABLE[PWM_Gen_Num * 2 + 1],duty2);
+    PWMPulseWidthSet((PWM_BASE + (PWm_Num << 12)),PWM_OUT_TABLE[PWM_Gen_Num * 2],dutyA);
+    PWMPulseWidthSet((PWM_BASE + (PWm_Num << 12)),PWM_OUT_TABLE[PWM_Gen_Num * 2 + 1],dutyB);
     PWMOutputState((PWM_BASE + (PWm_Num << 12)),PWM_OUT_BIT_TABLE[PWM_Gen_Num * 2],true);
     PWMOutputState((PWM_BASE + (PWm_Num << 12)),PWM_OUT_BIT_TABLE[PWM_Gen_Num * 2 + 1],true);
     PWMGenEnable((PWM_BASE + (PWm_Num << 12)), (PWM_GEN_BASE + ((0x00000004 * PWM_Gen_Num) << 4)));
 }
+
+
+void LIB_PWM_SetPulseWidth(uint8_t PWm_Num, uint32_t PWM_Chanel_Base, uint16_t duty)
+{
+    PWMPulseWidthSet((PWM_BASE + (PWm_Num << 12)), PWM_Chanel_Base, duty);
+}
+
