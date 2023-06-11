@@ -105,6 +105,12 @@ void LIB_UART_Init(uint8_t Uart_Ver, uint32_t Baud, void (*UARTx_ISRhandle)(void
     return;
 }
 
+/*
+ * 描述:初始化串口0为printf端口
+ * 参数 void
+ * 返回值:void
+ * 备注:使用此函数后可以直接使用printf,无需其他操作.
+ */
 void LIB_UART_PrintfInit()
 {
     SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);

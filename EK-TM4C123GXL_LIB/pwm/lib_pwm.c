@@ -7,6 +7,22 @@
 
 #include "lib_pwm.h"
 
+/*
+ * 描述:初始化PWM模块
+ * 参数
+ *  @PWm_Num:
+ *      PWM 模块号 PWM_NUM_0 , PWM_NUM_1
+ *  @PWM_Gen_Num:
+ *      PWM 发生器号 PWM_Gen_Num_0 - PWM_Gen_Num_4
+ *  @Freq:
+ *      pwm频率 40 - 65535
+ *  @dutyA:
+ *      0通道初始占空比
+ *  @dutyB:
+ *      1通道初始占空比
+ * 返回值:void
+ * 备注:PWM满占空比为 2500,000/Freq
+ */
 void LIB_PWM_Init(uint8_t PWm_Num,uint8_t PWM_Gen_Num, uint32_t Freq, uint16_t dutyA,uint16_t dutyB)
 {
     uint32_t GPIO_PORT_TABLE[2][4] = {{GPIO_PORTB_BASE, GPIO_PORTB_BASE, GPIO_PORTE_BASE, GPIO_PORTC_BASE},{GPIO_PORTD_BASE, GPIO_PORTA_BASE, GPIO_PORTF_BASE,GPIO_PORTF_BASE}};
@@ -30,7 +46,18 @@ void LIB_PWM_Init(uint8_t PWm_Num,uint8_t PWM_Gen_Num, uint32_t Freq, uint16_t d
     PWMGenEnable((PWM_BASE + (PWm_Num << 12)), (PWM_GEN_BASE + ((0x00000004 * PWM_Gen_Num) << 4)));
 }
 
-
+/*
+ * 描述:设置占空比
+ * 参数
+ *  @PWm_Num:
+ *      PWM 模块号 PWM_NUM_0 , PWM_NUM_1
+ *  @PWM_Gen_Num:
+ *      PWM 发生器号 PWM_Gen_Num_0 - PWM_Gen_Num_4
+ *  @duty:
+ *      占空比
+ * 返回值:void
+ * 备注:
+ */
 void LIB_PWM_SetPulseWidth(uint8_t PWm_Num, uint32_t PWM_Chanel_Base, uint16_t duty)
 {
     PWMPulseWidthSet((PWM_BASE + (PWm_Num << 12)), PWM_Chanel_Base, duty);

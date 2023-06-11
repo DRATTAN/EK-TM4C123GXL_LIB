@@ -2,6 +2,7 @@
 "./startup_ccs.obj"
 "./EK-TM4C123GXL_LIB/clock/lib_clock.obj"
 "./EK-TM4C123GXL_LIB/gpio/lib_gpio.obj"
+"./EK-TM4C123GXL_LIB/i2c/lib_i2c.obj"
 "./EK-TM4C123GXL_LIB/isr_anagement/lib_EXTIisrmanagement.obj"
 "./EK-TM4C123GXL_LIB/isr_anagement/lib_QEIisrmanagement.obj"
 "./EK-TM4C123GXL_LIB/isr_anagement/lib_TIMERisrmanagement.obj"

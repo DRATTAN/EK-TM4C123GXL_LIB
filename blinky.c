@@ -37,7 +37,7 @@ int main(void)
     LIB_TIMER_InitCycle(TIMER0, 2, toggle);
     LIB_QEI_Init(QEI0, 200, motor_control);
     LIB_TIMER_IntEnable(TIMER0);
-    LIB_PWM_Init(0,1,1000,1000,2000);
+    LIB_PWM_Init(PWM_NUM_0, PWM_GEN_NUM_1, 1000, 1000, 2000);
     IntMasterEnable();
     while(1)
     {

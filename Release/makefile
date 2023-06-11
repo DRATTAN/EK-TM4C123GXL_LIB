@@ -14,6 +14,7 @@ ORDERED_OBJS += \
 "./startup_ccs.obj" \
 "./EK-TM4C123GXL_LIB/clock/lib_clock.obj" \
 "./EK-TM4C123GXL_LIB/gpio/lib_gpio.obj" \
+"./EK-TM4C123GXL_LIB/i2c/lib_i2c.obj" \
 "./EK-TM4C123GXL_LIB/isr_anagement/lib_EXTIisrmanagement.obj" \
 "./EK-TM4C123GXL_LIB/isr_anagement/lib_QEIisrmanagement.obj" \
 "./EK-TM4C123GXL_LIB/isr_anagement/lib_TIMERisrmanagement.obj" \
@@ -76,6 +77,7 @@ RMDIR := RMDIR /S/Q
 -include subdir_vars.mk
 -include EK-TM4C123GXL_LIB/clock/subdir_vars.mk
 -include EK-TM4C123GXL_LIB/gpio/subdir_vars.mk
+-include EK-TM4C123GXL_LIB/i2c/subdir_vars.mk
 -include EK-TM4C123GXL_LIB/isr_anagement/subdir_vars.mk
 -include EK-TM4C123GXL_LIB/pwm/subdir_vars.mk
 -include EK-TM4C123GXL_LIB/qei/subdir_vars.mk
@@ -91,6 +93,7 @@ RMDIR := RMDIR /S/Q
 -include subdir_rules.mk
 -include EK-TM4C123GXL_LIB/clock/subdir_rules.mk
 -include EK-TM4C123GXL_LIB/gpio/subdir_rules.mk
+-include EK-TM4C123GXL_LIB/i2c/subdir_rules.mk
 -include EK-TM4C123GXL_LIB/isr_anagement/subdir_rules.mk
 -include EK-TM4C123GXL_LIB/pwm/subdir_rules.mk
 -include EK-TM4C123GXL_LIB/qei/subdir_rules.mk
@@ -221,10 +224,10 @@ EK-TM4C123GXL_LIB_TEST.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(A_SRCS) $(GEN_CMDS
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "blinky.obj" "startup_ccs.obj" "EK-TM4C123GXL_LIB\clock\lib_clock.obj" "EK-TM4C123GXL_LIB\gpio\lib_gpio.obj" "EK-TM4C123GXL_LIB\isr_anagement\lib_EXTIisrmanagement.obj" "EK-TM4C123GXL_LIB\isr_anagement\lib_QEIisrmanagement.obj" "EK-TM4C123GXL_LIB\isr_anagement\lib_TIMERisrmanagement.obj" "EK-TM4C123GXL_LIB\isr_anagement\lib_UARTisrmanagement.obj" "EK-TM4C123GXL_LIB\pwm\lib_pwm.obj" "EK-TM4C123GXL_LIB\qei\lib_qei.obj" "EK-TM4C123GXL_LIB\time\lib_time.obj" "EK-TM4C123GXL_LIB\timer\lib_timer.obj" "EK-TM4C123GXL_LIB\uart\lib_uart.obj" "driverlib\adc.obj" "driverlib\aes.obj" "driverlib\can.obj" "driverlib\comp.obj" "driverlib\cpu.obj" "driverlib\crc.obj" "driverlib\des.obj" "driverlib\eeprom.obj" "driverlib\emac.obj" "driverlib\epi.obj" "driverlib\epi_workaround_ccs.obj" "driverlib\flash.obj" "driverlib\fpu.obj" "driverlib\gpio.obj" "driverlib\hibernate.obj" "driverlib\i2c.obj" "driverlib\interrupt.obj" "driverlib\lcd.obj" "driverlib\mpu.obj" "driverlib\onewire.obj" "driverlib\pwm.obj" "driverlib\qei.obj" 
-	-$(RM) "driverlib\shamd5.obj" "driverlib\ssi.obj" "driverlib\sw_crc.obj" "driverlib\sysctl.obj" "driverlib\sysexc.obj" "driverlib\systick.obj" "driverlib\timer.obj" "driverlib\uart.obj" "driverlib\udma.obj" "driverlib\usb.obj" "driverlib\watchdog.obj" "utils\uartstdio.obj" "utils\ustdlib.obj" 
-	-$(RM) "blinky.d" "startup_ccs.d" "EK-TM4C123GXL_LIB\clock\lib_clock.d" "EK-TM4C123GXL_LIB\gpio\lib_gpio.d" "EK-TM4C123GXL_LIB\isr_anagement\lib_EXTIisrmanagement.d" "EK-TM4C123GXL_LIB\isr_anagement\lib_QEIisrmanagement.d" "EK-TM4C123GXL_LIB\isr_anagement\lib_TIMERisrmanagement.d" "EK-TM4C123GXL_LIB\isr_anagement\lib_UARTisrmanagement.d" "EK-TM4C123GXL_LIB\pwm\lib_pwm.d" "EK-TM4C123GXL_LIB\qei\lib_qei.d" "EK-TM4C123GXL_LIB\time\lib_time.d" "EK-TM4C123GXL_LIB\timer\lib_timer.d" "EK-TM4C123GXL_LIB\uart\lib_uart.d" "driverlib\adc.d" "driverlib\aes.d" "driverlib\can.d" "driverlib\comp.d" "driverlib\cpu.d" "driverlib\crc.d" "driverlib\des.d" "driverlib\eeprom.d" "driverlib\emac.d" "driverlib\epi.d" "driverlib\flash.d" "driverlib\fpu.d" "driverlib\gpio.d" "driverlib\hibernate.d" "driverlib\i2c.d" "driverlib\interrupt.d" "driverlib\lcd.d" "driverlib\mpu.d" "driverlib\onewire.d" "driverlib\pwm.d" "driverlib\qei.d" "driverlib\shamd5.d" "driverlib\ssi.d" "driverlib\sw_crc.d" "driverlib\sysctl.d" "driverlib\sysexc.d" 
-	-$(RM) "driverlib\systick.d" "driverlib\timer.d" "driverlib\uart.d" "driverlib\udma.d" "driverlib\usb.d" "driverlib\watchdog.d" "utils\uartstdio.d" "utils\ustdlib.d" 
+	-$(RM) "blinky.obj" "startup_ccs.obj" "EK-TM4C123GXL_LIB\clock\lib_clock.obj" "EK-TM4C123GXL_LIB\gpio\lib_gpio.obj" "EK-TM4C123GXL_LIB\i2c\lib_i2c.obj" "EK-TM4C123GXL_LIB\isr_anagement\lib_EXTIisrmanagement.obj" "EK-TM4C123GXL_LIB\isr_anagement\lib_QEIisrmanagement.obj" "EK-TM4C123GXL_LIB\isr_anagement\lib_TIMERisrmanagement.obj" "EK-TM4C123GXL_LIB\isr_anagement\lib_UARTisrmanagement.obj" "EK-TM4C123GXL_LIB\pwm\lib_pwm.obj" "EK-TM4C123GXL_LIB\qei\lib_qei.obj" "EK-TM4C123GXL_LIB\time\lib_time.obj" "EK-TM4C123GXL_LIB\timer\lib_timer.obj" "EK-TM4C123GXL_LIB\uart\lib_uart.obj" "driverlib\adc.obj" "driverlib\aes.obj" "driverlib\can.obj" "driverlib\comp.obj" "driverlib\cpu.obj" "driverlib\crc.obj" "driverlib\des.obj" "driverlib\eeprom.obj" "driverlib\emac.obj" "driverlib\epi.obj" "driverlib\epi_workaround_ccs.obj" "driverlib\flash.obj" "driverlib\fpu.obj" "driverlib\gpio.obj" "driverlib\hibernate.obj" "driverlib\i2c.obj" "driverlib\interrupt.obj" "driverlib\lcd.obj" "driverlib\mpu.obj" "driverlib\onewire.obj" 
+	-$(RM) "driverlib\pwm.obj" "driverlib\qei.obj" "driverlib\shamd5.obj" "driverlib\ssi.obj" "driverlib\sw_crc.obj" "driverlib\sysctl.obj" "driverlib\sysexc.obj" "driverlib\systick.obj" "driverlib\timer.obj" "driverlib\uart.obj" "driverlib\udma.obj" "driverlib\usb.obj" "driverlib\watchdog.obj" "utils\uartstdio.obj" "utils\ustdlib.obj" 
+	-$(RM) "blinky.d" "startup_ccs.d" "EK-TM4C123GXL_LIB\clock\lib_clock.d" "EK-TM4C123GXL_LIB\gpio\lib_gpio.d" "EK-TM4C123GXL_LIB\i2c\lib_i2c.d" "EK-TM4C123GXL_LIB\isr_anagement\lib_EXTIisrmanagement.d" "EK-TM4C123GXL_LIB\isr_anagement\lib_QEIisrmanagement.d" "EK-TM4C123GXL_LIB\isr_anagement\lib_TIMERisrmanagement.d" "EK-TM4C123GXL_LIB\isr_anagement\lib_UARTisrmanagement.d" "EK-TM4C123GXL_LIB\pwm\lib_pwm.d" "EK-TM4C123GXL_LIB\qei\lib_qei.d" "EK-TM4C123GXL_LIB\time\lib_time.d" "EK-TM4C123GXL_LIB\timer\lib_timer.d" "EK-TM4C123GXL_LIB\uart\lib_uart.d" "driverlib\adc.d" "driverlib\aes.d" "driverlib\can.d" "driverlib\comp.d" "driverlib\cpu.d" "driverlib\crc.d" "driverlib\des.d" "driverlib\eeprom.d" "driverlib\emac.d" "driverlib\epi.d" "driverlib\flash.d" "driverlib\fpu.d" "driverlib\gpio.d" "driverlib\hibernate.d" "driverlib\i2c.d" "driverlib\interrupt.d" "driverlib\lcd.d" "driverlib\mpu.d" "driverlib\onewire.d" "driverlib\pwm.d" "driverlib\qei.d" "driverlib\shamd5.d" "driverlib\ssi.d" "driverlib\sw_crc.d" 
+	-$(RM) "driverlib\sysctl.d" "driverlib\sysexc.d" "driverlib\systick.d" "driverlib\timer.d" "driverlib\uart.d" "driverlib\udma.d" "driverlib\usb.d" "driverlib\watchdog.d" "utils\uartstdio.d" "utils\ustdlib.d" 
 	-$(RM) "driverlib\epi_workaround_ccs.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
