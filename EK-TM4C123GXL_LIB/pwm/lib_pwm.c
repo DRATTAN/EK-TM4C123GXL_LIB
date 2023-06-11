@@ -9,6 +9,24 @@
 
 /*
  * 描述:初始化PWM模块
+ * PWM_NUM  PWM_CHANNEL     PIN
+ *      0       0           B6
+ *      0       1           B7
+ *      0       2           B4
+ *      0       3           B5
+ *      0       4           E4
+ *      0       5           E5
+ *      0       6           C4
+ *      0       7           C5
+ *      1       0           D0
+ *      1       1           D1
+ *      1       2           A6
+ *      1       3           A7
+ *      1       4           F0
+ *      1       5           F1
+ *      1       6           F2
+ *      1       7           F3
+ *
  * 参数
  *  @PWm_Num:
  *      PWM 模块号 PWM_NUM_0 , PWM_NUM_1
