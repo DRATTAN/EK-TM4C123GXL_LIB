@@ -121,6 +121,7 @@ EK-TM4C123GXL_LIB/qei \
 EK-TM4C123GXL_LIB/time \
 EK-TM4C123GXL_LIB/timer \
 EK-TM4C123GXL_LIB/uart \
+Peripheral_LIB/OLED \
 driverlib \
 driverlib/ccs/Debug \
 driverlib/ewarm/Exe \

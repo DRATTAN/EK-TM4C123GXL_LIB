@@ -45,6 +45,18 @@ blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4
 blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/pwm.h
 blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/pwm/lib_pwm_define.h
 blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/pwm/lib_pwm.h
+blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/i2c/lib_i2c.h
+blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_i2c.h
+blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/i2c.h
+blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/i2c/lib_i2c_define.h
+blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/i2c/lib_i2c.h
+blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/Peripheral_LIB/OLED/oled.h
+blinky.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/stdio.h
+blinky.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/stdlib.h
+blinky.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/math.h
+blinky.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/_defs.h
+blinky.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/machine/_limits.h
+blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/Peripheral_LIB/OLED/front.h
 
 ../blinky.c:
 
@@ -135,4 +147,28 @@ C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/pwm.h:
 C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/pwm/lib_pwm_define.h:
 
 C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/pwm/lib_pwm.h:
+
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/i2c/lib_i2c.h:
+
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/inc/hw_i2c.h:
+
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/driverlib/i2c.h:
+
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/i2c/lib_i2c_define.h:
+
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/EK-TM4C123GXL_LIB/i2c/lib_i2c.h:
+
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/Peripheral_LIB/OLED/oled.h:
+
+C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/stdio.h:
+
+C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/stdlib.h:
+
+C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/math.h:
+
+C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/_defs.h:
+
+C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/machine/_limits.h:
+
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/Peripheral_LIB/OLED/front.h:
 
