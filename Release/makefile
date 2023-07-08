@@ -220,7 +220,7 @@ all: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(A_SRCS) $(GEN_CMDS)
 EK-TM4C123GXL_LIB_TEST.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(A_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: ARM Linker'
-	"C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --opt_for_speed=5 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 --c11 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"blinky_ccs.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/lib" -i"C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="EK-TM4C123GXL_LIB_TEST_linkInfo.xml" --rom_model -o "EK-TM4C123GXL_LIB_TEST.out" $(ORDERED_OBJS) $(A_SRCS)
+	"C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --opt_for_speed=5 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 --c11 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"blinky_ccs.map" --heap_size=0 --stack_size=1024 -i"C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/lib" -i"C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="EK-TM4C123GXL_LIB_TEST_linkInfo.xml" --rom_model -o "EK-TM4C123GXL_LIB_TEST.out" $(ORDERED_OBJS) $(A_SRCS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 	@$(MAKE) --no-print-directory post-build

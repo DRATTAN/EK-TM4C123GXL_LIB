@@ -44,7 +44,7 @@ int main(void)
     {
 
         UARTprintf(" running \n");
-        delay_ms(100);
+        delay_ms(25);
         Oled_ShowParam(0, 0, "value", i, 4);
         i++;
     }
