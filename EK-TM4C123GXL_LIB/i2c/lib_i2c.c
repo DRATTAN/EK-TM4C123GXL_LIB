@@ -58,3 +58,20 @@ void LIB_I2C_Transmit(uint8_t I2CNum, uint16_t Dev_Addr, uint16_t Reg_Addr, uint
     I2CMasterControl(I2C0_BASE + (I2CNum << 12), I2C_MASTER_CMD_BURST_SEND_FINISH);
     while(I2CMasterBusy(I2C0_BASE + (I2CNum << 12))) ;
 }
+
+uint8_t LIB_I2C_Get(uint8_t I2CNum, uint16_t Dev_Addr, uint16_t Reg_Addr)
+{
+
+    I2CMasterSlaveAddrSet(I2C0_BASE + (I2CNum << 12), Dev_Addr, false);
+    I2CMasterDataPut(I2C0_BASE + (I2CNum << 12), Reg_Addr);
+    I2CMasterControl(I2C0_BASE + (I2CNum << 12), I2C_MASTER_CMD_BURST_SEND_START);
+    while(I2CMasterBusy(I2C0_BASE + (I2CNum << 12))) ;
+    I2CMasterDataPut(I2C0_BASE + (I2CNum << 12), Data);
+    I2CMasterControl(I2C0_BASE + (I2CNum << 12), I2C_MASTER_CMD_BURST_SEND_FINISH);
+    while(I2CMasterBusy(I2C0_BASE + (I2CNum << 12))) ;
+}
+
+void LIB_I2C_Transmit(uint8_t I2CNum, uint16_t Dev_Addr, uint16_t Reg_Addr, uint8_t* Dpoint, uint32_t counter)
+{
+
+}

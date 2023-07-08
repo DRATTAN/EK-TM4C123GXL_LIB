@@ -13,17 +13,17 @@
 
 void Oled_Cmd(uint8_t cmd)
 {
-    LIB_I2C_Send(I2C_NUM, Oled_Addr, 0x00, cmd);
+    LIB_I2C_Send(I2C_NUM, Oled_Addr >> 1, 0x00, cmd);
 }
 
 void Oled_Data(uint8_t data)
 {
-    LIB_I2C_Send(I2C_NUM, Oled_Addr, 0x40, data);
+    LIB_I2C_Send(I2C_NUM, Oled_Addr >> 1, 0x40, data);
 }
 
 void Oled_Datas(uint8_t* pdata, uint32_t counter)
 {
-    LIB_I2C_Transmit(I2C_NUM, Oled_Addr, 0x40, pdata, counter);
+    LIB_I2C_Transmit(I2C_NUM, Oled_Addr >> 1, 0x40, pdata, counter);
 }
 
 void Oled_Test()
