@@ -57,6 +57,11 @@ blinky.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/math
 blinky.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/_defs.h
 blinky.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/machine/_limits.h
 blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/Peripheral_LIB/OLED/front.h
+blinky.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/Peripheral_LIB/VL53L0x/vl53l0x.h
+blinky.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/stdlib.h
+blinky.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/time.h
+blinky.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/abi_prefix.h
+blinky.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/xlocale/_time.h
 
 ../blinky.c:
 
@@ -171,4 +176,14 @@ C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/_defs.h:
 C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/machine/_limits.h:
 
 C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/Peripheral_LIB/OLED/front.h:
+
+C:/Users/RATTAN/Desktop/ccs\ workspace/EK-TM4C123GXL_LIB_TEST/Peripheral_LIB/VL53L0x/vl53l0x.h:
+
+C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/stdlib.h:
+
+C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/time.h:
+
+C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/abi_prefix.h:
+
+C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/xlocale/_time.h:
 

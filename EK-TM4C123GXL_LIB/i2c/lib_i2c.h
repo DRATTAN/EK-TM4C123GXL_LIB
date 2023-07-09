@@ -30,6 +30,8 @@
 
 
 void LIB_I2C_Init(uint8_t, uint8_t);
-void LIB_I2C_Send(uint8_t, uint16_t, uint16_t, uint8_t);
+void LIB_I2C_Put(uint8_t, uint16_t, uint16_t, uint8_t);
 void LIB_I2C_Transmit(uint8_t, uint16_t, uint16_t, uint8_t*, uint32_t);
+uint8_t LIB_I2C_Get(uint8_t, uint16_t, uint16_t);
+void LIB_I2C_Recive(uint8_t, uint16_t, uint16_t, uint8_t*, uint32_t);
 #endif /* EK_TM4C123GXL_LIB_I2C_LIB_I2C_H_ */

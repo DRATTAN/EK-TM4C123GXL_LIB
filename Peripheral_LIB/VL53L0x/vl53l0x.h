@@ -26,5 +26,9 @@
 #define VL53L0X_REG_RESULT_INTERRUPT_STATUS         0x13
 #define VL53L0X_REG_RESULT_RANGE_STATUS             0x14
 
-
+void Vl53l0x_Init(void);
+uint8_t Vl53l0x_Check(void);
+uint16_t Vl53l0x_MakeUint16(uint8_t, uint8_t);
+void Vl53l0x_ConvOnce(void);
+uint16_t Vl53l0x_GetDistance(void);
 #endif /* PERIPHERAL_LIB_TOF_VL53L0X_H_ */

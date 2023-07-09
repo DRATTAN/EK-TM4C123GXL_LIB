@@ -22,12 +22,14 @@
 #include "lib_i2c.h"
 
 #include "oled.h"
+#include "vl53l0x.h"
 
 void toggle(void);
 void motor_control(void);
 
-uint8_t *buffer;
-
+uint8_t buffer;
+uint8_t temp[10] = {};
+uint8_t i = 0;
 int main(void)
 
 {
@@ -37,22 +39,21 @@ int main(void)
     //LIB_TIMER_InitCycle(TIMER5, 1, motor_control);
     LIB_I2C_Init(I2C0, 1);
     IntMasterEnable();
-
-    Oled_Init();
-    int8_t i = 0;
+    UARTprintf(" distance is:%u\n", Vl53l0x_GetDistance());
     while(1)
     {
-
-        UARTprintf(" running \n");
-        delay_ms(25);
-        Oled_ShowParam(0, 0, "value", i, 4);
+//        Vl53l0x_ConvOnce();
+//
+//        delay_ms(100);
+//
+//        UARTprintf(" distance is: %u \n", VL53L0x_GetDistance());
+//        delay_ms(500);
         i++;
     }
 }
 
 void toggle()
 {
-
     return ;
 }
 void motor_control()
