@@ -121,6 +121,7 @@ EK-TM4C123GXL_LIB/qei \
 EK-TM4C123GXL_LIB/time \
 EK-TM4C123GXL_LIB/timer \
 EK-TM4C123GXL_LIB/uart \
+Peripheral_LIB/HC-SR04 \
 Peripheral_LIB/OLED \
 Peripheral_LIB/VL53L0x \
 driverlib \

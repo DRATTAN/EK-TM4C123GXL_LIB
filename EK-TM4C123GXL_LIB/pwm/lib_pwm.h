@@ -23,6 +23,6 @@
 #include "lib_pwm_define.h"
 
 void LIB_PWM_Init(uint8_t,uint8_t, uint32_t, uint16_t,uint16_t);
-void LIB_PWM_SetPulseWidth(uint8_t, uint32_t, uint16_t);
+void LIB_PWM_SetPulseWidth(uint8_t, uint32_t, uint16_t Freq, uint16_t);
 
 #endif /* EK_TM4C123GXL_LIB_PWM_LIB_PWM_H_ */

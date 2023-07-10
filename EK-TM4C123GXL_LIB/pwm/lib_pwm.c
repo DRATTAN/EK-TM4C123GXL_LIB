@@ -31,15 +31,15 @@
  *  @PWm_Num:
  *      PWM 模块号 PWM_NUM_0 , PWM_NUM_1
  *  @PWM_Gen_Num:
- *      PWM 发生器号 PWM_Gen_Num_0 - PWM_Gen_Num_4
+ *      PWM 发生器号 PWM_GEN_NUM_0 - PWM_GEN_NUM_4
  *  @Freq:
  *      pwm频率 40 - 65535
  *  @dutyA:
- *      0通道初始占空比
+ *      A通道初始占空比
  *  @dutyB:
- *      1通道初始占空比
+ *      B通道初始占空比
  * 返回值:void
- * 备注:PWM满占空比为 2500,000/Freq
+ * 备注:PWM满占空比为 1000
  */
 void LIB_PWM_Init(uint8_t PWm_Num,uint8_t PWM_Gen_Num, uint32_t Freq, uint16_t dutyA,uint16_t dutyB)
 {
@@ -55,10 +55,10 @@ void LIB_PWM_Init(uint8_t PWm_Num,uint8_t PWM_Gen_Num, uint32_t Freq, uint16_t d
     GPIOPinConfigure(GPIO_Px_MXPWMx_TABLE[PWm_Num][PWM_Gen_Num]);
     GPIOPinConfigure(GPIO_Px_MXPWMx_TABLE[PWm_Num][PWM_Gen_Num] + (0x00000004 << 8));
     GPIOPinTypePWM(GPIO_PORT_TABLE[PWm_Num][PWM_Gen_Num], GPIO_PIN_TABLE[PWm_Num][PWM_Gen_Num] | (GPIO_PIN_TABLE[PWm_Num][PWM_Gen_Num] << 1));
-    PWMGenConfigure((PWM_BASE + (PWm_Num << 12)), (PWM_GEN_BASE + ((0x00000004 * PWM_Gen_Num) << 4)), PWM_GEN_MODE_DOWN | PWM_GEN_MODE_NO_SYNC);
-    PWMGenPeriodSet((PWM_BASE + (PWm_Num << 12)), (PWM_GEN_BASE + ((0x00000004 * PWM_Gen_Num) << 4)), SysCtlClockGet() / 32 / Freq);
-    PWMPulseWidthSet((PWM_BASE + (PWm_Num << 12)),PWM_OUT_TABLE[PWM_Gen_Num * 2],dutyA);
-    PWMPulseWidthSet((PWM_BASE + (PWm_Num << 12)),PWM_OUT_TABLE[PWM_Gen_Num * 2 + 1],dutyB);
+    PWMGenConfigure((PWM_BASE + (PWm_Num << 12)), (PWM_GEN_BASE + ((0x00000004 * PWM_Gen_Num) << 4)),PWM_GEN_MODE_UP_DOWN);
+    PWMGenPeriodSet((PWM_BASE + (PWm_Num << 12)), (PWM_GEN_BASE + ((0x00000004 * PWM_Gen_Num) << 4)), SysCtlClockGet() / 32 / Freq - 1);
+    PWMPulseWidthSet((PWM_BASE + (PWm_Num << 12)),PWM_OUT_TABLE[PWM_Gen_Num * 2], (float)(SysCtlClockGet() / 32 / Freq - 1) * ((float)dutyA / 1000.0));
+    PWMPulseWidthSet((PWM_BASE + (PWm_Num << 12)),PWM_OUT_TABLE[PWM_Gen_Num * 2 + 1], (float)(SysCtlClockGet() / 32 / Freq - 1) * ((float)dutyB / 1000.0));
     PWMOutputState((PWM_BASE + (PWm_Num << 12)),PWM_OUT_BIT_TABLE[PWM_Gen_Num * 2],true);
     PWMOutputState((PWM_BASE + (PWm_Num << 12)),PWM_OUT_BIT_TABLE[PWM_Gen_Num * 2 + 1],true);
     PWMGenEnable((PWM_BASE + (PWm_Num << 12)), (PWM_GEN_BASE + ((0x00000004 * PWM_Gen_Num) << 4)));
@@ -70,14 +70,15 @@ void LIB_PWM_Init(uint8_t PWm_Num,uint8_t PWM_Gen_Num, uint32_t Freq, uint16_t d
  *  @PWm_Num:
  *      PWM 模块号 PWM_NUM_0 , PWM_NUM_1
  *  @PWM_Gen_Num:
- *      PWM 发生器号 PWM_Gen_Num_0 - PWM_Gen_Num_4
+ *      PWM 发生器号 PWM_CHANNEL_0 - PWM_CHANNEL_7
  *  @duty:
  *      占空比
  * 返回值:void
- * 备注:
+ * 备注: PWM满占空比为 1000
  */
-void LIB_PWM_SetPulseWidth(uint8_t PWm_Num, uint32_t PWM_Chanel_Base, uint16_t duty)
+void LIB_PWM_SetPulseWidth(uint8_t PWm_Num, uint32_t PWM_Chanel_Base, uint16_t Freq,uint16_t duty)
 {
-    PWMPulseWidthSet((PWM_BASE + (PWm_Num << 12)), PWM_Chanel_Base, duty);
+    PWMPulseWidthSet((PWM_BASE + (PWm_Num << 12)), PWM_Chanel_Base, (float)(SysCtlClockGet() / 32 / Freq - 1) * ((float)duty / 1000.0));
+    //if(duty == 0) PWMOutputState((PWM_BASE + (PWm_Num << 12)),PWM_OUT_BIT_TABLE[PWM_Gen_Num * 2],dutyA?true:false);
 }
 

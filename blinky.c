@@ -23,7 +23,7 @@
 
 #include "oled.h"
 #include "vl53l0x.h"
-
+#include "hc-sr04.h"
 void toggle(void);
 void motor_control(void);
 
@@ -31,23 +31,20 @@ uint8_t buffer;
 uint8_t temp[10] = {};
 uint8_t i = 0;
 int main(void)
-
 {
     volatile uint32_t ui32Loop;
+    IntMasterEnable();
     LIB_CLOCK_MainClockSet(CLOCK_XTAL_PLL_80M);
     LIB_UART_PrintfInit();
     //LIB_TIMER_InitCycle(TIMER5, 1, motor_control);
-    LIB_I2C_Init(I2C0, 1);
-    IntMasterEnable();
-    UARTprintf(" distance is:%u\n", Vl53l0x_GetDistance());
+    //LIB_I2C_Init(I2C0, 1);
+    LIB_PWM_Init(PWM_NUM_0, PWM_GEN_NUM_0, 10000,0, 0) ;
+    LIB_PWM_SetPulseWidth(PWM_NUM_0, PWM_CHANNEL_0,10000,10);
+    LIB_PWM_SetPulseWidth(PWM_NUM_0, PWM_CHANNEL_1,10000,500);
     while(1)
     {
-//        Vl53l0x_ConvOnce();
-//
-//        delay_ms(100);
-//
-//        UARTprintf(" distance is: %u \n", VL53L0x_GetDistance());
-//        delay_ms(500);
+        //UARTprintf(" distance is:%u\n", Hcsr04_GetDistance());
+        //delay_ms(50);
         i++;
     }
 }
