@@ -15,7 +15,7 @@
 #include "lib_i2c.h"
 
 
-#define Oled_Addr 0x78
+#define Oled_Addr 0x78 >> 1
 #define I2C_NUM I2C0
 
 

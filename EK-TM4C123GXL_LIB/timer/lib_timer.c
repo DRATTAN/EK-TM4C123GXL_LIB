@@ -27,10 +27,9 @@ void LIB_TIMER_InitCycle(uint8_t TIMERx, uint32_t Freq, void (*TIMER_ISRhandle)(
     TimerDisable(((TIMERx << 12) + TIMER_BASE),TIMER_A);
     LIB_ISR_TIMERRegister(TIMERx, 0, TIMER_ISRhandle);
     TimerConfigure(((TIMERx << 12) + TIMER_BASE), TIMER_CFG_A_PERIODIC_UP);
-    TimerLoadSet(((TIMERx << 12) + TIMER_BASE), TIMER_A, SysCtlClockGet()/Freq - 1);
+    TimerLoadSet(((TIMERx << 12) + TIMER_BASE), TIMER_A, SysCtlClockGet() / Freq - 1);
     TimerIntEnable(((TIMERx << 12) + TIMER_BASE), TIMER_TIMA_TIMEOUT);
     IntEnable(TIMER_INT_TABLE[TIMERx]);
-    TimerEnable(((TIMERx << 12) + TIMER_BASE),TIMER_A);
 }
 
 /*
@@ -46,6 +45,7 @@ void LIB_TIMER_IntDisable(uint8_t TIMERx)
 {
     TimerIntDisable(((TIMERx << 12) + TIMER_BASE), TIMER_TIMA_TIMEOUT);
 }
+
 /*
  * 描述:使能定时器中断
  * 参数
@@ -87,7 +87,7 @@ void LIB_TIMER_SetFreq(uint8_t TIMERx, uint32_t Freq)
  */
 void LIB_TIMER_TimerDisable(uint8_t TIMERx)
 {
-    TimerDisable(TIMER0_BASE,TIMER_A);
+    TimerDisable(((TIMERx << 12) + TIMER_BASE),TIMER_A);
 }
 
 /*
@@ -101,5 +101,5 @@ void LIB_TIMER_TimerDisable(uint8_t TIMERx)
  */
 void LIB_TIMER_TimerEnable(uint8_t TIMERx)
 {
-    TimerEnable(TIMER0_BASE,TIMER_A);
+    TimerEnable(((TIMERx << 12) + TIMER_BASE),TIMER_A);
 }

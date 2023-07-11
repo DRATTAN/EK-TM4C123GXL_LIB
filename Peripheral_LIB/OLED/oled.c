@@ -79,6 +79,7 @@ uint32_t Oled_Pow(uint16_t a,uint16_t b)
  */
 void Oled_Init()
 {
+    delay_ms(1);
     Oled_Cmd(0xae); Oled_Cmd(0x00); Oled_Cmd(0x10); Oled_Cmd(0x40); Oled_Cmd(0x81); Oled_Cmd(0xcf); Oled_Cmd(0xa1);
     Oled_Cmd(0xc8); Oled_Cmd(0xa6); Oled_Cmd(0xa8); Oled_Cmd(0x3f); Oled_Cmd(0xd3); Oled_Cmd(0x00); Oled_Cmd(0xd5);
     Oled_Cmd(0x80); Oled_Cmd(0xd9); Oled_Cmd(0xf1); Oled_Cmd(0xda); Oled_Cmd(0x12); Oled_Cmd(0xdb); Oled_Cmd(0x40);
@@ -213,7 +214,7 @@ void Oled_ShowString(uint8_t x, uint8_t y, const char* String_Addr)
  */
 void Oled_ShowNumber(uint8_t x,uint8_t y,int32_t num, uint8_t len)
 {
-    if(num>0)
+    if(num >= 0)
         Oled_ShowNumberBase(x,y,num,len);
     else
     {

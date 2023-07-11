@@ -9,22 +9,10 @@
 #include "driverlib/timer.h"
 #include "driverlib/interrupt.h"
 #include "driverlib/qei.h"
-
 #include "utils/uartstdio.h"
 
-#include "lib_clock.h"
-#include "lib_gpio.h"
-#include "lib_time.h"
-#include "lib_timer.h"
-#include "lib_uart.h"
-#include "lib_qei.h"
-#include "lib_pwm.h"
-#include "lib_i2c.h"
-
-#include "oled.h"
-#include "vl53l0x.h"
-#include "hc-sr04.h"
-
+#include "LIB_INCLUDE.h"
+#include "PERI_INCLUDE.h"
 void toggle(void);
 void motor_control(void);
 
@@ -38,18 +26,20 @@ int main(void)
     IntMasterEnable();
     LIB_CLOCK_MainClockSet(CLOCK_XTAL_PLL_80M);
     LIB_UART_PrintfInit();
-    //LIB_TIMER_InitCycle(TIMER5, 1, motor_control);
-    //LIB_I2C_Init(I2C0, 1);
-    LIB_PWM_Init(PWM_NUM_0, PWM_GEN_NUM_0, 10000,0, 0) ;
-    LIB_PWM_SetPulseWidth(PWM_NUM_0, PWM_CHANNEL_0,10);
-    LIB_PWM_SetPulseWidth(PWM_NUM_0, PWM_CHANNEL_1,500);
+    LIB_I2C_Init(I2C0, 1);
+    Oled_Init();
+    LIB_TIMER_InitCycle(TIMER5, 100, motor_control);
+    LIB_TIMER_TimerEnable(TIMER5);
+    Hcsr04_Init(ISR_GPIOB, ISR_GPIO_PIN_4, GPIOB, GPIO_PIN_5);
+    LIB_PWM_Init(PWM_NUM_0, PWM_GEN_NUM_0, 10000, 500, 100);
+    delay_ms(1500);
+    LIB_PWM_SetPulseWidth(PWM_NUM_0, PWM_CHANNEL_0, 800);
+    LIB_PWM_SetPulseWidth(PWM_NUM_0, PWM_CHANNEL_1, 800);
     while(1)
     {
-        LIB_PWM_SetPulseWidth(PWM_NUM_0, PWM_CHANNEL_0,i);
-        UARTprintf("duty:%d\n",i);
-        delay_ms(1);
-        if(i>998) i = 0;
-        i++;
+        //UARTprintf("duty:%d\n",i);
+        //Hcsr04_GetDistance();
+        delay_ms(10);
     }
 }
 
@@ -59,5 +49,8 @@ void toggle()
 }
 void motor_control()
 {
-    UARTprintf(" running \n");
+    Oled_ShowNumber(0, 0, i, 5);
+    i++;
+    if(i>1000) i = 0;
+    //UARTprintf(" running \n");
 }
