@@ -24,6 +24,7 @@
 #include "oled.h"
 #include "vl53l0x.h"
 #include "hc-sr04.h"
+
 void toggle(void);
 void motor_control(void);
 
@@ -39,8 +40,8 @@ int main(void)
     //LIB_TIMER_InitCycle(TIMER5, 1, motor_control);
     //LIB_I2C_Init(I2C0, 1);
     LIB_PWM_Init(PWM_NUM_0, PWM_GEN_NUM_0, 10000,0, 0) ;
-    LIB_PWM_SetPulseWidth(PWM_NUM_0, PWM_CHANNEL_0,10000,10);
-    LIB_PWM_SetPulseWidth(PWM_NUM_0, PWM_CHANNEL_1,10000,500);
+    LIB_PWM_SetPulseWidth(PWM_NUM_0, PWM_CHANNEL_0,10);
+    LIB_PWM_SetPulseWidth(PWM_NUM_0, PWM_CHANNEL_1,500);
     while(1)
     {
         //UARTprintf(" distance is:%u\n", Hcsr04_GetDistance());
