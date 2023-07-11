@@ -27,11 +27,11 @@
 
 void toggle(void);
 void motor_control(void);
-asda
 
 uint8_t buffer;
 uint8_t temp[10] = {};
-uint8_t i = 0;
+uint16_t i = 0;
+
 int main(void)
 {
     volatile uint32_t ui32Loop;
@@ -45,8 +45,10 @@ int main(void)
     LIB_PWM_SetPulseWidth(PWM_NUM_0, PWM_CHANNEL_1,500);
     while(1)
     {
-        //UARTprintf(" distance is:%u\n", Hcsr04_GetDistance());
-        //delay_ms(50);
+        LIB_PWM_SetPulseWidth(PWM_NUM_0, PWM_CHANNEL_0,i);
+        UARTprintf("duty:%d\n",i);
+        delay_ms(500);
+        if(i>999) i = 0;
         i++;
     }
 }

@@ -12,27 +12,27 @@ LIB_SRCS += \
 ../driverlib.lib 
 
 C_SRCS += \
-../blinky.c \
+../main.c \
 ../startup_ccs.c 
 
 C_DEPS += \
-./blinky.d \
+./main.d \
 ./startup_ccs.d 
 
 OBJS += \
-./blinky.obj \
+./main.obj \
 ./startup_ccs.obj 
 
 OBJS__QUOTED += \
-"blinky.obj" \
+"main.obj" \
 "startup_ccs.obj" 
 
 C_DEPS__QUOTED += \
-"blinky.d" \
+"main.d" \
 "startup_ccs.d" 
 
 C_SRCS__QUOTED += \
-"../blinky.c" \
+"../main.c" \
 "../startup_ccs.c" 
 
 
