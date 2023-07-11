@@ -47,8 +47,8 @@ int main(void)
     {
         LIB_PWM_SetPulseWidth(PWM_NUM_0, PWM_CHANNEL_0,i);
         UARTprintf("duty:%d\n",i);
-        delay_ms(500);
-        if(i>999) i = 0;
+        delay_ms(1);
+        if(i>998) i = 0;
         i++;
     }
 }

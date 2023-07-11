@@ -10,6 +10,11 @@
 
 /*
  * 描述:I2C初始化
+ * I2CNUM   SCL     SDA
+ *  0       PB2     PB3
+ *  1       PA6     PA7
+ *  2       PE4     PE5
+ *  3       PD0     PD1
  * 参数
  *  @I2CNum:
  *      I2C号:

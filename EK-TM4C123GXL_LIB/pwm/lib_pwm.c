@@ -82,8 +82,6 @@ void LIB_PWM_Init(uint8_t PWm_Num,uint8_t PWM_Gen_Num, uint32_t Freq, uint16_t d
  *      PWM 通道号 PWM_CHANNEL_0 - PWM_CHANNEL_7
  *  @duty:
  *      占空比
- *  @Freq:
- *      初始化此通道时给定的
  * 返回值:void
  * 备注: PWM满占空比为 1000
  */
