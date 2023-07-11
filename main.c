@@ -27,14 +27,15 @@ int main(void)
     LIB_CLOCK_MainClockSet(CLOCK_XTAL_PLL_80M);
     LIB_UART_PrintfInit();
     LIB_I2C_Init(I2C0, 1);
+    Photocell_Check();
     Oled_Init();
     LIB_TIMER_InitCycle(TIMER5, 100, motor_control);
     LIB_TIMER_TimerEnable(TIMER5);
     Hcsr04_Init(ISR_GPIOB, ISR_GPIO_PIN_4, GPIOB, GPIO_PIN_5);
     LIB_PWM_Init(PWM_NUM_0, PWM_GEN_NUM_0, 10000, 500, 100);
-    delay_ms(1500);
     LIB_PWM_SetPulseWidth(PWM_NUM_0, PWM_CHANNEL_0, 800);
     LIB_PWM_SetPulseWidth(PWM_NUM_0, PWM_CHANNEL_1, 800);
+    Oled_ShowNumber(0, 0,Photocell_Check(), 2);
     while(1)
     {
         //UARTprintf("duty:%d\n",i);
@@ -49,7 +50,7 @@ void toggle()
 }
 void motor_control()
 {
-    Oled_ShowNumber(0, 0, i, 5);
+    Oled_ShowNumber(0, 1,Photocell_ReadValue(), 4);
     i++;
     if(i>1000) i = 0;
     //UARTprintf(" running \n");

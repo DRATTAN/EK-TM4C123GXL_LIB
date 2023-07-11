@@ -11,5 +11,6 @@
 #include "oled.h"
 #include "vl53l0x.h"
 #include "hc-sr04.h"
+#include "photocell.h"
 
 #endif /* PERIPHERAL_LIB_PERI_INCLUDE_H_ */
