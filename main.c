@@ -19,7 +19,7 @@ void motor_control(void);
 uint8_t buffer;
 uint8_t temp[10] = {};
 uint16_t i = 0;
-
+uint8_t Adata[8];
 int main(void)
 {
     volatile uint32_t ui32Loop;
@@ -50,7 +50,8 @@ void toggle()
 }
 void motor_control()
 {
-    Oled_ShowNumber(0, 1,Photocell_ReadValue(), 4);
+    Photocell_ReadAnalogValue(Adata);
+    Oled_ShowNumber(0, 1,Adata[6], 4);
     i++;
     if(i>1000) i = 0;
     //UARTprintf(" running \n");

@@ -21,9 +21,6 @@
 
 uint32_t Oled_Pow(uint16_t, uint16_t);
 
-void Oled_Cmd(uint8_t);
-void Oled_Data(uint8_t);
-void Oled_Datas(uint8_t*, uint32_t);
 void Oled_Clear(void);
 void Oled_Clear_Part(uint8_t, uint8_t, uint8_t);
 void Oled_Init(void);

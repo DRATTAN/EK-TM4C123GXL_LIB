@@ -17,4 +17,5 @@
 
 uint8_t Photocell_Check(void);
 uint8_t Photocell_ReadValue(void);
+void Photocell_ReadAnalogValue(uint8_t *);
 #endif /* PERIPHERAL_LIB_GANWEI_8BIT_PHOTOCELL_PHOTOCELL_H_ */
