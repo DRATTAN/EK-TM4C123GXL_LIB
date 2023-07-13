@@ -12,5 +12,6 @@
 #include "vl53l0x.h"
 #include "hc-sr04.h"
 #include "photocell.h"
+#include "cx20106a.h"
 
 #endif /* PERIPHERAL_LIB_PERI_INCLUDE_H_ */

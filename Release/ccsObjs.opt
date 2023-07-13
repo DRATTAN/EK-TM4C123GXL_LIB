@@ -12,6 +12,7 @@
 "./EK-TM4C123GXL_LIB/time/lib_time.obj"
 "./EK-TM4C123GXL_LIB/timer/lib_timer.obj"
 "./EK-TM4C123GXL_LIB/uart/lib_uart.obj"
+"./Peripheral_LIB/CX20106A/cx20106a.obj"
 "./Peripheral_LIB/GANWEI-8Bit-photocell/photocell.obj"
 "./Peripheral_LIB/HC-SR04/hc-sr04.obj"
 "./Peripheral_LIB/OLED/front.obj"

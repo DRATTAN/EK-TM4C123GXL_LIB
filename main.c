@@ -27,15 +27,16 @@ int main(void)
     LIB_CLOCK_MainClockSet(CLOCK_XTAL_PLL_80M);
     LIB_UART_PrintfInit();
     LIB_I2C_Init(I2C0, 0);
+    Cx20106a_Init();
     //LIB_TIMER_InitCycle(TIMER5, 1, motor_control);
     //LIB_TIMER_TimerEnable(TIMER5);
-    LIB_PWM_Init(PWM_NUM_0, PWM_GEN_NUM_0, 10000, 0,0);
+    //LIB_PWM_Init(PWM_NUM_0, PWM_GEN_NUM_0, 10000, 0,0);
     while(1)
     {
-        LIB_PWM_SetPulseWidth(0, 0, i);
+        UARTprintf("distance: %u \n", Cx20106a_GetDistance());
         i++;
         if(i == 250) i = 0;
-        delay_ms(1);
+        delay_ms(100);
     }
 }
 

@@ -121,6 +121,7 @@ EK-TM4C123GXL_LIB/qei \
 EK-TM4C123GXL_LIB/time \
 EK-TM4C123GXL_LIB/timer \
 EK-TM4C123GXL_LIB/uart \
+Peripheral_LIB/CX20106A \
 Peripheral_LIB/GANWEI-8Bit-photocell \
 Peripheral_LIB/HC-SR04 \
 Peripheral_LIB/OLED \
