@@ -27,14 +27,15 @@ int main(void)
     LIB_CLOCK_MainClockSet(CLOCK_XTAL_PLL_80M);
     LIB_UART_PrintfInit();
     LIB_I2C_Init(I2C0, 0);
-    LIB_TIMER_InitCycle(TIMER5, 1, motor_control);
-    LIB_TIMER_TimerEnable(TIMER5);
+    //LIB_TIMER_InitCycle(TIMER5, 1, motor_control);
+    //LIB_TIMER_TimerEnable(TIMER5);
+    LIB_PWM_Init(PWM_NUM_0, PWM_GEN_NUM_0, 10000, 0,0);
     while(1)
     {
-        //Oled_ShowNumber(0, 1,VL53L0x_Bottom.distValid, 4);
-        UARTprintf("duty:%d\n",VL53L0x_Bottom.distValid);
-        //Hcsr04_GetDistance();
-        delay_ms(100);
+        LIB_PWM_SetPulseWidth(0, 0, i);
+        i++;
+        if(i == 250) i = 0;
+        delay_ms(1);
     }
 }
 

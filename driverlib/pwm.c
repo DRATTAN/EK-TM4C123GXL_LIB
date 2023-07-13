@@ -738,7 +738,7 @@ PWMOutputState(uint32_t ui32Base, uint32_t ui32PWMOutBits,
     // Read the module's ENABLE output control register and set or clear the
     // requested bits.
     //
-    if(bEnable == true)
+    if(bEnable != false)
     {
         HWREG(ui32Base + PWM_O_ENABLE) |= ui32PWMOutBits;
     }
