@@ -79,7 +79,7 @@ void LIB_PWM_Init(uint8_t PWm_Num,uint8_t PWM_Gen_Num, uint32_t Freq, uint16_t d
  *  @duty:
  *      占空比
  * 返回值:void
- * 备注: PWM满占空比为 999
+ * 备注: PWM满占空比为 主频 / 32 / Freq - 1
  */
 void LIB_PWM_SetPulseWidth(uint8_t PWm_Num, uint8_t PWM_Channel_Num,uint16_t duty)
 {
