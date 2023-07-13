@@ -1,18 +1,10 @@
 #include <stdint.h>
 #include <stdbool.h>
-#include "inc/hw_memmap.h"
-#include "inc/tm4c123gh6pm.h"
-
-
-#include "driverlib/gpio.h"
-#include "driverlib/sysctl.h"
-#include "driverlib/timer.h"
-#include "driverlib/interrupt.h"
-#include "driverlib/qei.h"
-#include "utils/uartstdio.h"
 
 #include "LIB_INCLUDE.h"
 #include "PERI_INCLUDE.h"
+
+
 void toggle(void);
 void motor_control(void);
 

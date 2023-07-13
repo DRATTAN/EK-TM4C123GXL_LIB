@@ -4,17 +4,32 @@
 
 SHELL = cmd.exe
 
-CG_TOOL_ROOT := C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS
+CG_TOOL_ROOT := C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS
 
 GEN_OPTS__FLAG := 
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
-"./blinky.obj" \
+"./main.obj" \
 "./startup_ccs.obj" \
 "./EK-TM4C123GXL_LIB/clock/lib_clock.obj" \
 "./EK-TM4C123GXL_LIB/gpio/lib_gpio.obj" \
-"./EK-TM4C123GXL_LIB/isr_anagement/lib_isrmanagement.obj" \
+"./EK-TM4C123GXL_LIB/i2c/lib_i2c.obj" \
+"./EK-TM4C123GXL_LIB/isr_anagement/lib_EXTIisrmanagement.obj" \
+"./EK-TM4C123GXL_LIB/isr_anagement/lib_QEIisrmanagement.obj" \
+"./EK-TM4C123GXL_LIB/isr_anagement/lib_TIMERisrmanagement.obj" \
+"./EK-TM4C123GXL_LIB/isr_anagement/lib_UARTisrmanagement.obj" \
+"./EK-TM4C123GXL_LIB/pwm/lib_pwm.obj" \
+"./EK-TM4C123GXL_LIB/qei/lib_qei.obj" \
+"./EK-TM4C123GXL_LIB/time/lib_time.obj" \
+"./EK-TM4C123GXL_LIB/timer/lib_timer.obj" \
+"./EK-TM4C123GXL_LIB/uart/lib_uart.obj" \
+"./Peripheral_LIB/CX20106A/cx20106a.obj" \
+"./Peripheral_LIB/GANWEI-8Bit-photocell/photocell.obj" \
+"./Peripheral_LIB/HC-SR04/hc-sr04.obj" \
+"./Peripheral_LIB/OLED/front.obj" \
+"./Peripheral_LIB/OLED/oled.obj" \
+"./Peripheral_LIB/VL53L0x/vl53l0x.obj" \
 "./driverlib/adc.obj" \
 "./driverlib/aes.obj" \
 "./driverlib/can.obj" \
@@ -48,6 +63,8 @@ ORDERED_OBJS += \
 "./driverlib/udma.obj" \
 "./driverlib/usb.obj" \
 "./driverlib/watchdog.obj" \
+"./utils/uartstdio.obj" \
+"./utils/ustdlib.obj" \
 "../blinky_ccs.cmd" \
 "../driverlib.lib" \
 "../driverlib/ccs/Debug/driverlib.lib" \
@@ -66,21 +83,45 @@ RMDIR := RMDIR /S/Q
 -include subdir_vars.mk
 -include EK-TM4C123GXL_LIB/clock/subdir_vars.mk
 -include EK-TM4C123GXL_LIB/gpio/subdir_vars.mk
+-include EK-TM4C123GXL_LIB/i2c/subdir_vars.mk
 -include EK-TM4C123GXL_LIB/isr_anagement/subdir_vars.mk
+-include EK-TM4C123GXL_LIB/pwm/subdir_vars.mk
+-include EK-TM4C123GXL_LIB/qei/subdir_vars.mk
+-include EK-TM4C123GXL_LIB/time/subdir_vars.mk
+-include EK-TM4C123GXL_LIB/timer/subdir_vars.mk
+-include EK-TM4C123GXL_LIB/uart/subdir_vars.mk
+-include Peripheral_LIB/CX20106A/subdir_vars.mk
+-include Peripheral_LIB/GANWEI-8Bit-photocell/subdir_vars.mk
+-include Peripheral_LIB/HC-SR04/subdir_vars.mk
+-include Peripheral_LIB/OLED/subdir_vars.mk
+-include Peripheral_LIB/VL53L0x/subdir_vars.mk
 -include driverlib/subdir_vars.mk
 -include driverlib/ccs/Debug/subdir_vars.mk
 -include driverlib/ewarm/Exe/subdir_vars.mk
 -include driverlib/gcc/subdir_vars.mk
 -include driverlib/rvmdk/subdir_vars.mk
+-include utils/subdir_vars.mk
 -include subdir_rules.mk
 -include EK-TM4C123GXL_LIB/clock/subdir_rules.mk
 -include EK-TM4C123GXL_LIB/gpio/subdir_rules.mk
+-include EK-TM4C123GXL_LIB/i2c/subdir_rules.mk
 -include EK-TM4C123GXL_LIB/isr_anagement/subdir_rules.mk
+-include EK-TM4C123GXL_LIB/pwm/subdir_rules.mk
+-include EK-TM4C123GXL_LIB/qei/subdir_rules.mk
+-include EK-TM4C123GXL_LIB/time/subdir_rules.mk
+-include EK-TM4C123GXL_LIB/timer/subdir_rules.mk
+-include EK-TM4C123GXL_LIB/uart/subdir_rules.mk
+-include Peripheral_LIB/CX20106A/subdir_rules.mk
+-include Peripheral_LIB/GANWEI-8Bit-photocell/subdir_rules.mk
+-include Peripheral_LIB/HC-SR04/subdir_rules.mk
+-include Peripheral_LIB/OLED/subdir_rules.mk
+-include Peripheral_LIB/VL53L0x/subdir_rules.mk
 -include driverlib/subdir_rules.mk
 -include driverlib/ccs/Debug/subdir_rules.mk
 -include driverlib/ewarm/Exe/subdir_rules.mk
 -include driverlib/gcc/subdir_rules.mk
 -include driverlib/rvmdk/subdir_rules.mk
+-include utils/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -191,7 +232,7 @@ all: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(A_SRCS) $(GEN_CMDS)
 EK-TM4C123GXL_LIB_TEST.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(A_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: ARM Linker'
-	"C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"blinky_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="EK-TM4C123GXL_LIB_TEST_linkInfo.xml" --rom_model -o "EK-TM4C123GXL_LIB_TEST.out" $(ORDERED_OBJS) $(A_SRCS)
+	"C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"blinky_ccs.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/lib" -i"C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="EK-TM4C123GXL_LIB_TEST_linkInfo.xml" --rom_model -o "EK-TM4C123GXL_LIB_TEST.out" $(ORDERED_OBJS) $(A_SRCS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 	@$(MAKE) --no-print-directory post-build
@@ -199,14 +240,16 @@ EK-TM4C123GXL_LIB_TEST.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(A_SRCS) $(GEN_CMDS
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "blinky.obj" "startup_ccs.obj" "EK-TM4C123GXL_LIB\clock\lib_clock.obj" "EK-TM4C123GXL_LIB\gpio\lib_gpio.obj" "EK-TM4C123GXL_LIB\isr_anagement\lib_isrmanagement.obj" "driverlib\adc.obj" "driverlib\aes.obj" "driverlib\can.obj" "driverlib\comp.obj" "driverlib\cpu.obj" "driverlib\crc.obj" "driverlib\des.obj" "driverlib\eeprom.obj" "driverlib\emac.obj" "driverlib\epi.obj" "driverlib\epi_workaround_ccs.obj" "driverlib\flash.obj" "driverlib\fpu.obj" "driverlib\gpio.obj" "driverlib\hibernate.obj" "driverlib\i2c.obj" "driverlib\interrupt.obj" "driverlib\lcd.obj" "driverlib\mpu.obj" "driverlib\onewire.obj" "driverlib\pwm.obj" "driverlib\qei.obj" "driverlib\shamd5.obj" "driverlib\ssi.obj" "driverlib\sw_crc.obj" "driverlib\sysctl.obj" "driverlib\sysexc.obj" "driverlib\systick.obj" "driverlib\timer.obj" "driverlib\uart.obj" "driverlib\udma.obj" "driverlib\usb.obj" "driverlib\watchdog.obj" 
-	-$(RM) "blinky.d" "startup_ccs.d" "EK-TM4C123GXL_LIB\clock\lib_clock.d" "EK-TM4C123GXL_LIB\gpio\lib_gpio.d" "EK-TM4C123GXL_LIB\isr_anagement\lib_isrmanagement.d" "driverlib\adc.d" "driverlib\aes.d" "driverlib\can.d" "driverlib\comp.d" "driverlib\cpu.d" "driverlib\crc.d" "driverlib\des.d" "driverlib\eeprom.d" "driverlib\emac.d" "driverlib\epi.d" "driverlib\flash.d" "driverlib\fpu.d" "driverlib\gpio.d" "driverlib\hibernate.d" "driverlib\i2c.d" "driverlib\interrupt.d" "driverlib\lcd.d" "driverlib\mpu.d" "driverlib\onewire.d" "driverlib\pwm.d" "driverlib\qei.d" "driverlib\shamd5.d" "driverlib\ssi.d" "driverlib\sw_crc.d" "driverlib\sysctl.d" "driverlib\sysexc.d" "driverlib\systick.d" "driverlib\timer.d" "driverlib\uart.d" "driverlib\udma.d" "driverlib\usb.d" "driverlib\watchdog.d" 
+	-$(RM) "main.obj" "startup_ccs.obj" "EK-TM4C123GXL_LIB\clock\lib_clock.obj" "EK-TM4C123GXL_LIB\gpio\lib_gpio.obj" "EK-TM4C123GXL_LIB\i2c\lib_i2c.obj" "EK-TM4C123GXL_LIB\isr_anagement\lib_EXTIisrmanagement.obj" "EK-TM4C123GXL_LIB\isr_anagement\lib_QEIisrmanagement.obj" "EK-TM4C123GXL_LIB\isr_anagement\lib_TIMERisrmanagement.obj" "EK-TM4C123GXL_LIB\isr_anagement\lib_UARTisrmanagement.obj" "EK-TM4C123GXL_LIB\pwm\lib_pwm.obj" "EK-TM4C123GXL_LIB\qei\lib_qei.obj" "EK-TM4C123GXL_LIB\time\lib_time.obj" "EK-TM4C123GXL_LIB\timer\lib_timer.obj" "EK-TM4C123GXL_LIB\uart\lib_uart.obj" "Peripheral_LIB\CX20106A\cx20106a.obj" "Peripheral_LIB\GANWEI-8Bit-photocell\photocell.obj" "Peripheral_LIB\HC-SR04\hc-sr04.obj" "Peripheral_LIB\OLED\front.obj" "Peripheral_LIB\OLED\oled.obj" "Peripheral_LIB\VL53L0x\vl53l0x.obj" "driverlib\adc.obj" "driverlib\aes.obj" "driverlib\can.obj" "driverlib\comp.obj" "driverlib\cpu.obj" "driverlib\crc.obj" "driverlib\des.obj" "driverlib\eeprom.obj" "driverlib\emac.obj" "driverlib\epi.obj" 
+	-$(RM) "driverlib\epi_workaround_ccs.obj" "driverlib\flash.obj" "driverlib\fpu.obj" "driverlib\gpio.obj" "driverlib\hibernate.obj" "driverlib\i2c.obj" "driverlib\interrupt.obj" "driverlib\lcd.obj" "driverlib\mpu.obj" "driverlib\onewire.obj" "driverlib\pwm.obj" "driverlib\qei.obj" "driverlib\shamd5.obj" "driverlib\ssi.obj" "driverlib\sw_crc.obj" "driverlib\sysctl.obj" "driverlib\sysexc.obj" "driverlib\systick.obj" "driverlib\timer.obj" "driverlib\uart.obj" "driverlib\udma.obj" "driverlib\usb.obj" "driverlib\watchdog.obj" "utils\uartstdio.obj" "utils\ustdlib.obj" 
+	-$(RM) "main.d" "startup_ccs.d" "EK-TM4C123GXL_LIB\clock\lib_clock.d" "EK-TM4C123GXL_LIB\gpio\lib_gpio.d" "EK-TM4C123GXL_LIB\i2c\lib_i2c.d" "EK-TM4C123GXL_LIB\isr_anagement\lib_EXTIisrmanagement.d" "EK-TM4C123GXL_LIB\isr_anagement\lib_QEIisrmanagement.d" "EK-TM4C123GXL_LIB\isr_anagement\lib_TIMERisrmanagement.d" "EK-TM4C123GXL_LIB\isr_anagement\lib_UARTisrmanagement.d" "EK-TM4C123GXL_LIB\pwm\lib_pwm.d" "EK-TM4C123GXL_LIB\qei\lib_qei.d" "EK-TM4C123GXL_LIB\time\lib_time.d" "EK-TM4C123GXL_LIB\timer\lib_timer.d" "EK-TM4C123GXL_LIB\uart\lib_uart.d" "Peripheral_LIB\CX20106A\cx20106a.d" "Peripheral_LIB\GANWEI-8Bit-photocell\photocell.d" "Peripheral_LIB\HC-SR04\hc-sr04.d" "Peripheral_LIB\OLED\front.d" "Peripheral_LIB\OLED\oled.d" "Peripheral_LIB\VL53L0x\vl53l0x.d" "driverlib\adc.d" "driverlib\aes.d" "driverlib\can.d" "driverlib\comp.d" "driverlib\cpu.d" "driverlib\crc.d" "driverlib\des.d" "driverlib\eeprom.d" "driverlib\emac.d" "driverlib\epi.d" "driverlib\flash.d" "driverlib\fpu.d" "driverlib\gpio.d" 
+	-$(RM) "driverlib\hibernate.d" "driverlib\i2c.d" "driverlib\interrupt.d" "driverlib\lcd.d" "driverlib\mpu.d" "driverlib\onewire.d" "driverlib\pwm.d" "driverlib\qei.d" "driverlib\shamd5.d" "driverlib\ssi.d" "driverlib\sw_crc.d" "driverlib\sysctl.d" "driverlib\sysexc.d" "driverlib\systick.d" "driverlib\timer.d" "driverlib\uart.d" "driverlib\udma.d" "driverlib\usb.d" "driverlib\watchdog.d" "utils\uartstdio.d" "utils\ustdlib.d" 
 	-$(RM) "driverlib\epi_workaround_ccs.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
 post-build:
-	-"C:/ti/ccs1220/ccs/utils/tiobj2bin/tiobj2bin" "EK-TM4C123GXL_LIB_TEST.out" "EK-TM4C123GXL_LIB_TEST.bin" "C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armofd" "C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armhex" "C:/ti/ccs1220/ccs/utils/tiobj2bin/mkhex4bin"
+	-"C:/ti/ccs1220/ccs/utils/tiobj2bin/tiobj2bin" "EK-TM4C123GXL_LIB_TEST.out" "EK-TM4C123GXL_LIB_TEST.bin" "C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/bin/armofd" "C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/bin/armhex" "C:/ti/ccs1220/ccs/utils/tiobj2bin/mkhex4bin"
 	-@echo ' '
 
 .PHONY: all clean dependents

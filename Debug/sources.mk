@@ -114,10 +114,22 @@ SUBDIRS := \
 . \
 EK-TM4C123GXL_LIB/clock \
 EK-TM4C123GXL_LIB/gpio \
+EK-TM4C123GXL_LIB/i2c \
 EK-TM4C123GXL_LIB/isr_anagement \
+EK-TM4C123GXL_LIB/pwm \
+EK-TM4C123GXL_LIB/qei \
+EK-TM4C123GXL_LIB/time \
+EK-TM4C123GXL_LIB/timer \
+EK-TM4C123GXL_LIB/uart \
+Peripheral_LIB/CX20106A \
+Peripheral_LIB/GANWEI-8Bit-photocell \
+Peripheral_LIB/HC-SR04 \
+Peripheral_LIB/OLED \
+Peripheral_LIB/VL53L0x \
 driverlib \
 driverlib/ccs/Debug \
 driverlib/ewarm/Exe \
 driverlib/gcc \
 driverlib/rvmdk \
+utils \
 

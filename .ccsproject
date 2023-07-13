@@ -10,6 +10,6 @@
 	<rts value="libc.a"/>
 	<createSlaveProjects value=""/>
 	<filesToOpen value=""/>
-	<origin value="C:/ti/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c123gxl/blinky/ccs"/>
+	<origin value="C:/Users/RATTAN/Desktop/EK-TM4C123GXL_LIB"/>
 	<isTargetManual value="true"/>
 </projectOptions>
