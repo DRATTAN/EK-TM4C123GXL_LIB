@@ -26,21 +26,15 @@ int main(void)
     IntMasterEnable();
     LIB_CLOCK_MainClockSet(CLOCK_XTAL_PLL_80M);
     LIB_UART_PrintfInit();
-    LIB_I2C_Init(I2C0, 1);
-    Photocell_Check();
-    Oled_Init();
-    LIB_TIMER_InitCycle(TIMER5, 100, motor_control);
+    LIB_I2C_Init(I2C0, 0);
+    LIB_TIMER_InitCycle(TIMER5, 1, motor_control);
     LIB_TIMER_TimerEnable(TIMER5);
-    Hcsr04_Init(ISR_GPIOB, ISR_GPIO_PIN_4, GPIOB, GPIO_PIN_5);
-    LIB_PWM_Init(PWM_NUM_0, PWM_GEN_NUM_0, 10000, 500, 100);
-    LIB_PWM_SetPulseWidth(PWM_NUM_0, PWM_CHANNEL_0, 800);
-    LIB_PWM_SetPulseWidth(PWM_NUM_0, PWM_CHANNEL_1, 800);
-    Oled_ShowNumber(0, 0,Photocell_Check(), 2);
     while(1)
     {
-        //UARTprintf("duty:%d\n",i);
+        //Oled_ShowNumber(0, 1,VL53L0x_Bottom.distValid, 4);
+        UARTprintf("duty:%d\n",VL53L0x_Bottom.distValid);
         //Hcsr04_GetDistance();
-        delay_ms(10);
+        delay_ms(100);
     }
 }
 
@@ -50,8 +44,7 @@ void toggle()
 }
 void motor_control()
 {
-    Photocell_ReadAnalogValue(Adata);
-    Oled_ShowNumber(0, 1,Adata[6], 4);
+    //Oled_ShowNumber(0, 1, 4);
     i++;
     if(i>1000) i = 0;
     //UARTprintf(" running \n");

@@ -75,7 +75,7 @@ void LIB_I2C_Put(uint8_t I2CNum, uint16_t Dev_Addr, uint16_t Reg_Addr, uint8_t D
 }
 
 /*
- * 描述:I2C传输数据
+ * 描述:I2C发送数据流
  * 参数
  *  @I2CNum:
  *      I2C号:
